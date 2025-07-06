@@ -1,9 +1,9 @@
-import Search from "@/app/ui/components/search";
+import Search from "@/ui/components/search";
 import Link from "next/link";
-import CertificatesListWrapper from "@/app/ui/components/certificates/certificatesList";
+import CertificatesListWrapper from "@/ui/components/certificates/certificatesList";
 import {Suspense} from "react";
-import {CardWithIconListSkeleton} from "@/app/ui/components/skeletons";
-import Banner from "@/app/ui/layout/Banner";
+import {CardWithIconListSkeleton} from "../ui/components/skeletons";
+import Banner from "@/ui/layout/Banner";
 import Image from "next/image";
 
 

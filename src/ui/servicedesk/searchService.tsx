@@ -1,6 +1,6 @@
 import {MagnifyingGlassIcon} from "@heroicons/react/16/solid";
-import {SolidButton, TextButton} from "@/app/ui/components/buttons";
-import {getGroupServices} from "@/app/core/http/services";
+import {SolidButton, TextButton} from "../components/buttons";
+import {getGroupServices} from "@/http/services";
 
 export default async function SearchService() {
     try {

@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import SafeImage from "@/app/ui/components/safeImage";
+import SafeImage from "@/ui/components/safeImage";
 
 
 interface CardWithIconProps {

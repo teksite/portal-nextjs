@@ -1,6 +1,6 @@
-import axios, {AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError, InternalAxiosRequestConfig} from 'axios';
-import AuthenticationException from "@/app/core/exceptions/AuthenticationException";
-import ValidationException from "@/app/core/exceptions/ValidationException";
+import axios, {AxiosInstance, AxiosResponse, AxiosError} from 'axios';
+import AuthenticationException from "@/exceptions/AuthenticationException";
+import ValidationException from "@/exceptions/ValidationException";
 
 
 // Define interface for error response

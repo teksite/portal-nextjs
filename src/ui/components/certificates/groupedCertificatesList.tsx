@@ -1,7 +1,7 @@
-import CardWithIcon from "@/app/ui/components/cardWithIcon";
-import {OutlineLink, SolidLink} from "@/app/ui/components/Links";
-import ServiceModel from "@/app/core/models/service";
-import {getServices} from "@/app/core/http/services";
+import CardWithIcon from "@/ui/components/cardWithIcon";
+import {OutlineLink, SolidLink} from "@/ui/components/Links";
+import ServiceModel from "@/models/service";
+import {getServices} from "@/http/services";
 import {ReactElement} from "react";
 
 export default async function GroupedCertificatesListWrapper() {

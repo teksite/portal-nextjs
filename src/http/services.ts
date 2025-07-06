@@ -1,4 +1,4 @@
-import callApi from "@/app/core/helpers/callApi";
+import callApi from "@/helpers/callApi";
 
 export async function getServices() {
     const res = await callApi().post('/GetServices');

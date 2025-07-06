@@ -1,7 +1,7 @@
-import SearchService from "@/app/ui/servicedesk/searchService";
-import Banner from "@/app/ui/layout/Banner";
-import GroupedCertificatesListWrapper from "@/app/ui/components/certificates/groupedCertificatesList";
-import {GroupedCardWithIconListSkeleton} from "@/app/ui/components/skeletons";
+import SearchService from "@/ui/servicedesk/searchService";
+import Banner from "@/ui/layout/Banner";
+import GroupedCertificatesListWrapper from "@/ui/components/certificates/groupedCertificatesList";
+import {GroupedCardWithIconListSkeleton} from "../../ui/components/skeletons";
 import {Suspense} from "react";
 
 export default async function ServicePage() {
