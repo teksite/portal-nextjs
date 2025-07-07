@@ -5,6 +5,8 @@ import {Suspense} from "react";
 import {CardWithIconListSkeleton} from "../ui/components/skeletons";
 import Banner from "@/ui/layout/Banner";
 import Image from "next/image";
+import {SolidButton} from "@/ui/components/buttons";
+import {SolidLink} from "@/ui/components/Links";
 
 
 export default function Home() {
@@ -32,8 +34,8 @@ export default function Home() {
                         <CertificatesListWrapper count="8"/>
                     </Suspense>
                 </section>
-                <section className='bg-white py-24'>
-                    <div className="inner-container grid md:grid-cols-2 items-center">
+                <section className='bg-white pt-24 pb-6'>
+                    <div className="inner-container grid md:grid-cols-2 items-center p-6 border border-zinc-300 rounded-lg shadow-lg">
                         <div>
                             <h2>
                                 درگاه شفافیت
@@ -43,18 +45,24 @@ export default function Home() {
                                 کارها است. این درگاه، مجموعه‌ای از داده‌های متنوع و مفید مرتبط با کسب و کار از جمله
                                 کاتالوگ‌ها، آمارها، اطلاعات فنی و دیگر اطلاعات کاربردی مرتبط با بیزینس را به طور شفاف و
                                 قابل
-                                دسترسی ارائه می‌کند
+                                د
+                                سترسی ارائه می‌کند
                             </p>
+                            <div className="mt-6">
+                                <SolidLink href='#' title='ورود به درگاه' color="blue" size="md"/>
+                            </div>
                         </div>
                         <div>
-                            <Image src="/assets/images/others/transparent-protal.jpg" alt="درگاه شفافیت" loading='lazy' width={400} height={400} className="mx-auto"/>
+                            <Image src="/assets/images/others/transparent-portal.jpg" alt="درگاه شفافیت" loading='lazy' width={450} height={300} className="me-0 ms-auto"/>
                         </div>
                     </div>
 
                 </section>
-                <section className='bg-white py-24'>
-                    <div className="inner-container grid md:grid-cols-2">
-                        <div></div>
+                <section className='bg-white pb-24 pt-6'>
+                    <div className="inner-container grid md:grid-cols-2 items-center p-6 border border-zinc-300 rounded-lg shadow-lg">
+                        <div>
+                            <Image src="/assets/images/others/transparent-portal.jpg" alt="درگاه شفافیت" loading='lazy' width={450} height={300} className="me-auto ms-0"/>
+                        </div>
                         <div>
                             <h2>
                                 درگاه داده باز
@@ -66,11 +74,13 @@ export default function Home() {
                                 قابل
                                 دسترسی ارائه می‌کند
                             </p>
+                            <div className="mt-6">
+                                <SolidLink href='#' title='ورود به درگاه' color="blue" size="md"/>
+                            </div>
                         </div>
                     </div>
                 </section>
             </main>
-
         </>
     );
 }
