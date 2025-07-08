@@ -2,10 +2,8 @@ import CardWithIcon from "@/ui/components/cardWithIcon";
 import {OutlineLink, SolidLink} from "@/ui/components/Links";
 import ServiceModel from "@/models/service";
 import {getServices} from "@/http/services";
-import {ReactElement} from "react";
 
 export default async function GroupedCertificatesListWrapper() {
-
     try {
         const serviceResult = await getServices();
         const services = serviceResult?.Services ?? [];

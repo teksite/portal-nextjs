@@ -1,7 +1,6 @@
 import {ReactNode} from "react";
 import SafeImage from "@/ui/components/safeImage";
 
-
 interface CardWithIconProps {
     image: string;
     title: string;

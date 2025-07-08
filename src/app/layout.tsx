@@ -21,7 +21,9 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <body
             className={`${vazir.className} antialiased bg-slate-50`}>
         <Header />
-        {children}
+        <main className="min-h-svh">
+            {children}
+        </main>
         <Footer />
 
         </body>

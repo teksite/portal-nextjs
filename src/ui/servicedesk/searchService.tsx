@@ -2,17 +2,28 @@ import {MagnifyingGlassIcon} from "@heroicons/react/16/solid";
 import {SolidButton, TextButton} from "../components/buttons";
 import {getGroupServices} from "@/http/services";
 
-export default async function SearchService() {
+interface searchParamsType{
+    term?: string;
+}
+interface propsType{
+    searchParams : Promise<searchParamsType>
+}
+
+const noOption = <option disabled={true}>موردی وجود ندارد</option>;
+
+export default async function SearchService(props: propsType) {
+
     try {
-        const noOption = <option disabled={true}>موردی وجود ندارد</option>;
+        const searchParams = await props.searchParams;
 
         const groupResult = await getGroupServices();
+
         const groups = groupResult?.SGData ?? [];
-
+        console.log(groups)
+        const term =searchParams?.term ?? "";
         const groupsList = groups.length ?
-            groups?.map((item) => (<option key={item.Id} value={item.Id}>{item.Title}</option>))
+            groups?.map((item) => (<option key={item.Slug} value={item.Id}>{item.Title}</option>))
             : noOption
-
         return (
             <div className="bg-white rounded-xl shadow-xl p-6 inner-container -mt-16">
                 <form action="" className="grid gap-6 lg:grid-cols-4">
@@ -23,7 +34,7 @@ export default async function SearchService() {
                         </label>
                         <input id="search-title" title="جستجو بر اساس اسم" placeholder="جستجو بر اساس کلمه"
                                className="input-style"
-                            // defaultValue={searchParams.get('query')?.toString()}
+                               defaultValue={term}
                             // onChange={(e) => handleSearch(e.target.value)}
                         />
                         <MagnifyingGlassIcon
@@ -40,10 +51,11 @@ export default async function SearchService() {
                             گروه خدمت
                         </label>
                         <select id="search-group" title="فیلتر کردن بر اساس  گروه خدمت" className="input-style"
-                            // defaultValue={searchParams.get('query')?.toString()}
+
+                            // defaultValue={}
                             // onChange={(e) => handleSearch(e.target.value)}
                         >
-                            <option disabled={true} selected={true}> انتخاب کنید </option>
+                            <option disabled={true} value=""> همه </option>
                             {groupsList}
                         </select>
                     </div>
@@ -57,13 +69,13 @@ export default async function SearchService() {
                             // onChange={(e) => handleSearch(e.target.value)}
                         >
                             <option>
-                                dsfsdf
+                                سازمان 1
                             </option>
                             <option>
-                                dsfsdf
+                                سازمان 2
                             </option>
                             <option>
-                                dsfsdf
+                                سازمان 3
                             </option>
                         </select>
                     </div>
@@ -77,13 +89,13 @@ export default async function SearchService() {
                             // onChange={(e) => handleSearch(e.target.value)}
                         >
                             <option>
-                                dsfsdf
+                                تکی
                             </option>
                             <option>
-                                dsfsdf
+                                جمعی
                             </option>
                             <option>
-                                dsfsdf
+                                ترکیبی
                             </option>
                         </select>
                     </div>
@@ -97,14 +109,12 @@ export default async function SearchService() {
                             // onChange={(e) => handleSearch(e.target.value)}
                         >
                             <option>
-                                dsfsdf
+                               زیاد
                             </option>
                             <option>
-                                dsfsdf
+                                کم
                             </option>
-                            <option>
-                                dsfsdf
-                            </option>
+
                         </select>
                     </div>
 

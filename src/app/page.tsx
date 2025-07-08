@@ -2,23 +2,23 @@ import Search from "@/ui/components/search";
 import Link from "next/link";
 import CertificatesListWrapper from "@/ui/components/certificates/certificatesList";
 import {Suspense} from "react";
-import {CardWithIconListSkeleton} from "../ui/components/skeletons";
+import {CardWithIconListSkeleton} from "@/ui/components/skeletons";
 import Banner from "@/ui/layout/Banner";
 import Image from "next/image";
-import {SolidButton} from "@/ui/components/buttons";
 import {SolidLink} from "@/ui/components/Links";
 
 
 export default function Home() {
-    const appName = process.env.NEXT_PUBLIC_APP_NAME ?? 'درگاه خدمات';
-
+    const appName = process.env.NEXT_PUBLIC_APP_NAME ?? 'پنجره واحد خدمات وزارت فرهنگ و ارشاد اسلامی';
     return (
         <>
             <Banner title={appName}>
                 <div className='space-y-6'>
                     <Search/>
                     <div className='flex items-center gap-6 justify-center'>
-                        <Link href='/servicedesk' className='text-zinc-50 font-semibold'>مشاهده همه مجوزها</Link>
+                        <Link href='/servicedesk' className='text-zinc-50 font-semibold'>
+                            مشاهده همه مجوزها
+                        </Link>
                     </div>
                 </div>
             </Banner>
@@ -35,7 +35,7 @@ export default function Home() {
                     </Suspense>
                 </section>
                 <section className='bg-white pt-24 pb-6'>
-                    <div className="inner-container grid md:grid-cols-2 items-center p-6 border border-zinc-300 rounded-lg shadow-lg">
+                    <div className="inner-container grid gap-6 lg:grid-cols-2 items-center p-6 border border-zinc-300 rounded-lg shadow-lg">
                         <div>
                             <h2>
                                 درگاه شفافیت
@@ -49,21 +49,21 @@ export default function Home() {
                                 سترسی ارائه می‌کند
                             </p>
                             <div className="mt-6">
-                                <SolidLink href='#' title='ورود به درگاه' color="blue" size="md"/>
+                                <SolidLink href='/transparent-data' title='ورود به درگاه' color="blue" size="md"/>
                             </div>
                         </div>
                         <div>
-                            <Image src="/assets/images/others/transparent-portal.jpg" alt="درگاه شفافیت" loading='lazy' width={450} height={300} className="me-0 ms-auto"/>
+                            <Image src="/assets/images/others/transparent-portal.jpg" alt="درگاه شفافیت" loading='lazy' width={450} height={300} className=" mx-auto lg:me-0 lg:ms-auto"/>
                         </div>
                     </div>
 
                 </section>
                 <section className='bg-white pb-24 pt-6'>
-                    <div className="inner-container grid md:grid-cols-2 items-center p-6 border border-zinc-300 rounded-lg shadow-lg">
-                        <div>
-                            <Image src="/assets/images/others/transparent-portal.jpg" alt="درگاه شفافیت" loading='lazy' width={450} height={300} className="me-auto ms-0"/>
+                    <div className="inner-container grid gap-6 lg:grid-cols-2 items-center p-6 border border-zinc-300 rounded-lg shadow-lg">
+                        <div className="order-2 lg:order-1">
+                            <Image src="/assets/images/others/opendata-portal.jpg" alt="درگاه داده باز" loading='lazy' width={450} height={300} className=" mx-auto lg:me-auto lg:ms-0"/>
                         </div>
-                        <div>
+                        <div className="order-1 lg:order-2">
                             <h2>
                                 درگاه داده باز
                             </h2>
@@ -75,7 +75,7 @@ export default function Home() {
                                 دسترسی ارائه می‌کند
                             </p>
                             <div className="mt-6">
-                                <SolidLink href='#' title='ورود به درگاه' color="blue" size="md"/>
+                                <SolidLink href='/open-data' title='ورود به درگاه' color="blue" size="md"/>
                             </div>
                         </div>
                     </div>
