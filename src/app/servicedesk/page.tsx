@@ -1,12 +1,11 @@
-import SearchService from "@/ui/servicedesk/searchService";
+import SearchService, {searchParamsType} from "@/ui/servicedesk/searchService";
 import Banner from "@/ui/layout/Banner";
 import GroupedCertificatesListWrapper from "@/ui/components/certificates/groupedCertificatesList";
-import {GroupedCardWithIconListSkeleton} from "../../ui/components/skeletons";
+import {GroupedCardWithIconListSkeleton} from "@/ui/components/skeletons";
 import {Suspense} from "react";
 import Breadcrumb from "@/ui/components/breadcrumb/breadcrumb";
 
-export default async function ServicePage(props: {searchParams?: Promise<{term?: string;}>;
-}) {
+export default async function ServicePage(props: {searchParams?: Promise<searchParamsType>;}) {
     const searchParams = await props.searchParams;
 
     const breadcrumbItems = [
@@ -28,7 +27,6 @@ export default async function ServicePage(props: {searchParams?: Promise<{term?:
                     </Suspense>
                 </div>
             </main>
-
         </>
     );
 

@@ -2,11 +2,11 @@ import {MagnifyingGlassIcon} from "@heroicons/react/16/solid";
 import {SolidButton, TextButton} from "../components/buttons";
 import {getGroupServices} from "@/http/services";
 
-interface searchParamsType{
+export interface searchParamsType{
     term?: string;
 }
 interface propsType{
-    searchParams : Promise<searchParamsType>
+    searchParams?: searchParamsType
 }
 
 const noOption = <option disabled={true}>موردی وجود ندارد</option>;
@@ -14,12 +14,11 @@ const noOption = <option disabled={true}>موردی وجود ندارد</option>
 export default async function SearchService(props: propsType) {
 
     try {
-        const searchParams = await props.searchParams;
+        const searchParams = props.searchParams;
 
         const groupResult = await getGroupServices();
 
         const groups = groupResult?.SGData ?? [];
-        console.log(groups)
         const term =searchParams?.term ?? "";
         const groupsList = groups.length ?
             groups?.map((item) => (<option key={item.Slug} value={item.Id}>{item.Title}</option>))

@@ -6,13 +6,14 @@ import {CardWithIconListSkeleton} from "@/ui/components/skeletons";
 import Banner from "@/ui/layout/Banner";
 import Image from "next/image";
 import {SolidLink} from "@/ui/components/Links";
+import {env} from "@/helpers/functions";
 
 
 export default function Home() {
-    const appName = process.env.NEXT_PUBLIC_APP_NAME ?? 'پنجره واحد خدمات وزارت فرهنگ و ارشاد اسلامی';
+    const appName = env('NEXT_PUBLIC_APP_NAME');
     return (
         <>
-            <Banner title={appName}>
+            <Banner title={appName ?? 'پنجره واحد خدمات وزارت فرهنگ و ارشاد اسلامی'}>
                 <div className='space-y-6'>
                     <Search/>
                     <div className='flex items-center gap-6 justify-center'>

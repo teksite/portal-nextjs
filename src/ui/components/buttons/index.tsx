@@ -1,11 +1,13 @@
-import {ReactNode} from "react";
+'use client'
 
+import {ReactNode} from "react";
 interface ButtonType {
-    title: string | ReactNode;
-    color?: "blue" | "green" | "gray" | "red";
-    size?: "sm" | "md" | "lg";
-    className?: string;
-    disabled?: boolean;
+    title: string | ReactNode,
+    color?: "blue" | "green" | "gray" | "red",
+    size?: "sm" | "md" | "lg",
+    className?: string,
+    disabled?: boolean,
+    onClick?: () => void;
 }
 
 const commonStyles = "inline-flex items-center justify-center rounded-md font-semibold transition-colors duration-200 ease-in-out focus:outline-none select-none";
@@ -43,7 +45,7 @@ const sizeStyles = {
     lg: "px-4 py-2 text-lg",
 };
 
-export function SolidButton({title, color = "blue", size = "md", className, disabled = false,...rest}: ButtonType) {
+export function SolidButton({title, color = "blue", size = "md", className, disabled = false, ...rest}: ButtonType) {
     const styles = disabled
         ? `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].disabled} ${className}`
         : `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].solid} ${className}`;
@@ -55,7 +57,7 @@ export function SolidButton({title, color = "blue", size = "md", className, disa
     );
 }
 
-export function OutlineButton({ title, color = "blue", size = "md",className, disabled = false,...rest}:
+export function OutlineButton({title, color = "blue", size = "md", className, disabled = false, ...rest}:
                               ButtonType) {
     const styles = disabled
         ? `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].disabled} ${className}`
@@ -68,8 +70,8 @@ export function OutlineButton({ title, color = "blue", size = "md",className, di
     );
 }
 
-export function TextButton({ title, color = "blue", size = "md",className, disabled = false,...rest}:
-                              ButtonType) {
+export function TextButton({title, color = "blue", size = "md", className, disabled = false, ...rest}:
+                           ButtonType) {
     const styles = disabled
         ? `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].disabled} ${className}`
         : `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].text} ${className}`;
