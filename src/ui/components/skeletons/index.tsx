@@ -1,4 +1,3 @@
-// Loading animation
 export function CardWithIconSkeleton() {
     return (
         <div className="border border-zinc-300 rounded-xl shadow-lg bg-white p-6 animate-pulse">

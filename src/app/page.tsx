@@ -26,7 +26,7 @@ export default function Home() {
             <main className=''>
                 <section className='inner-container pt-12 pb-24'>
                     <div className="relative text-center mb-12">
-                        <h2 className='text-center inline-block px-3 bg-zinc-50 mb-0'>
+                        <h2 className='text-center inline-block px-3 bg-zinc-50 dark:bg-zinc-950 mb-0'>
                             مجوزهای پربازدید
                         </h2>
                         <hr className='absolute inset-x-0 top-1/2 border-zinc-600 -z-10'/>
