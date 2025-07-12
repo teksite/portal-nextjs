@@ -3,29 +3,33 @@ import {ReactNode} from "react";
 
 interface ButtonType {
     href: string;
-    title: string | ReactNode;
+    title?: string | ReactNode;
     color?: "blue" | "green" | "gray" | "red";
     size?: "sm" | "md" | "lg";
     className?: string;
     disabled?: boolean;
+    children?: ReactNode;
 }
 
 const commonStyles = "inline-flex items-center justify-center rounded-md font-semibold transition-colors duration-200 ease-in-out focus:outline-none select-none";
 
 const colorStyles = {
     blue: {
-        solid: "border border-blue-800 bg-blue-800 hover:bg-blue-900 text-zinc-50 dark:bg-blue-300 dark:text-blue-800 dark:hover:text-blue-300",
-        outline: "border border-blue-800 text-blue-800 hover:bg-blue-900 hover:text-blue-300 dark:text-blue-300 dark:border-blue-300",
+        text: "text-blue-800 hover:bg-blue-300 dark:text-blue-100",
+        solid: "border border-blue-800 bg-blue-800 hover:bg-blue-900 text-zinc-50 dark:border-blue-300 dark:bg-blue-300 dark:text-blue-800 dark:hover:text-zinc-50",
+        outline: "border border-blue-800 text-blue-800 hover:bg-blue-900 hover:text-zinc-50 dark:text-blue-50 dark:border-blue-50",
         disabled: "bg-blue-300 text-blue-100 cursor-not-allowed",
     },
     green: {
-        solid: "border border-green-600 bg-green-600 hover:bg-green-900 text-zinc-50 ",
-        outline: "border border-green-600 text-green-600 hover:bg-green-900 hover:text-green-300",
+        text: "text-green-800 hover:bg-green-300 dark:text-green-100",
+        solid: "border border-green-800 bg-green-800 hover:bg-green-900 text-zinc-50 dark:border-green-300 dark:bg-green-300 dark:text-green-800 dark:hover:text-zinc-50",
+        outline: "border border-green-800 text-green-800 hover:bg-green-900 hover:text-zinc-50 dark:text-green-50 dark:border-green-50",
         disabled: "bg-green-300 text-green-100 cursor-not-allowed",
     },
     red: {
-        solid: "border border-red-600 bg-red-600 hover:bg-red-900 text-zinc-50 ",
-        outline: "border border-red-600 text-red-600 hover:bg-red-900 hover:text-red-300",
+        text: "text-red-800 hover:bg-red-300 dark:text-red-100",
+        solid: "border border-red-800 bg-red-800 hover:bg-red-900 text-zinc-50 dark:border-red-300 dark:bg-red-300 dark:text-red-800 dark:hover:text-zinc-50",
+        outline: "border border-red-800 text-red-800 hover:bg-red-900 hover:text-zinc-50 dark:text-red-50 dark:border-red-50",
         disabled: "bg-red-300 text-red-100 cursor-not-allowed",
     },
     gray: {
@@ -41,27 +45,36 @@ const sizeStyles = {
     lg: "px-4 py-2 text-lg",
 };
 
-export function SolidLink({href, title, color = "blue", size = "md", className, disabled = false,...rest}: ButtonType) {
+export function SolidLink({
+                              href,
+                              title,
+                              color = "blue",
+                              size = "md",
+                              className,
+                              disabled = false,
+                              children,
+                              ...rest
+                          }: ButtonType) {
     const styles = disabled
         ? `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].disabled} ${className}`
         : `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].solid} ${className}`;
 
     return (
         <Link href={disabled ? "#" : href} className={styles} aria-disabled={disabled} {...rest}>
-            {title}
+            {children ?? title}
         </Link>
     );
 }
 
-export function OutlineLink({href, title, color = "blue", size = "md",className, disabled = false,...rest}:
-                              ButtonType) {
+export function OutlineLink({href, title, color = "blue", size = "md", className, disabled = false, children, ...rest}:
+                            ButtonType) {
     const styles = disabled
         ? `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].disabled} ${className}`
         : `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].outline} ${className}`;
 
     return (
         <Link href={disabled ? "#" : href} className={styles} aria-disabled={disabled} {...rest}>
-            {title}
+            {children ?? title}
         </Link>
     );
 }

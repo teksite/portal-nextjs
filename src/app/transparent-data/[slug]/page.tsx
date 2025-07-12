@@ -2,7 +2,7 @@ import Banner from "@/ui/layout/Banner";
 
 
 
-export default function SinlgePage() {
+export default function SinglePage() {
     const breadcrumbItems = [
         {
             title: "درگاه شفافیت",

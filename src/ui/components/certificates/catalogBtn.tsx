@@ -3,6 +3,7 @@
 import {OutlineButton} from "@/ui/components/buttons";
 import {Description, Dialog, DialogPanel, DialogTitle} from "@headlessui/react";
 import {useState} from "react";
+import {BookOpenIcon} from "@heroicons/react/16/solid";
 
 export default function CatalogBtn({certificateId}: { certificateId?: string | number }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +14,10 @@ export default function CatalogBtn({certificateId}: { certificateId?: string | n
 
     return (
         <>
-            <OutlineButton title="کاتالوگ" color="blue" size="md" className="w-full" onClick={handleCatalogClick} />
+            <OutlineButton title="کاتالوگ" color="blue" size="md" className="w-full flex items-center gap-3" onClick={handleCatalogClick} >
+                <BookOpenIcon className="stroke-current fill-none size-5"/>
+                <span>کاتالوگ</span>
+            </OutlineButton>
             {
                 isOpen && <Dialog open={true} onClose={() => setIsOpen(false)} className="relative z-50">
                     <div className="fixed inset-0 flex w-screen items-center justify-center p-3 bg-black/50 backdrop-blur-sm">

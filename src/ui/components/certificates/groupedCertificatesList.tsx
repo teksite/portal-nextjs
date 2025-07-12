@@ -30,8 +30,11 @@ export default async function GroupedCertificatesListWrapper() {
 
             return (
                 <section key={name}>
-                    <h2 className="text-center mb-12">{name}</h2>
-                    <ul className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-stretch">
+                    <div className="flex items-center gap-3 mb-12">
+                        <h2 className="min-w-fit ">{name}</h2>
+                        <hr className="w-full hr"/>
+                    </div>
+                    <ul className="grid gap-x-6 gap-y-12 lg:mb-24 lg:grid-cols-2 xl:grid-cols-3 items-stretch">
                         {certificatesList}
                     </ul>
                 </section>

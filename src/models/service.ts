@@ -30,3 +30,19 @@ export default class ServiceModel {
         this.service = service;
     }
 }
+
+
+/*
+type ServiceListItem={
+    id: string,
+    slug: string,
+    code:string,
+    groupId:string,
+    avgTime?:number,  //متوسط زمان اخذ خدمت
+    cost?:number, // نیاز به پرداخت هزینه
+    description?:string, //توضیحات
+    electronic?:boolean, // نحوه ارائه خدمت
+    needPresence?:boolean, //نیاز به مراجعه حضوری
+    serviceTime?:string // زمان ارائه خدمت
+}
+*/

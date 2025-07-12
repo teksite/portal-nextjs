@@ -41,4 +41,7 @@
     .label-style{
         @apply text-sm font-semibold mb-1 block dark:text-zinc-300
     }
+    .hr{
+        @apply border-zinc-300 dark:border-zinc-600
+    }
 }
