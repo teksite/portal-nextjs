@@ -35,8 +35,8 @@ export default function Home() {
                         <CertificatesListWrapper count="8"/>
                     </Suspense>
                 </section>
-                <section className='bg-white pt-24 pb-6'>
-                    <div className="inner-container grid gap-6 lg:grid-cols-2 items-center p-6 border border-zinc-300 rounded-lg shadow-lg">
+                <section className='bg-white dark:bg-zinc-900 pt-24 pb-6'>
+                    <div className="inner-container grid gap-6 lg:grid-cols-2 items-center x-box">
                         <div>
                             <h2>
                                 درگاه شفافیت
@@ -59,8 +59,8 @@ export default function Home() {
                     </div>
 
                 </section>
-                <section className='bg-white pb-24 pt-6'>
-                    <div className="inner-container grid gap-6 lg:grid-cols-2 items-center p-6 border border-zinc-300 rounded-lg shadow-lg">
+                <section className='bg-white dark:bg-zinc-900 pb-24 pt-6'>
+                    <div className="inner-container grid gap-6 lg:grid-cols-2 items-center x-box">
                         <div className="order-2 lg:order-1">
                             <Image src="/assets/images/others/opendata-portal.jpg" alt="درگاه داده باز" loading='lazy' width={450} height={300} className=" mx-auto lg:me-auto lg:ms-0"/>
                         </div>

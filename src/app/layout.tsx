@@ -3,7 +3,7 @@ import {Vazirmatn} from "next/font/google";
 import "./globals.css";
 import Header from "@/ui/layout/Header";
 import Footer from "@/ui/layout/Footer";
-
+import {ThemeProvider} from "@/ui/components/themeProvider";
 
 
 const vazir = Vazirmatn({
@@ -17,16 +17,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
     return (
-        <html lang="fa" dir='rtl'>
-        <body
-            className={`${vazir.className} antialiased bg-slate-50 dark:bg-zinc-950`}>
-        <Header />
-        <main className="min-h-svh">
-            {children}
-        </main>
-        <Footer />
+        <ThemeProvider>
+            <html lang="fa" dir='rtl'>
+            <body className={`${vazir.className} antialiased bg-slate-50 dark:bg-zinc-950`}>
+            <Header/>
+            <main className="min-h-svh">
+                {children}
+            </main>
+            <Footer/>
 
-        </body>
-        </html>
+            </body>
+            </html>
+        </ThemeProvider>
     );
 }

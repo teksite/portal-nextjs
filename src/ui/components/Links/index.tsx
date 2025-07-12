@@ -14,8 +14,8 @@ const commonStyles = "inline-flex items-center justify-center rounded-md font-se
 
 const colorStyles = {
     blue: {
-        solid: "border border-blue-800 bg-blue-800 hover:bg-blue-900 text-zinc-50 ",
-        outline: "border border-blue-800 text-blue-800 hover:bg-blue-900 hover:text-blue-300",
+        solid: "border border-blue-800 bg-blue-800 hover:bg-blue-900 text-zinc-50 dark:bg-blue-300 dark:text-blue-800 dark:hover:text-blue-300",
+        outline: "border border-blue-800 text-blue-800 hover:bg-blue-900 hover:text-blue-300 dark:text-blue-300 dark:border-blue-300",
         disabled: "bg-blue-300 text-blue-100 cursor-not-allowed",
     },
     green: {

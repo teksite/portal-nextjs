@@ -24,7 +24,7 @@ export default async function SearchService(props: propsType) {
             groups?.map((item) => (<option key={item.Slug} value={item.Id}>{item.Title}</option>))
             : noOption
         return (
-            <div className="bg-white rounded-xl shadow-xl p-6 inner-container -mt-16">
+            <div className="x-box inner-container -mt-16">
                 <form action="" className="grid gap-6 lg:grid-cols-4">
                     {/* search by name */}
                     <div className="relative lg:col-span-3">

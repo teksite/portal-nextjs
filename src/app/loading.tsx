@@ -3,7 +3,7 @@
 export default function Loading() {
     return (
         <div className="flex justify-center items-center h-screen">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600 dark:border-blue-300"></div>
             <p className="mr-4">در حال بارگذاری...</p>
         </div>
     );

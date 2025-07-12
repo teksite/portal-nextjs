@@ -24,8 +24,8 @@ export default function CatalogBtn({certificateId}: { certificateId?: string | n
                                <p>Are you sure you want to deactivate your account? All of your data will be permanently removed.</p>
                            </div>
                             <div className="flex border-t border-zinc-300 divide-x divide-zinc-300  dark:border-zinc-600  dark:divide-zinc-600">
-                                <button className="w-full block p-3 hover:bg-zinc-300 dark:hover:bg-zinc-600 hover:shadow-innertext-sm" onClick={() => setIsOpen(false)}>ثبت درخواست</button>
-                                <button className="w-full block p-3 hover:bg-zinc-300 dark:hover:bg-zinc-600 hover:shadow-innertext-sm" onClick={() => setIsOpen(false)}>کنسل</button>
+                                <button className="w-full block p-3 hover:bg-zinc-300 dark:hover:bg-zinc-600 hover:shadow-innertext-sm" onClick={() => setIsOpen(false)}>جزئیات بیشتر</button>
+                                <button className="w-full block p-3 hover:bg-zinc-300 dark:hover:bg-zinc-600 hover:shadow-innertext-sm" onClick={() => setIsOpen(false)}>بستن</button>
                             </div>
                         </DialogPanel>
                     </div>
