@@ -20,7 +20,7 @@ export default async function ServicePage(props: {searchParams?: Promise<searchP
                 <Breadcrumb items={breadcrumbItems} listClassName='justify-center mx-auto text-center'/>
             </Banner>
             <main className=''>
-                <SearchService searchParams={searchParams}/>
+                <SearchService />
                 <div className="mt-12 space-y-12 inner-container">
                     <Suspense fallback={<GroupedCardWithIconListSkeleton/>}>
                         <GroupedCertificatesListWrapper search={searchParams}/>

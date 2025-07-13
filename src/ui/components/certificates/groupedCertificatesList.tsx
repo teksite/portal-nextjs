@@ -4,9 +4,12 @@ import CertificateBox from "@/ui/components/certificates/certificateBox";
 import {ReactNode} from "react";
 import {searchParamsType} from "@/ui/servicedesk/searchService";
 
-const groupingServices = (services: ServiceType[] , search?:string|searchParamsType) => {
-    return services?.reduce((acc: { [key: string]: any[] }, service: ServiceType) => {
+const groupingServices = (services: ServiceType[], search?: searchParamsType) => {
 
+    const serviceList = search?.term?.length ?
+        services.filter((service: ServiceType) => service.title.includes(search?.term ?? ''))
+        : services
+    return serviceList?.reduce((acc: { [key: string]: any[] }, service: ServiceType) => {
         const group = service?.serviceGroupCaption || 'سایر';
         if (!acc[group]) {
             acc[group] = [];
@@ -28,7 +31,7 @@ function listingCertificates(items: ServiceModel[]): ReactNode {
 }
 
 
-export default async function GroupedCertificatesListWrapper({search}:{search?:string|searchParamsType}) {
+export default async function GroupedCertificatesListWrapper({search}: { search?: searchParamsType }) {
 
     try {
         const services: ServiceType[] = await getServices() ?? [];
@@ -37,7 +40,7 @@ export default async function GroupedCertificatesListWrapper({search}:{search?:s
             return <p className="text-center text-sm font-semibold">موردی ثبت نشده‌است</p>
         }
 
-        const groupedServices = groupingServices(services ,search)
+        const groupedServices = groupingServices(services, search)
 
         return Object.entries(groupedServices).map(([name, items]) => {
             const certificatesList = listingCertificates(items)
