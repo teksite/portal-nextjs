@@ -12,7 +12,7 @@ export default async function ServicePage(props: {searchParams?: Promise<searchP
         {
             title: "خدمات و مجوزها"
         }
-    ]
+    ];
 
     return (
         <>
@@ -23,7 +23,7 @@ export default async function ServicePage(props: {searchParams?: Promise<searchP
                 <SearchService searchParams={searchParams}/>
                 <div className="mt-12 space-y-12 inner-container">
                     <Suspense fallback={<GroupedCardWithIconListSkeleton/>}>
-                        <GroupedCertificatesListWrapper/>
+                        <GroupedCertificatesListWrapper search={searchParams}/>
                     </Suspense>
                 </div>
             </main>

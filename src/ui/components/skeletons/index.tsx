@@ -22,7 +22,7 @@ export function CardWithIconSkeleton() {
 export function CardWithIconListSkeleton() {
 
     return (
-        <ul className="grid gap-y-12 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <ul className="grid gap-y-12 gap-x-6 sm:grid-cols-2 lg:grid-cols-3">
             <li><CardWithIconSkeleton/></li>
             <li><CardWithIconSkeleton/></li>
             <li><CardWithIconSkeleton/></li>
@@ -39,17 +39,8 @@ export function GroupedCardWithIconListSkeleton() {
 
     return (
        <>
-           <div className="h-6 rounded bg-gray-200 w-24 mx-auto mb-12"></div>
-           <ul className="grid gap-y-12 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-               <li><CardWithIconSkeleton/></li>
-               <li><CardWithIconSkeleton/></li>
-               <li><CardWithIconSkeleton/></li>
-               <li><CardWithIconSkeleton/></li>
-               <li><CardWithIconSkeleton/></li>
-               <li><CardWithIconSkeleton/></li>
-               <li><CardWithIconSkeleton/></li>
-               <li><CardWithIconSkeleton/></li>
-           </ul>
+           <div className="h-6 rounded bg-gray-200 w-24 mb-12"></div>
+           <CardWithIconListSkeleton/>
        </>
     );
 }

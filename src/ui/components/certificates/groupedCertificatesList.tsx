@@ -1,32 +1,46 @@
-import ServiceModel from "@/models/service";
-import {getServices} from "@/http/services";
+import ServiceModel, {ServiceType} from "@/models/serviceModel";
+import {getServices} from "@/http/controller/servicesController";
 import CertificateBox from "@/ui/components/certificates/certificateBox";
+import {ReactNode} from "react";
+import {searchParamsType} from "@/ui/servicedesk/searchService";
 
-export default async function GroupedCertificatesListWrapper() {
+const groupingServices = (services: ServiceType[] , search?:string|searchParamsType) => {
+    return services?.reduce((acc: { [key: string]: any[] }, service: ServiceType) => {
+
+        const group = service?.serviceGroupCaption || 'سایر';
+        if (!acc[group]) {
+            acc[group] = [];
+        }
+        const serviceInstanceModel = new ServiceModel(service);
+
+        acc[group].push(serviceInstanceModel);
+        return acc;
+    }, {})
+}
+
+function listingCertificates(items: ServiceModel[]): ReactNode {
+    return items?.map((item: ServiceModel, index: number) => {
+        return (
+            <li key={index}>
+                <CertificateBox certificate={item}/>
+            </li>);
+    });
+}
+
+
+export default async function GroupedCertificatesListWrapper({search}:{search?:string|searchParamsType}) {
+
     try {
-        const serviceResult = await getServices();
-        const services = serviceResult?.Services ?? [];
-        const groupedServices = services?.reduce((acc: { [key: string]: any[] }, service) => {
-            const group = service["گروه خدمت"] || "بدون گروه";
-            if (!acc[group]) {
-                acc[group] = [];
-            }
-            acc[group].push(service);
-            return acc;
-        }, {})
+        const services: ServiceType[] = await getServices() ?? [];
+
+        if (!services.length) {
+            return <p className="text-center text-sm font-semibold">موردی ثبت نشده‌است</p>
+        }
+
+        const groupedServices = groupingServices(services ,search)
+
         return Object.entries(groupedServices).map(([name, items]) => {
-            const certificatesList = items?.map((item: { [x: string]: any; Title: any; }, index: number) => {
-                const certificate = new ServiceModel({
-                    title: item?.Title,
-                    description: item["شرح خدمت"] ?? 'كسب و كار فرهنگي در فضاي مجازي نظير رسانه برخط، نشر ديجيتال و...',
-                    code: item["كد خدمت"] ?? null,
-                    group: item["گروه"] ?? null,
-                });
-                return (
-                    <li key={index}>
-                        <CertificateBox certificate={certificate}/>
-                    </li>);
-            });
+            const certificatesList = listingCertificates(items)
 
             return (
                 <section key={name}>
@@ -39,11 +53,13 @@ export default async function GroupedCertificatesListWrapper() {
                     </ul>
                 </section>
             );
-
-
         });
     } catch (error) {
         console.log(error)
-        return <p className="text-xs text-center">در بازآوری مشکلی بوجود آمده است لطفا دوباره تلاش کنید.</p>
+        return (
+            <p className="text-xs text-center">
+                در بازآوری مشکلی بوجود آمده است لطفا دوباره تلاش کنید.
+            </p>
+        );
     }
 }

@@ -1,25 +1,16 @@
-import ServiceModel from "@/models/service";
-import {getServices} from "@/http/services";
+import ServiceModel, {ServiceType} from "@/models/serviceModel";
 import CertificateBox from "@/ui/components/certificates/certificateBox";
+import {getServices} from "@/http/controller/servicesController";
 
-export default async function CertificatesListWrapper({count = "8"}: { count?: number | string }) {
+export default async function CertificatesListWrapper({count = 8}: { count: number }) {
 
     try {
-        const result = await getServices();
-        const Services = result?.Services ?? [];
-        if (!Services.length) {
-            return <p className="text-center text-sm font-semibold">موردی ثبت شنده است</p>
+        const services:ServiceType[] = await getServices() ?? [];
+        if (!services.length) {
+            return <p className="text-center text-sm font-semibold">موردی ثبت نشده‌است</p>
         }
-        const certificatesList = Services?.slice(0, count).map((item: {
-            [x: string]: any;
-            Title: any;
-        }, index: number) => {
-            const certificate = new ServiceModel({
-                title: item?.Title,
-                description: item["شرح خدمت"] ?? 'كسب و كار فرهنگي در فضاي مجازي نظير رسانه برخط، نشر ديجيتال و...',
-                code: item["كد خدمت"] ?? null,
-                group: item["گروه"] ?? null,
-            });
+        const certificatesList = services?.slice(0, count).map((item: ServiceType, index: number) => {
+            const certificate = new ServiceModel(item);
             return (
                 <li key={index}>
                     <CertificateBox certificate={certificate}/>
@@ -31,7 +22,6 @@ export default async function CertificatesListWrapper({count = "8"}: { count?: n
             </ul>
         );
     } catch (error) {
-        console.log(error)
         return <p className="text-xs text-center">در بازآوری مشکلی بوجود آمده است لطفا دوباره تلاش کنید.</p>
     }
 }

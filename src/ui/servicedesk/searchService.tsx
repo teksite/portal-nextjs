@@ -1,6 +1,6 @@
 import {MagnifyingGlassIcon} from "@heroicons/react/16/solid";
 import {SolidButton, TextButton} from "../components/buttons";
-import {getGroupServices} from "@/http/services";
+import {getGroupServices} from "@/http/controller/servicesController";
 
 export interface searchParamsType{
     term?: string;

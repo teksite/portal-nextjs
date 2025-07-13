@@ -2,12 +2,12 @@ import axios, {AxiosInstance, AxiosResponse, AxiosError} from 'axios';
 import AuthenticationException from "@/exceptions/AuthenticationException";
 import ValidationException from "@/exceptions/ValidationException";
 
-
-// Define interface for error response
 interface ApiErrorResponse {
     errors?: Record<string, string[]>;
     message?: string;
 }
+
+
 
 const callApi = (): AxiosInstance => {
 
