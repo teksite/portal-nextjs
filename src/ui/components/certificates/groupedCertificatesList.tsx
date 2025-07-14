@@ -6,8 +6,8 @@ import {searchParamsType} from "@/ui/servicedesk/searchService";
 
 const groupingServices = (services: ServiceType[], search?: searchParamsType) => {
 
-    const serviceList = search?.term?.length ?
-        services.filter((service: ServiceType) => service.title.includes(search?.term ?? ''))
+    const serviceList = search?.title?.length ?
+        services.filter((service: ServiceType) => service.title.includes(search?.title ?? ''))
         : services
     return serviceList?.reduce((acc: { [key: string]: any[] }, service: ServiceType) => {
         const group = service?.serviceGroupCaption || 'سایر';
@@ -58,7 +58,6 @@ export default async function GroupedCertificatesListWrapper({search}: { search?
             );
         });
     } catch (error) {
-        console.log(error)
         return (
             <p className="text-xs text-center">
                 در بازآوری مشکلی بوجود آمده است لطفا دوباره تلاش کنید.

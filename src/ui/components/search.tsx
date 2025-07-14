@@ -11,7 +11,7 @@ export default function Search() {
     const handleKeyDown = (e:React.KeyboardEvent<HTMLInputElement>):void => {
         if (e.key === "Enter") {
             e.preventDefault();
-            router.push(`/servicedesk?term=${encodeURIComponent(searchTerm)}`);
+            router.push(`/servicedesk?title=${encodeURIComponent(searchTerm)}`);
         }
     };
 
