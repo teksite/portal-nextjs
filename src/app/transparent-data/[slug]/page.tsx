@@ -1,20 +1,13 @@
-import Banner from "@/ui/layout/Banner";
-
-
-
 export default function SinglePage() {
-    const breadcrumbItems = [
-        {
-            title: "درگاه شفافیت",
-        },
-    ];
+	// const breadcrumbItems = [
+	// 	{
+	// 		title: "درگاه شفافیت",
+	// 	},
+	// ];
 
-    return (
-        <>
-           <h1>
-               dfsd
-           </h1>
-
-        </>
-    );
+	return (
+		<>
+			<h1>dfsd</h1>
+		</>
+	);
 }

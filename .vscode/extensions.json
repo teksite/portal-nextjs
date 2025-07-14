@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"esbenp.prettier-vscode",
+		"peterschmalfeldt.explorer-exclude",
+		"dbaeumer.vscode-eslint",
+		"wmaurer.vscode-jumpy",
+		"alefragnani.numbered-bookmarks",
+		"heybourn.headwind",
+		"bradlc.vscode-tailwindcss",
+		"pkief.material-icon-theme"
+	]
+}

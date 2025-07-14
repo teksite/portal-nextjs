@@ -1,0 +1,121 @@
+{
+	"cssVariables.lookupFiles": [
+		"**/*.css",
+		"**/*.scss",
+		"**/*.sass",
+		"**/*.less",
+		"node_modules/@mantine/core/styles.css"
+	],
+	"material-icon-theme.activeIconPack": "react",
+
+	"material-icon-theme.folders.associations": {
+		"app-headless": "Database",
+		"auth-headless": "Database",
+		"shared-ui": "Layout",
+		"app-ui": "Layout",
+		"packages/overflow": "Layout",
+		"shared-assets": "Batch",
+		"packages/utils": "Batch",
+		"configs": "Batch",
+		"packages/main": "Batch",
+		"storybook-host": "Storybook",
+		"mock": "Test",
+		"page": "",
+		"report": "",
+		"src": "",
+		"packages": "",
+		"manager": "",
+		"server": "",
+		"public": "",
+		"command": "",
+		"commands": ""
+	},
+
+	"material-icon-theme.files.associations": {
+		"*.ts": "TypeScript-def",
+		"manager": "",
+		"*.tester.tsx": "Test-ts",
+		"server": "",
+		"auth": "",
+		"public": ""
+	},
+	"files.exclude": {
+		"**/.git": false,
+		"**/.svn": false,
+		"**/.hg": false,
+		"**/CVS": false,
+		"**/.DS_Store": false,
+		"**/Thumbs.db": false,
+		"**/_jest.config.ts": false,
+		"**/_jest.preset.js": false,
+		"**/.babelrc": false,
+		"**/.editorconfig": false,
+		"**/.eslintignore": false,
+		"**/.eslintrc.json": false,
+		"**/.gitignore": false,
+		"**/.nx": false,
+		"**/.prettierignore": false,
+		"**/.prettierrc": false,
+		"**/.storybook": false,
+		"**/index.html": false,
+		"**/jest.config.ts": false,
+		"**/jest.preset.js": false,
+		"**/main-app/index.html": false,
+		"**/main-app/public": false,
+		"**/node_modules": false,
+		"**/nx.json": false,
+		"**/package-lock.json": false,
+		"**/package.json": false,
+		"**/postcss.config.js": false,
+		"**/project.json": false,
+		"**/README.md": false,
+		"**/README.MD": false,
+		"**/tailwind.config.js": false,
+		"**/tsconfig.app.json": false,
+		"**/tsconfig.base.json": false,
+		"**/tsconfig.json": false,
+		"**/tsconfig.lib.json": false,
+		"**/tsconfig.spec.json": false,
+		"**/tsconfig.storybook.json": false,
+		"**/vite.config.ts": false,
+		"**/vitest.workspace.ts": false,
+		"dist": false
+	},
+	"workbench.colorTheme": "Default Dark+",
+	"explorerExclude.backup": {},
+	"cSpell.customDictionaries": {},
+	"cSpell.ignoreWords": ["barsa"],
+	"cSpell.languageSettings": [],
+	"material-icon-theme.folders.theme": "classic",
+	"material-icon-theme.hidesExplorerArrows": true,
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.activityBar.iconClickBehavior": "toggle",
+	"workbench.editor.decorations.colors": true,
+	"breadcrumbs.filePath": "on",
+	"explorer.compactFolders": false,
+	"search.exclude": {
+		"docs/**": true
+	},
+	"prettier.printWidth": 80,
+	"html.format.wrapLineLength": 80,
+	"workbench.preferredDarkColorTheme": "Default Dark+",
+	"liveServer.settings.wait": 100,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.useTabs": true,
+	"prettier.endOfLine": "auto",
+
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "never", // Prevent VS Code from re-ordering imports :contentReference[oaicite:3]{index=3}
+		"source.fixAll.eslint": "explicit" // ensure ESLint autofix runs on save
+	},
+	"eslint.run": "onType", // or "onType" for real-time squiggles :contentReference[oaicite:0]{index=0}
+
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact"
+	],
+	"deepscan.enable": true,
+	"editor.formatOnSave": true
+}

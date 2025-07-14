@@ -1,45 +1,53 @@
-import CardWithIcon from "@/ui/components/cardWithIcon";
-import {OutlineLink, SimpleLink, SolidLink} from "@/ui/components/Links";
-import ServiceModel from "@/models/serviceModel";
-import CatalogBtn from "@/ui/components/certificates/catalogBtn";
-import {SparklesIcon, InboxArrowDownIcon} from "@heroicons/react/16/solid";
 import Link from "next/link";
+import { InboxArrowDownIcon } from "@heroicons/react/16/solid";
+
+import { ServiceType } from "@/models/serviceModel";
+import CardWithIcon from "@/ui/components/cardWithIcon";
+import CatalogBtn from "@/ui/components/certificates/catalogBtn";
 
 interface CertificateBoxProps {
-    certificate: ServiceModel;
+	certificate: ServiceType;
 }
 
-export default function CertificateBox({certificate}: CertificateBoxProps) {
-    const title: string = certificate.get("title", "بدون عنوان") ?? "بدون عنوان";
-    const image: string =  "/no-image.jpg";
-    const description = certificate.get("description");
-
-    return (
-        <CardWithIcon title={title} image={image} className="h-full relative">
-
-            <div className="space-y-6 flex flex-col justify-between h-full relative">
-                {description && (
-                    <p className="text-center text-sm px-3">
-                        {description}
-                    </p>
-                )}
-                <div
-                    className="h-fit flex flex-col sm:flex-row items-center justify-center divide-x divide-zinc-300 border border-zinc-300 w-full  mt-auto mb-0 justify-self-end">
-                    <Link
-                        //TODO change the url of SSO
-                        href="https://ssoinfo.farhang.gov.ir/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DPORTALErSHaD232%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%26redirect_uri%3Dhttps%253A%252F%252Fmy.farhang.gov.ir%252Fapi%252Fopenid%252Fcallback%253Fprovider%253DPortalBarsaSSO%26state%3D41119AD9_https%25253A%25252F%25252Fmy.farhang.gov.ir%25252F%26nonce%3D41119AD9%26response_mode%3Dform_post%26culture%3Dfa-IR#/servicedesk"
-                         className="w-full flex items-center justify-center gap-1 text-green-900 p-3 text-center hover:bg-zinc-300">
-                        <InboxArrowDownIcon className="fill-current size-5"/>
-                        <span>ثبت</span>
-                    </Link>
-                    <CatalogBtn certificate={JSON.stringify(certificate)}/>
-                </div>
-            </div>
-        </CardWithIcon>
-    );
+export default function CertificateBox({ certificate }: CertificateBoxProps) {
+	// // const title: string = certificate. .get("title", "بدون عنوان") ?? "بدون عنوان";
+	const image: string = "/no-image.jpg";
+	// const description = certificate.get("description");
+	const {
+		id,
+		slug,
+		title = "بدون عنوان",
+		code,
+		groupId,
+		serviceGroupCaption,
+		avgTime,
+		cost,
+		description,
+		electronic,
+		needPresence,
+		serviceTime,
+	} = certificate;
+	return (
+		<CardWithIcon title={title} image={image} className="h-full relative">
+			<div className="space-y-6 flex flex-col justify-between h-full relative">
+				{description && (
+					<p className="text-center text-sm px-3">{description}</p>
+				)}
+				<div className="h-fit flex flex-col sm:flex-row items-center justify-center divide-x divide-zinc-300 border border-zinc-300 w-full  mt-auto mb-0 justify-self-end">
+					<Link
+						//TODO change the url of SSO
+						href="https://ssoinfo.farhang.gov.ir/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DPORTALErSHaD232%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%26redirect_uri%3Dhttps%253A%252F%252Fmy.farhang.gov.ir%252Fapi%252Fopenid%252Fcallback%253Fprovider%253DPortalBarsaSSO%26state%3D41119AD9_https%25253A%25252F%25252Fmy.farhang.gov.ir%25252F%26nonce%3D41119AD9%26response_mode%3Dform_post%26culture%3Dfa-IR#/servicedesk"
+						className="w-full flex items-center justify-center gap-1 text-green-900 p-3 text-center hover:bg-zinc-300"
+					>
+						<InboxArrowDownIcon className="fill-current size-5" />
+						<span>ثبت</span>
+					</Link>
+					<CatalogBtn certificate={certificate} />
+				</div>
+			</div>
+		</CardWithIcon>
+	);
 }
-
-
 
 /*
 

@@ -70,6 +70,18 @@ export function TestButton({
 	);
 }
 
+export function Button({ className, disabled, children, ...rest }: ButtonType) {
+	return (
+		<button
+			className={`px-3 py-1 text-base border border-blue-800 text-blue-800 hover:bg-blue-900 hover:text-zinc-50 dark:text-blue-50 dark:border-blue-50`}
+			aria-disabled={disabled}
+			{...rest}
+		>
+			{children}
+		</button>
+	);
+}
+
 export function SolidButton({
 	title,
 	color = "blue",
