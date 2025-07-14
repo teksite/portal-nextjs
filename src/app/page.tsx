@@ -32,7 +32,7 @@ export default function Home() {
                         <hr className='absolute inset-x-0 top-1/2 border-zinc-600 -z-10'/>
                     </div>
                     <Suspense fallback={<CardWithIconListSkeleton/>}>
-                        <CertificatesListWrapper count="8"/>
+                        <CertificatesListWrapper count="9"/>
                     </Suspense>
                 </section>
                 <section className='bg-white dark:bg-zinc-900 pt-24 pb-6'>

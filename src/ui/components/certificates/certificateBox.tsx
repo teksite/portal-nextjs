@@ -19,7 +19,7 @@ export default function CertificateBox({certificate}: CertificateBoxProps) {
 
             <div className="space-y-6 flex flex-col justify-between h-full relative">
                 {description && (
-                    <p className="text-center text-sm">
+                    <p className="text-center text-sm px-3">
                         {description}
                     </p>
                 )}

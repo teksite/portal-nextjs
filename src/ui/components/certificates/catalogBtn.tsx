@@ -1,9 +1,8 @@
 "use client"
 
-import {OutlineButton, SolidButton, TextButton} from "@/ui/components/buttons";
-import {Description, Dialog, DialogDescription, DialogPanel, DialogTitle} from "@headlessui/react";
+import {Description, Dialog, DialogPanel, DialogTitle} from "@headlessui/react";
 import {useState} from "react";
-import {BookOpenIcon, TicketIcon, XMarkIcon} from "@heroicons/react/16/solid";
+import {BookOpenIcon} from "@heroicons/react/16/solid";
 import {ServiceType} from "@/models/serviceModel";
 import {SolidLink} from "@/ui/components/Links";
 
@@ -65,7 +64,7 @@ export default function CatalogBtn({certificate}: { certificate?: string }) {
                             <div className="p-12">
                                 <div className="flex items-center justify-between mb-6">
                                     <DialogTitle className="font-bold !mb-0">{service?.title}</DialogTitle>
-                                    <SolidLink color="green" size="sm" href="">ثبت درخواست</SolidLink>
+                                    <SolidLink color="green" size="sm" href="" className="min-w-fit w-fit">ثبت درخواست</SolidLink>
                                 </div>
                                 <Description className="text-sm">{service?.description}</Description>
 
