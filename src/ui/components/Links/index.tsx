@@ -33,6 +33,7 @@ const colorStyles = {
         disabled: "bg-red-300 text-red-100 cursor-not-allowed",
     },
     gray: {
+        text: "text-gray-600 hover:bg-gray-300",
         solid: "border border-gray-600 bg-gray-600 hover:bg-gray-900 text-zinc-50 ",
         outline: "border border-gray-600 text-gray-600 hover:bg-gray-900 hover:text-gray-300",
         disabled: "bg-gray-300 text-blue-100 cursor-not-allowed",
@@ -71,6 +72,20 @@ export function OutlineLink({href, title, color = "blue", size = "md", className
     const styles = disabled
         ? `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].disabled} ${className}`
         : `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].outline} ${className}`;
+
+    return (
+        <Link href={disabled ? "#" : href} className={styles} aria-disabled={disabled} {...rest}>
+            {children ?? title}
+        </Link>
+    );
+}
+
+
+export function SimpleLink({href, title, color = "blue", size = "md", className, disabled = false, children, ...rest}:
+                            ButtonType) {
+    const styles = disabled
+        ? `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].disabled} ${className}`
+        : `${commonStyles} ${sizeStyles[size]} ${colorStyles[color].text} ${className}`;
 
     return (
         <Link href={disabled ? "#" : href} className={styles} aria-disabled={disabled} {...rest}>

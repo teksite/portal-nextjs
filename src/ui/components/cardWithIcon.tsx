@@ -5,22 +5,23 @@ interface CardWithIconProps {
     image: string;
     title: string;
     className?: string;
+    descriptionClassName?: string;
     children: ReactNode | (() => ReactNode);
 }
 
-export default function CardWithIcon({image, title, children, className = undefined}: CardWithIconProps) {
+export default function CardWithIcon({image, title, children, className = undefined, descriptionClassName = undefined}: CardWithIconProps) {
     return (
-        <div className={`x-box flex flex-col gap-3 justify-between  ${className}`}>
+        <div className={`x-box flex flex-col gap-3 justify-between p-0 ${className}`}>
             <div>
                 <div
-                    className="aspect-square rounded-full bg-zinc-200 dark:bg-zinc-300 mx-auto -mt-12 mb-3 p-1 w-[75px] h-[75px] text-center content-center">
-                    <SafeImage src={image} fallbackSrc="/assets/images/placeholder/certificate-placeholder.png"
-                               alt={title} width={50} height={50} loading="lazy" decoding="async" className="mx-auto"/>
+                    className="over aspect-square rounded-full bg-blue-900 dark:bg-zinc-300 mx-auto -mt-8 mb-3 p-1 w-[65px] h-[65px] text-center content-center">
+                    <SafeImage src={image} fallbackSrc="/assets/images/placeholder/certificate-placeholder-w.png"
+                               alt={title} width={40} height={40} loading="lazy" decoding="async" className="mx-auto"/>
                 </div>
                 <h3 className="text-center text-base">{title}</h3>
             </div>
 
-            <div className='flex flex-col gap-6 justify-between  justify-self-end w-full h-full'>
+            <div className={`flex flex-col gap-6 justify-between  justify-self-end w-full h-full ,${descriptionClassName}`}>
                 {typeof children === "function" ? children() : children || null}
             </div>
 

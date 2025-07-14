@@ -3,9 +3,10 @@ import {MagnifyingGlassIcon} from "@heroicons/react/16/solid";
 import {SolidButton, TextButton} from "../components/buttons";
 import {redirect, usePathname, useSearchParams} from "next/navigation";
 import Form from "next/form";
+import {getGroupServices} from "@/http/controller/servicesController";
 
 export interface searchParamsType {
-    term?: string;
+    title?: string;
 }
 
 
@@ -18,9 +19,11 @@ export default function SearchService() {
     console.log(pathname);
     try {
 
-        const groups = /*getGroupServices() ?? */[];
-        const term = searchParams.get("term") ?? "";
-        //
+
+
+        const term = searchParams.get('title') ?? "";
+
+        console.log(term);
         // const groupsList = groups.length ?
         //     groups?.map((item) => (<option key={item.Slug} value={item.Id}>{item.Title}</option>))
         //     : noOption;
@@ -40,7 +43,7 @@ export default function SearchService() {
                         <label htmlFor="search-title" className="sr-only label-style">
                             نام خدمت مورد نظر
                         </label>
-                        <input id="search-title" title="جستجو بر اساس اسم" placeholder="جستجو بر اساس کلمه" name="term"
+                        <input id="search-title" title="جستجو بر اساس اسم" placeholder="جستجو بر اساس کلمه" name="title"
                                className="input-style"
                                defaultValue={term}
                             // onChange={(e) => handleSearch(e.target.value)}
