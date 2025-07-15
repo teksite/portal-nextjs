@@ -63,6 +63,16 @@ const eslintConfig = [
 			],
 			// Sort exports alphabetically
 			"simple-import-sort/exports": "error",
+			// allow using `Function`
+			"@typescript-eslint/ban-types": [
+				"error",
+				{
+					types: {
+						Function: false,
+					},
+					extendDefaults: true,
+				},
+			],
 		},
 	},
 ];
