@@ -1,6 +1,6 @@
-import { ServiceType } from "@/models/serviceModel";
+import {LicenseType} from "@/models/licenseModel";
 
-export const mockServiceList1: ServiceType[] = [
+export const mockServiceList1: LicenseType[] = [
 	{
 		id: "1179027790000000128",
 		slug: "1179027790000000128",

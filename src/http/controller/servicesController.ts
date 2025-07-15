@@ -1,28 +1,28 @@
 //import callApi from "@/helpers/callApi";
-import { fetchApi } from "@/lib";
-import { ServiceType } from "@/models/serviceModel";
+import {fetchApi} from "@/lib/";
+import {licenseType} from "@/models/licenseModel";
 
 const api = fetchApi();
 
-export async function getServices(): Promise<ServiceType[] | undefined> {
+export async function getServices(): Promise<licenseType[]> {
 	// const res = await callApi().post('/GetServices');
 	// return res.data;
 
 	try {
-		const { Services }: { Services: ServiceType[] } = await api("GetServices", {
+		const { Services }: { Services: licenseType[] } = await api("GetServices", {
 			method: "POST",
 			next: { tags: ["GetServices"], revalidate: 120 },
 		});
 		return Services;
 	} catch (error) {
 		console.error(error);
+		return [];
 	}
 }
 
-export async function getRecentServices(): Promise<ServiceType[]> {
-	const services: ServiceType[] = (await getServices()) ?? [];
-	const certificatesList = (services || [])?.slice(0, Number(9));
-	return certificatesList;
+export async function getRecentServices(): Promise<licenseType[]> {
+	const services: licenseType[] = (await getServices()) ?? [];
+	return (services || [])?.slice(0, Number(9));
 }
 
 export async function getGroupServices() {
@@ -36,5 +36,6 @@ export async function getGroupServices() {
 		return SGData;
 	} catch (error) {
 		console.error(error);
+		return [];
 	}
 }

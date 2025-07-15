@@ -1,11 +1,11 @@
 import { getRecentServices } from "@/http/controller/servicesController";
-import { ServiceType } from "@/models/serviceModel";
-import CertificateBox from "@/ui/components/certificates/certificateBox";
+import LicenseBox from "@/ui/components/license/licenseBox";
+import {LicenseType} from "@/models/licenseModel";
 
-export async function CertificatesListWrapper() {
+export async function LicenseListWrapper() {
 	try {
-		const serviceList: ServiceType[] = (await getRecentServices()) ?? [];
-		return <CertificateList data={serviceList} />;
+		const licenseList: LicenseType[] = (await getRecentServices()) ?? [];
+		return <LicenseList data={licenseList} />;
 	} catch (error) {
 		return (
 			<p className="text-xs text-center">
@@ -15,14 +15,14 @@ export async function CertificatesListWrapper() {
 	}
 }
 
-export function CertificateList({ data }: { data: ServiceType[] }) {
+export function LicenseList({ data }: { data: LicenseType[] }) {
 	return !data.length ? (
 		<p className="text-center text-sm font-semibold">موردی ثبت نشده‌است</p>
 	) : (
 		<ul className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
-			{data.map((item: ServiceType, index: number) => (
+			{data.map((item: LicenseType, index: number) => (
 				<li key={index}>
-					<CertificateBox certificate={item} />
+					<LicenseBox license={item} />
 				</li>
 			))}
 		</ul>
