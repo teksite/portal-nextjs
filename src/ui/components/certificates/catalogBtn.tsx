@@ -17,7 +17,7 @@ function TableWrapper(service: ServiceType) {
 		"کد خدمت": service.code,
 		"گروه خدمت": service.serviceGroupCaption,
 		"هزینه خدمت": service.code ? "دارد" : "ندارد",
-		"نحوه ارائه خدمت": service.electronic ? "الکتورنیکی" : "حضوری",
+		"نحوه ارائه خدمت": service.electronics ? "الکتورنیکی" : "حضوری",
 		"مراجعه حضوری": service.needPresence ? "دارد" : "ندارد",
 		"متوسط زمان اخذ خدمت": service.avgTime,
 	};

@@ -1,5 +1,5 @@
 //import callApi from "@/helpers/callApi";
-import fetchApi from "@/helpers/fetchApi";
+import { fetchApi } from "@/lib";
 import { ServiceType } from "@/models/serviceModel";
 
 const api = fetchApi();

@@ -23,7 +23,7 @@ export default function CertificateBox({ certificate }: CertificateBoxProps) {
 		avgTime,
 		cost,
 		description,
-		electronic,
+		electronics,
 		needPresence,
 		serviceTime,
 	} = certificate;

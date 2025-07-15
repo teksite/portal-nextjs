@@ -2,12 +2,12 @@ import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { env } from "@/helpers/functions";
 import { CertificatesListWrapper } from "@/ui/components/certificates/certificatesList";
 import { SolidLink } from "@/ui/components/Links";
 import Search from "@/ui/components/search";
 import { CardWithIconListSkeleton } from "@/ui/components/skeletons";
 import Banner from "@/ui/layout/Banner";
+import { env } from "@/lib";
 
 export default function Home() {
 	const appName = env("NEXT_PUBLIC_APP_NAME");
