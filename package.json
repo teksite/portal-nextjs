@@ -13,10 +13,14 @@
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
+    "@tailwindcss/cli": "^4.1.11",
     "axios": "^1.10.0",
+    "clsx": "^2.1.1",
+    "motion": "^12.23.5",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.3.1",
     "use-debounce": "^10.0.5"
   },
   "devDependencies": {
