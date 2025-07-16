@@ -11,4 +11,5 @@ export interface LicenseType {
 	electronics?: string;
 	needPresence?: boolean;
 	serviceTime?: string;
+	image?:string;
 }

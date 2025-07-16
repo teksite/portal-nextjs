@@ -1,18 +1,31 @@
 //import callApi from "@/helpers/callApi";
 import {fetchApi} from "@/lib/";
-import {licenseType} from "@/models/licenseModel";
+import {LicenseType} from "@/models/licenseModel";
 
 const api = fetchApi();
 
-export async function getServices(): Promise<licenseType[]> {
+export async function getServices(): Promise<LicenseType[]> {
 	// const res = await callApi().post('/GetServices');
 	// return res.data;
 
 	try {
-		const { Services }: { Services: licenseType[] } = await api("GetServices", {
+		const { Services }: { Services: LicenseType[] } = await api("GetServices", {
 			method: "POST",
 			next: { tags: ["GetServices"], revalidate: 120 },
 		});
+		Services.map((license:LicenseType)=>{
+			switch (license.serviceGroupCaption){
+				case 'فضاي مجازي':
+					license.image='/assets/images/placeholder/virtual-env.jpg';
+					break;
+				default:
+					license.image='/assets/images/placeholder/other-license.jpg';
+
+			}
+
+		});
+		console.log(Services)
+
 		return Services;
 	} catch (error) {
 		console.error(error);
@@ -20,8 +33,8 @@ export async function getServices(): Promise<licenseType[]> {
 	}
 }
 
-export async function getRecentServices(): Promise<licenseType[]> {
-	const services: licenseType[] = (await getServices()) ?? [];
+export async function getRecentServices(): Promise<LicenseType[]> {
+	const services: LicenseType[] = (await getServices()) ?? [];
 	return (services || [])?.slice(0, Number(9));
 }
 

@@ -1,10 +1,12 @@
-import { fn } from "storybook/test";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { CloseIcon, ExpandableCardDemoGrid } from "./expandable-card-demo-grid";
-import { ExpandableCardDemoStandard } from "./expandable-card-demo-standard";
+
+import {
+	CardWithIconListSkeleton, CardWithIconSkeleton,
+	GroupedCardWithIconListSkeleton
+} from "@/ui/components/skeletons";
 
 const meta = {
-	title: "Test",
+	title: "SKELETON/CardWithIcon",
 	component: undefined,
 	parameters: {
 		layout: "centered",
@@ -16,18 +18,25 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Test: Story = {
-	name: "Expandable Card in Grid",
+export const single: Story = {
+	name: "single card",
 	render: () => {
-		return <ExpandableCardDemoGrid />;
+		return <CardWithIconSkeleton />;
 	},
 };
-export const Test2: Story = {
-	name: "Expandable Card in Rows",
+export const onlyList: Story = {
+	name: "only list",
 	render: () => {
-		return <ExpandableCardDemoStandard />;
+		return <CardWithIconListSkeleton />;
 	},
 };
+export const listWithTitle: Story = {
+	name: "list with title",
+	render: () => {
+		return <GroupedCardWithIconListSkeleton />;
+	},
+};
+
 
 // export const Date1: Story = {
 //   name: 'بله خیر',
