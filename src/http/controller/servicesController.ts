@@ -24,7 +24,6 @@ export async function getServices(): Promise<LicenseType[]> {
 			}
 
 		});
-		console.log(Services)
 
 		return Services;
 	} catch (error) {

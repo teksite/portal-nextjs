@@ -12,7 +12,8 @@ export const mockServiceList1: LicenseType[] =  [
         "electronics": 1,
         "needPresence": false,
         "serviceTime": null,
-        "serviceGroupCaption": "خدمات عمومي"
+        "serviceGroupCaption": "خدمات عمومي",
+        "icon":"briefcase"
     },
     {
         "id": "1179027790000000129",
@@ -26,7 +27,8 @@ export const mockServiceList1: LicenseType[] =  [
         "electronics": 1,
         "needPresence": false,
         "serviceTime": null,
-        "serviceGroupCaption": "خدمات عمومي"
+        "serviceGroupCaption": "خدمات عمومي",
+        "icon":"briefcase"
     },
     {
         "id": "1233027790000000313",
@@ -40,7 +42,8 @@ export const mockServiceList1: LicenseType[] =  [
         "electronics": 1,
         "needPresence": false,
         "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-        "serviceGroupCaption": "چاپ ، نشر و كتاب"
+        "serviceGroupCaption": "چاپ ، نشر و كتاب",
+        "icon":"book"
     },
     {
         "id": "1233027790000000320",
@@ -68,7 +71,8 @@ export const mockServiceList1: LicenseType[] =  [
         "electronics": 1,
         "needPresence": false,
         "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-        "serviceGroupCaption": "رسانه و تبليغات"
+        "serviceGroupCaption": "رسانه و تبليغات",
+        "icon":"tv"
     },
     {
         "id": "1233027790000000348",
@@ -96,7 +100,8 @@ export const mockServiceList1: LicenseType[] =  [
         "electronics": 1,
         "needPresence": false,
         "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-        "serviceGroupCaption": "رسانه و تبليغات"
+        "serviceGroupCaption": "رسانه و تبليغات",
+        "icon":"tv"
     },
     {
         "id": "1233027790000000384",
@@ -145,7 +150,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": null,
-                "serviceGroupCaption": "خدمات عمومي"
+                "serviceGroupCaption": "خدمات عمومي",
+                "icon":"briefcase"
             },
             {
                 "id": "1179027790000000129",
@@ -159,7 +165,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": null,
-                "serviceGroupCaption": "خدمات عمومي"
+                "serviceGroupCaption": "خدمات عمومي",
+                "icon":"briefcase"
             },
             {
                 "id": "1179027790000000130",
@@ -173,7 +180,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": null,
-                "serviceGroupCaption": "خدمات عمومي"
+                "serviceGroupCaption": "خدمات عمومي",
+                "icon":"briefcase"
             },
             {
                 "id": "1179027790000000131",
@@ -187,7 +195,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": null,
-                "serviceGroupCaption": "خدمات عمومي"
+                "serviceGroupCaption": "خدمات عمومي",
+                "icon":"briefcase"
             },
             {
                 "id": "1179027790000000132",
@@ -201,7 +210,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": null,
-                "serviceGroupCaption": "خدمات عمومي"
+                "serviceGroupCaption": "خدمات عمومي",
+                "icon":"briefcase"
             },
             {
                 "id": "1179027790000000133",
@@ -215,7 +225,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": null,
-                "serviceGroupCaption": "خدمات عمومي"
+                "serviceGroupCaption": "خدمات عمومي",
+                "icon":"briefcase"
             },
             {
                 "id": "1233027790000000289",
@@ -327,7 +338,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "آموزش"
+                "serviceGroupCaption": "آموزش",
+                "icon":"education"
             },
             {
                 "id": "1233027790000000297",
@@ -383,7 +395,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "آموزش"
+                "serviceGroupCaption": "آموزش",
+                "icon":"education"
             },
             {
                 "id": "1233027790000000301",
@@ -411,7 +424,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "آموزش"
+                "serviceGroupCaption": "آموزش",
+                "icon":"education"
             },
             {
                 "id": "1233027790000000303",
@@ -453,7 +467,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000306",
@@ -467,7 +482,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "قبل از نمايشگاه",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000307",
@@ -481,7 +497,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000308",
@@ -495,7 +512,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000309",
@@ -509,7 +527,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000310",
@@ -523,7 +542,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000311",
@@ -537,7 +557,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000312",
@@ -551,7 +572,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000313",
@@ -565,7 +587,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000314",
@@ -677,7 +700,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000322",
@@ -691,7 +715,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000323",
@@ -705,7 +730,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000324",
@@ -719,7 +745,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000325",
@@ -761,7 +788,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000328",
@@ -775,7 +803,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000329",
@@ -789,7 +818,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000330",
@@ -803,7 +833,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000331",
@@ -817,7 +848,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000332",
@@ -831,7 +863,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000333",
@@ -845,7 +878,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000334",
@@ -859,7 +893,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000335",
@@ -873,7 +908,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000336",
@@ -887,7 +923,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000337",
@@ -901,7 +938,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000338",
@@ -915,7 +953,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000339",
@@ -929,7 +968,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000340",
@@ -957,7 +997,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000342",
@@ -971,7 +1012,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000343",
@@ -985,7 +1027,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000344",
@@ -999,7 +1042,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000345",
@@ -1013,7 +1057,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 2,
                 "needPresence": true,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000346",
@@ -1027,7 +1072,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000347",
@@ -1041,7 +1087,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000348",
@@ -1069,7 +1116,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "رسانه و تبليغات"
+                "serviceGroupCaption": "رسانه و تبليغات",
+                "icon":"tv"
             },
             {
                 "id": "1233027790000000350",
@@ -1111,7 +1159,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "آموزش"
+                "serviceGroupCaption": "آموزش",
+                "icon":"education"
             },
             {
                 "id": "1233027790000000353",
@@ -1139,7 +1188,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000355",
@@ -1265,7 +1315,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "چاپ ، نشر و كتاب"
+                "serviceGroupCaption": "چاپ ، نشر و كتاب",
+                "icon":"book"
             },
             {
                 "id": "1233027790000000364",
@@ -1419,7 +1470,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 2,
                 "needPresence": true,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "آموزش"
+                "serviceGroupCaption": "آموزش",
+                "icon":"education"
             },
             {
                 "id": "1233027790000000375",
@@ -1507,7 +1559,8 @@ export const mockServiceList2: LicenseType[] =  [
                 "electronics": 1,
                 "needPresence": false,
                 "serviceTime": "شنبه تا چهار شنبه - ساعات اداري",
-                "serviceGroupCaption": "آموزش"
+                "serviceGroupCaption": "آموزش",
+                "icon":"education"
             },
             {
                 "id": "1233027790000000381",
