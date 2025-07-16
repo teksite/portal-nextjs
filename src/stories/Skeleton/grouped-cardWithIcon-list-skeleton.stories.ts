@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import {GroupedCardWithIconListSkeleton} from "@/ui/components/skeletons";
 
-import {GroupedCardWithIconListSkeleton} from "../../../../farhang-portal/farhang-portal/src/ui/components/skeletons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

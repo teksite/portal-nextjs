@@ -15,7 +15,6 @@ export default function SearchService() {
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
 
-	console.log(pathname);
 	try {
 		const term = searchParams.get("title") ?? "";
 

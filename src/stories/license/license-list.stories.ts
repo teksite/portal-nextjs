@@ -3,7 +3,6 @@ import {LicenseList} from "@/ui/components/license/licenseList";
 import {mockServiceList1} from "@/mock";
 
 
-
 const meta = {
 	title: "License/License List",
 	component: LicenseList,
