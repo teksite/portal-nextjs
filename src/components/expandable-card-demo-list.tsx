@@ -58,9 +58,9 @@ export function ExpandableCardDemoList() {
                         <motion.div
                             layoutId={`card-${active.title}-${active.id}`}
                             ref={ref}
-                            className="w-full max-w-[500px] h-full md:h-fit flex flex-col x-box p-0 overflow-hidden">
+                            className="w-full max-w-[500px] h-full md:h-fit flex flex-col x-box p-0 overflow-hiddenr">
                             <div className="p-6">
-                                <div className="mb-3">
+                                <div className=" mb-3">
                                     <div className="flex items-center gap-3 justify-start">
                                         <motion.div layoutId={`image-${active.title}-${active.id}`}>
                                             <IconPicker name={active.icon || "license"} className="fill-blue-600 size-12"/>
@@ -125,7 +125,7 @@ export function ExpandableCardDemoList() {
                         layoutId={`card-${card.title}-${card.id}`}
                         key={`card-${card.title}-${card.id}`}
                         onClick={() => setActive(card)}
-                        className="x-box flex gap-3 items-center">
+                        className="x-box flex gap-3 items-center  transition  duration-200 hover:shadow-sm ease-linea">
                         <motion.div layoutId={`image-${card.title}-${card.id}`}>
                             <IconPicker name={card.icon || "license"} className=" fill-blue-600 size-12" />
                         </motion.div>
