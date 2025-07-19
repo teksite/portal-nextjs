@@ -48,10 +48,10 @@ export function IconPicker({
         >
             {title && <title>{title}</title>}
             {typeof icon.path === 'string' ? (
-                <path fill={fill} d={icon.path} className={pathClassName}/>
+                <path d={icon.path} className={pathClassName}/>
             ) : (
                 icon.path.map((path, index) => (
-                    <path key={index} fill={fill} d={path} className={pathClassName}/>
+                    <path key={index} d={path} className={pathClassName}/>
                 ))
             )}
         </svg>
