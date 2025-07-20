@@ -9,9 +9,7 @@ import {LicenseType} from "@/models/licenseModel";
 import {ExpandedCardContent} from "@/components/popup-with-text";
 import {ExpandedCardBadge} from "@/components/popup-with-badge";
 
-// Define LicenseType interface for type safety
 
-// Optimized component with memoization
 export const ExpandableCardDemoList = React.memo(
     ({
          cards,
@@ -38,10 +36,8 @@ export const ExpandableCardDemoList = React.memo(
             return () => window.removeEventListener("keydown", handleKeyDown);
         }, [handleKeyDown]);
 
-        // Handle outside click
         useOutsideClick(ref, () => setActive(null));
 
-        // Handle card click with memoized callback
         const handleCardClick = useCallback((card: LicenseType) => {
             setActive(card);
         }, []);
@@ -133,7 +129,6 @@ export const ExpandableCardDemoList = React.memo(
     }
 );
 
-// CloseIcon component (unchanged but memoized)
 export const CloseIcon = React.memo(() => (
     <motion.svg
         initial={{opacity: 0}}

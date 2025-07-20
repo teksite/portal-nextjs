@@ -20,7 +20,7 @@ export function ShowExactMatch({license}:{license:LicenseType}) {
                </div>
                <h3 className="font-bold">{license.title}</h3>
                {license.description && <p>توضیحات: {license.description}</p>}
-               <div className="flex mt-6">
+               <div className="flex justify-end mt-6">
                    <Link href="#"
                          className="text-sm font-semibold inline-block min-w-fit w-36 text-center border border-zinc-300 dark:border-zinc-600 rounded-s-lg p-3 hover:bg-zinc-300 dark:hover:bg-zinc-600 hover:shadow-innertext-sm"
                    >
