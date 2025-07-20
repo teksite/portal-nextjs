@@ -3,7 +3,6 @@ import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { SolidButton, TextButton } from "../components/buttons";
 import { redirect, usePathname, useSearchParams } from "next/navigation";
 import Form from "next/form";
-import { getGroupServices } from "@/http/controller/servicesController";
 
 export interface searchParamsType {
 	title?: string;
@@ -57,7 +56,7 @@ export default function SearchService() {
 						/>
 					</div>
 					{/* search by groups */}
-					<div className="relative lg:order-3">
+{/*					<div className="relative lg:order-3">
 						<label htmlFor="search-group" className="label-style">
 							گروه خدمت
 						</label>
@@ -77,7 +76,7 @@ export default function SearchService() {
 							{groupsList}
 						</select>
 					</div>
-					{/* search by organs */}
+					 search by organs
 					<div className="relative lg:order-4">
 						<label htmlFor="search-organ" className="label-style">
 							واحد سازمانی ارائه دهنده خدمت
@@ -95,7 +94,7 @@ export default function SearchService() {
 							<option>سازمان 3</option>
 						</select>
 					</div>
-					{/* search by present */}
+					 search by present
 					<div className="relative lg:order-5">
 						<label htmlFor="search-present" className="label-style">
 							نحوه ارائه خدمت
@@ -113,7 +112,7 @@ export default function SearchService() {
 							<option>ترکیبی</option>
 						</select>
 					</div>
-					{/* search by demands */}
+					 search by demands
 					<div className="relative lg:order-6">
 						<label htmlFor="search-demands" className="label-style">
 							میزان تقاضا
@@ -129,7 +128,7 @@ export default function SearchService() {
 							<option>زیاد</option>
 							<option>کم</option>
 						</select>
-					</div>
+					</div>*/}
 				</Form>
 			</div>
 		);

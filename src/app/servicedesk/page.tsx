@@ -4,7 +4,8 @@ import Breadcrumb from "@/ui/components/breadcrumb/breadcrumb";
 import {GroupedCardWithIconListSkeleton} from "@/ui/components/skeletons";
 import Banner from "@/ui/layout/Banner";
 import SearchService, {searchParamsType} from "@/ui/servicedesk/searchService";
-import GroupedLicenseListWrapper from "@/ui/components/license/groupedLicenseList";
+import ServiceDeskPage from "@/ui/servicedesk/searchItems";
+
 
 export default async function LicensesPage(props: {searchParams?: Promise<searchParamsType>;}) {
     const searchParams = await props.searchParams;
@@ -24,7 +25,7 @@ export default async function LicensesPage(props: {searchParams?: Promise<search
                 <SearchService />
                 <div className="mt-12 space-y-12 inner-container">
                     <Suspense fallback={<GroupedCardWithIconListSkeleton/>}>
-                        <GroupedLicenseListWrapper search={searchParams}/>
+                        <ServiceDeskPage search={searchParams}/>
                     </Suspense>
                 </div>
             </main>
