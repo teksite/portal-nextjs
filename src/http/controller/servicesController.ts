@@ -16,10 +16,10 @@ export async function getServices(): Promise<LicenseType[]> {
 		Services.map((license:LicenseType)=>{
 			switch (license.serviceGroupCaption){
 				case 'فضاي مجازي':
-					license.image='/assets/images/placeholder/virtual-env.jpg';
+					license.icon='/assets/images/placeholder/virtual-env.jpg';
 					break;
 				default:
-					license.image='/assets/images/placeholder/other-license.jpg';
+					license.icon='/assets/images/placeholder/other-license.jpg';
 
 			}
 

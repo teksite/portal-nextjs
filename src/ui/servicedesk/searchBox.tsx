@@ -48,7 +48,6 @@ export default function SearchService() {
         searchTitleHandler(term);
     };
 
-
     const clickOutsideHandler = (event: MouseEvent) => {
         if (suggestionBoxRef.current && !suggestionBoxRef.current.contains(event.target as Node)) {
             setShowSuggestions(false);
@@ -87,16 +86,16 @@ export default function SearchService() {
                         title="جستوی مجوزها"
                         placeholder="جستجو..."
                         name="title"
-                        className="input-style"
+                        className={`input-style ${result.length && showSuggestions ? 'rounded-b-none border-b-0 shadow' :''}`}
                         onChange={handleInputChange}
                         value={value}
                     />
                     <MagnifyingGlassIcon
-                        className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900"
+                        className="absolute end-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900"
                     />
                     {showSuggestions && result.length && (
                         <div className="absolute top-full inset-x-0 z-10" ref={suggestionBoxRef}>
-                            <ul className="bg-white block w-full border border-zinc-300 rounded-xl p-3 divide-y divider-zinc-300 dark:divider-zinc-600">
+                            <ul className="x-box rounded-t-none border-blue-600 border-t-zinc-300 dark:border-t-zinc-600 py-1">
                                 {suggestionList}
                             </ul>
                         </div>

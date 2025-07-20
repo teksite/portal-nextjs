@@ -11,11 +11,11 @@ export default function SearchResult({search}: { search?: { title?: string } }) 
     const results = advanceSearch(searchTerm);
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">نتایج جستجو برای: {searchTerm}</h1>
+        <div className="container mx-auto p-3">
+            <h1 className="text-2xl font-bold mb-3">نتایج جستجو برای: {searchTerm}</h1>
 
             {results.exact.length > 0 && (
-                <div className="mb-8">
+                <div className="mb-6">
 
                     <ul className="space-y-4">
                         {results.exact.map((license) => (
@@ -27,14 +27,14 @@ export default function SearchResult({search}: { search?: { title?: string } }) 
                 </div>
             )}
             {results.titleContains.length || results.descriptionContains.length ?
-                <h2 className="text-xl font-semibold mb-2">موارد مشابه</h2> :
+                <h2 className="text-xl font-semibold mb-3">موارد مشابه</h2> :
                 null
             }
             {results.titleContains.length > 0 && (
-                <div className="mb-8">
-                    <ul className="space-y-4">
+                <div className="mb-6">
+                    <ul className="space-y-3">
                         {results.titleContains.map((license) => (
-                            <li key={license.id} className="border p-4 rounded">
+                            <li key={license.id} className="border p-3 rounded">
                                 <h3 className="font-bold">{license.title}</h3>
                                 <p>کد: {license.code}</p>
                                 <p>گروه: {license.serviceGroupCaption}</p>
@@ -46,10 +46,10 @@ export default function SearchResult({search}: { search?: { title?: string } }) 
             )}
 
             {results.descriptionContains.length > 0 && (
-                <div className="mb-8">
+                <div className="mb-6">
                     <ul className="space-y-4">
                         {results.descriptionContains.map((license) => (
-                            <li key={license.id} className="border p-4 rounded">
+                            <li key={license.id} className="border p-3 rounded">
                                 <h3 className="font-bold">{license.title}</h3>
                                 <p>کد: {license.code}</p>
                                 <p>گروه: {license.serviceGroupCaption}</p>
