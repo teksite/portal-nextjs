@@ -3,136 +3,121 @@ import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { SolidButton, TextButton } from "../components/buttons";
 import { redirect, usePathname, useSearchParams } from "next/navigation";
 import Form from "next/form";
+import { searchLicensesByTitle, titleSearchItemType } from "@/http/controller/licenseSearchController";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export interface searchParamsType {
-	title?: string;
+    title?: string;
 }
 
 const noOption = <option disabled={true}>موردی وجود ندارد</option>;
 
+const debounce = (func: (...args: any[]) => void, delay: number) => {
+    let timeoutId: NodeJS.Timeout;
+    return (...args: any[]) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func(...args), delay);
+    };
+};
+
 export default function SearchService() {
-	const searchParams = useSearchParams();
-	const pathname = usePathname();
 
-	try {
-		const term = searchParams.get("title") ?? "";
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
+    const [value, setValue] = useState("");
+    const [result, setResult] = useState<titleSearchItemType[]>([]);
+    const suggestionBoxRef = useRef<HTMLDivElement>(null);
 
-		// const groupsList = groups.length ?
-		//     groups?.map((item) => (<option key={item.Slug} value={item.Id}>{item.Title}</option>))
-		//     : noOption;
-		const groupsList: any = [];
+    const searchTitleHandler = useCallback(
+        debounce(async (term: string) => {
+            if (term.length > 4) {
+                const res = searchLicensesByTitle(term);
+                setResult(res);
+                setShowSuggestions(res.length > 0);
+            } else {
+                setResult([]);
+                setShowSuggestions(false);
+            }
+        }, 300),
+        []
+    );
 
-		const clearFiltersHandler = async () => {
-			redirect(pathname);
-		};
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const term = e.target.value;
+        setValue(term);
+        searchTitleHandler(term);
+    };
 
-		return (
-			<div className="x-box inner-container -mt-16">
-				<Form className="grid gap-6 lg:grid-cols-4" action="/servicedesk">
-					{/* search by name */}
-					<div className="relative lg:col-span-3">
-						<label htmlFor="search-title" className="sr-only label-style">
-							نام خدمت مورد نظر
-						</label>
-						<input
-							id="search-title"
-							title="جستجو بر اساس اسم"
-							placeholder="جستجو بر اساس کلمه"
-							name="title"
-							className="input-style"
-							defaultValue={term}
-							// onChange={(e) => handleSearch(e.target.value)}
-						/>
-						<MagnifyingGlassIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
-					</div>
-					{/* buttons */}
-					<div className="flex gap-3 items-center justify-end order-last lg:order-2">
-						<SolidButton title="جستجو" size="md" />
-						<TextButton
-							type="button"
-							title="حذف فیلتر"
-							size="md"
-							onClick={clearFiltersHandler}
-						/>
-					</div>
-					{/* search by groups */}
-{/*					<div className="relative lg:order-3">
-						<label htmlFor="search-group" className="label-style">
-							گروه خدمت
-						</label>
-						<select
-							id="search-group"
-							title="فیلتر کردن بر اساس  گروه خدمت"
-							className="input-style"
-							name="group"
+    const clearFiltersHandler = async () => {
+        redirect(pathname);
+    };
 
-							// defaultValue={}
-							// onChange={(e) => handleSearch(e.target.value)}
-						>
-							<option disabled={true} value="">
-								{" "}
-								همه
-							</option>
-							{groupsList}
-						</select>
-					</div>
-					 search by organs
-					<div className="relative lg:order-4">
-						<label htmlFor="search-organ" className="label-style">
-							واحد سازمانی ارائه دهنده خدمت
-						</label>
-						<select
-							id="search-organ"
-							title="فیلتر کردن بر اساس  واحد سازمانی"
-							className="input-style"
-							name="organ"
-							// defaultValue={searchParams.get('query')?.toString()}
-							// onChange={(e) => handleSearch(e.target.value)}
-						>
-							<option>سازمان 1</option>
-							<option>سازمان 2</option>
-							<option>سازمان 3</option>
-						</select>
-					</div>
-					 search by present
-					<div className="relative lg:order-5">
-						<label htmlFor="search-present" className="label-style">
-							نحوه ارائه خدمت
-						</label>
-						<select
-							id="search-present"
-							title="فیلتر کردن بر اساس  نحوه ارائه خدمت"
-							className="input-style"
-							name="present"
-							// defaultValue={searchParams.get('query')?.toString()}
-							// onChange={(e) => handleSearch(e.target.value)}
-						>
-							<option>تکی</option>
-							<option>جمعی</option>
-							<option>ترکیبی</option>
-						</select>
-					</div>
-					 search by demands
-					<div className="relative lg:order-6">
-						<label htmlFor="search-demands" className="label-style">
-							میزان تقاضا
-						</label>
-						<select
-							id="search-demands"
-							title="فیلتر کردن بر اساس  میزان تقاضا"
-							className="input-style"
-							name="demands"
-							// defaultValue={searchParams.get('query')?.toString()}
-							// onChange={(e) => handleSearch(e.target.value)}
-						>
-							<option>زیاد</option>
-							<option>کم</option>
-						</select>
-					</div>*/}
-				</Form>
-			</div>
-		);
-	} catch (error) {
-		console.error(error);
-	}
+    const clickOutsideHandler = (event: MouseEvent) => {
+        if (suggestionBoxRef.current && !suggestionBoxRef.current.contains(event.target as Node)) {
+            setShowSuggestions(false);
+        }
+    };
+    const selectSearchInputHandler= (event: MouseEvent) => {
+        if (result.length) setShowSuggestions(true);
+    }
+
+    useEffect(() => {
+        setValue(searchParams.get("title") ?? "");
+        document.addEventListener("mousedown", clickOutsideHandler);
+        return () => document.removeEventListener("mousedown", clickOutsideHandler);
+    }, [searchParams]);
+
+    const suggestionList = result?.map((suggestion: titleSearchItemType) => (
+        <li key={suggestion.id}>
+            <Link href={suggestion.slug} className="py-3 block">
+                <span className="text-zinc-950 font-bold block">{suggestion.title}</span>
+                <span className="text-zinc-600 text-sm block">{suggestion.serviceGroupCaption}</span>
+            </Link>
+        </li>
+    ));
+
+    return (
+        <div className="x-box inner-container -mt-16">
+            <Form className="grid gap-6 lg:grid-cols-4" action="/servicedesk">
+                {/* search by name */}
+                <div className="relative lg:col-span-3">
+                    <label htmlFor="search-title" className="sr-only label-style">
+                        نام خدمت مورد نظر
+                    </label>
+                    <input
+                        onFocus={selectSearchInputHandler}
+                        id="search-title"
+                        title="جستوی مجوزها"
+                        placeholder="جستجو..."
+                        name="title"
+                        className="input-style"
+                        onChange={handleInputChange}
+                        value={value}
+                    />
+                    <MagnifyingGlassIcon
+                        className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900"
+                    />
+                    {showSuggestions && result.length  && (
+                        <div className="absolute top-full inset-x-0 z-10" ref={suggestionBoxRef}>
+                            <ul className="bg-white block w-full border border-zinc-300 rounded-xl p-3 divide-y divider-zinc-300 dark:divider-zinc-600">
+                                {suggestionList.length > 0 ? suggestionList : <li>{noOption}</li>}
+                            </ul>
+                        </div>
+                    )}
+                </div>
+                {/* buttons */}
+                <div className="flex gap-3 items-center justify-end order-last lg:order-2">
+                    <SolidButton type="submit" title="جستجو" size="md" />
+                    <TextButton
+                        type="button"
+                        title="حذف فیلتر"
+                        size="md"
+                        onClick={clearFiltersHandler}
+                    />
+                </div>
+            </Form>
+        </div>
+    );
 }
