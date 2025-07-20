@@ -1,6 +1,6 @@
 import {getServices} from "@/http/controller/servicesController";
 
-import {searchParamsType} from "@/ui/servicedesk/searchService";
+import {searchParamsType} from "@/ui/servicedesk/searchBox";
 import {LicenseType} from "@/models/licenseModel";
 import {LicenseList} from "@/ui/components/license/licenseList";
 
@@ -10,15 +10,8 @@ const groupingAndFilteringLicenses = (
 ) => {
 	const filteredLicenses = licenses.filter((license: LicenseType) => {
 		// Filter by title
-		if (search?.title?.length && !license.title?.toLowerCase().includes(search.title.toLowerCase())) {
-			return false;
-		}
+		return !(search?.title?.length && !license.title?.toLowerCase().includes(search.title.toLowerCase()));
 
-		// if (search?.group?.length && license.serviceGroupCaption !== search.group) {
-		// 	return false;
-		// }
-
-		return true;
 	});
 
 	// Group filtered licenses by serviceGroupCaption
