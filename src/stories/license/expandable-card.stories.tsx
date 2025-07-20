@@ -33,7 +33,7 @@ export const Test3: Story = {
 	name: "Expandable Card in list",
 
 	render: () => {
-		return <ExpandableCardDemoList cards={mockServiceList1} />;
+		return <ExpandableCardDemoList cards={mockServiceList1} withBadge={false} />;
 	},
 };
 
