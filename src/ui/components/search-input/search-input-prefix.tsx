@@ -2,8 +2,7 @@ import React from "react";
 
 import { Search } from "lucide-react";
 import { cva } from "class-variance-authority";
-
-import { SearchInputProps } from "./shared";
+import { InputProps } from "@/ui/atoms";
 
 //________________________________________
 //________________________________________
@@ -27,7 +26,7 @@ const iconVariants = cva("", {
 		},
 	},
 });
-export function SearchPrefix({ size }: { size: SearchInputProps["size"] }) {
+export function SearchPrefix({ size }: { size: InputProps["size"] }) {
 	return (
 		<div
 			className={prefixVariants({

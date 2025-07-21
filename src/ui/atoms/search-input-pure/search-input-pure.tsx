@@ -28,30 +28,31 @@ const inputVariants = cva("peer", {
 	],
 });
 
-type SearchInputProps = Pick<InputProps, "size" | "placeholder"> & {
+type SearchInputPureProps = Pick<InputProps, "size" | "placeholder"> & {
 	type: "noButton" | "buttonInside" | "buttonOutside";
 };
-export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
-	({ size = "default", placeholder = "جستجو", type = "noButton" }, ref) => {
-		const id = useId();
+export const SearchInputPure = React.forwardRef<
+	HTMLInputElement,
+	SearchInputPureProps
+>(({ size = "default", placeholder = "جستجو", type = "noButton" }, ref) => {
+	const id = useId();
 
-		return (
-			<div className="relative flex rounded-md shadow-xs">
-				{type === "noButton" && <SearchPrefix size={size} />}
-				<Input
-					ref={ref}
-					id={id}
-					type="text"
-					placeholder={placeholder}
-					size={size}
-					className={inputVariants({ size, type })}
-				/>
-				{type !== "noButton" && <SearchButton size={size} type={type} />}
-			</div>
-		);
-	}
-);
-SearchInput.displayName = "SearchInput";
+	return (
+		<div className="relative flex rounded-md shadow-xs">
+			{type === "noButton" && <SearchPrefix size={size} />}
+			<Input
+				ref={ref}
+				id={id}
+				type="text"
+				placeholder={placeholder}
+				size={size}
+				className={inputVariants({ size, type })}
+			/>
+			{type !== "noButton" && <SearchButton size={size} type={type} />}
+		</div>
+	);
+});
+SearchInputPure.displayName = "SearchInputPure";
 //________________________________________
 //________________________________________
 const prefixVariants = cva("", {
@@ -74,7 +75,7 @@ const iconVariants = cva("", {
 		},
 	},
 });
-function SearchPrefix({ size }: { size: SearchInputProps["size"] }) {
+function SearchPrefix({ size }: { size: SearchInputPureProps["size"] }) {
 	return (
 		<div
 			className={prefixVariants({
@@ -101,8 +102,8 @@ const buttonVariants = cva("peer", {
 	},
 });
 type SearchButtonProps = {
-	type: Exclude<SearchInputProps["type"], "noButton">;
-	size: SearchInputProps["size"];
+	type: Exclude<SearchInputPureProps["type"], "noButton">;
+	size: SearchInputPureProps["size"];
 	onClick?: ComponentProps<"button">["onClick"];
 };
 

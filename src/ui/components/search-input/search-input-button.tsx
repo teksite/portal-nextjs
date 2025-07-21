@@ -2,8 +2,8 @@ import React, { ComponentProps } from "react";
 
 import { Search } from "lucide-react";
 import { cva } from "class-variance-authority";
-import { Button } from "@/ui/atoms";
-import { SearchInputProps } from "./shared";
+import { Button, InputProps } from "@/ui/atoms";
+import { SearchInputButtonTypes } from "./shared";
 
 const buttonVariants = cva("peer", {
 	variants: {
@@ -27,8 +27,8 @@ const iconVariants = cva("", {
 });
 
 type SearchButtonProps = {
-	type: Exclude<SearchInputProps["type"], "noButton">;
-	size: SearchInputProps["size"];
+	type: Exclude<SearchInputButtonTypes, "noButton">;
+	size: InputProps["size"];
 	onClick?: ComponentProps<"button">["onClick"];
 };
 
@@ -39,6 +39,7 @@ export function SearchButton({ type, size, onClick }: SearchButtonProps) {
 			size={size}
 			// size="icon"
 			className={buttonVariants({ type })}
+			onClick={onClick}
 		>
 			<Search className={iconVariants({ size })} />
 			<span className="sr-only">جستجو</span>

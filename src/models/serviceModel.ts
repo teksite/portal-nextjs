@@ -8,9 +8,10 @@ export interface ServiceType {
 	avgTime?: string;
 	cost?: boolean;
 	description?: string;
-	electronics?: string;
+	electronics?: number;
 	needPresence?: boolean;
 	serviceTime?: string;
+	icon?: string;
 }
 
 export default class ServiceModel {

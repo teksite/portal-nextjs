@@ -5,8 +5,6 @@ import { Input, Popover, PopoverContent } from "@/ui/atoms";
 
 const EMPTY_ARRAY: unknown[] = [];
 
-type Item = string;
-
 export type SearchInput2Props<T> = {
 	data: T[];
 	getItemLabel?: (item: T) => string;

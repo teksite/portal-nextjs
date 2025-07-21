@@ -1,6 +1,7 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import storybook from "eslint-plugin-storybook";
+import reactHooks from "eslint-plugin-react-hooks"; // ← import the plugin
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -14,6 +15,17 @@ const compat = new FlatCompat({
 const eslintConfig = [
 	// Next.js core and TypeScript rules
 	...compat.extends("next/core-web-vitals", "next/typescript"),
+
+	// Explicitly turn on React Hooks rules
+	reactHooks.configs["recommended-latest"],
+
+	// Adjust react-hooks rules if needed
+	{
+		plugins: { "react-hooks": reactHooks },
+		rules: {
+			...reactHooks.configs.recommended.rules,
+		},
+	},
 
 	// Disable explicit any in TS files
 	{
@@ -38,15 +50,7 @@ const eslintConfig = [
 				"error",
 				{
 					groups: [
-						[
-							"^react$",
-							"^next",
-							"^[a-z]",
-							"^@mantine/hooks",
-							"^@mantine/core",
-							"^@mantine",
-							"^@",
-						],
+						["^react$", "^next", "^[a-z]", "^@"],
 						["^@/"],
 						["^~"],
 						[

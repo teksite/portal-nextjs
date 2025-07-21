@@ -117,5 +117,6 @@
 		"typescriptreact"
 	],
 	"deepscan.enable": true,
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"eslint.useFlatConfig": true
 }

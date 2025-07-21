@@ -1,4 +1,5 @@
 //import callApi from "@/helpers/callApi";
+import { mockAllServices } from "@/app/mock/mock-all-services";
 import fetchApi from "@/helpers/fetchApi";
 import { ServiceType } from "@/models/serviceModel";
 
@@ -38,3 +39,15 @@ export async function getGroupServices() {
 		console.error(error);
 	}
 }
+
+export async function getAllServicesMock(): Promise<ServiceType[]> {
+	await wait();
+	return mockAllServices;
+}
+
+function wait(delay: number = 500): Promise<void> {
+	return new Promise<void>((resolve) => setTimeout(() => resolve(), delay));
+}
+
+const wait3 = (delay: number = 500): Promise<void> =>
+	new Promise<void>((resolve) => setTimeout(resolve, delay));

@@ -1,8 +1,8 @@
-import { fn } from "storybook/test";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { CloseIcon, ExpandableCardDemoGrid } from "./expandable-card-demo-grid";
+import { ExpandableCardDemoGrid } from "./expandable-card-demo-grid";
 import { ExpandableCardDemoStandard } from "./expandable-card-demo-standard";
 import { CommandDemo, CommandDemo2, CommandDemo3 } from "./command-demo";
+import { PopoverDemo } from "./popover-demo";
 
 const meta = {
 	title: "Test",
@@ -66,24 +66,9 @@ export const Command3: Story = {
 	},
 };
 
-// export const Date1: Story = {
-//   name: 'بله خیر',
-//   render: () => {
-//     return (
-//       <div>
-//         123
-//         <CodeBlock
-//           language="javascript"
-//           code={`
-// // Sample JavaScript code
-// function greet() {
-//   console.log('Hello, world!');
-// }
-// hljs.registerLanguage('json', json);
-// hljs.registerLanguage('sql', sql);
-// greet();`}
-//         />
-//       </div>
-//     );
-//   },
-// };
+export const testPopover: Story = {
+	name: "PopoverDemo",
+	render: () => {
+		return <PopoverDemo />;
+	},
+};
