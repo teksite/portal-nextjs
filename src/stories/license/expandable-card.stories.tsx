@@ -28,12 +28,22 @@ export const Test2: Story = {
 	render: () => {
 		return <ExpandableCardDemoStandard />;
 	},
+	parameters: {
+		direction: 'rtl',
+	},
 };
 export const Test3: Story = {
 	name: "Expandable Card in list",
-
-	render: () => {
-		return <ExpandableCardDemoList cards={mockServiceList1} withBadge={false} />;
+	tags: ["autodocs"],
+	args :{
+		cards:mockServiceList1,
+		withBadge:true
+	},
+	render: ( ) => {
+		return <ExpandableCardDemoList cards={mockServiceList1} withBadge={true} />;
+	},
+	parameters: {
+		direction: 'rtl',
 	},
 };
 
