@@ -3,12 +3,12 @@
 import React, {useEffect, useId, useRef, useState} from "react";
 import {AnimatePresence, motion} from "motion/react";
 import {useOutsideClick} from "@/hooks/use-outside-click";
-import {mockServiceList1} from "@/mock";
 import {IconPicker} from "@/ui/components/icons/icon";
 import Link from "next/link";
+import {LicenseType} from "@/models/licenseModel";
 
-export function ExpandableCardDemoList() {
-    const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);
+export function ExpandableCardDemoList({cards ,className="grid gap-6 lg:grid-cols-2"}:{cards:LicenseType[] ,className ?: string}) {
+    const [active, setActive] = useState<null|LicenseType|boolean>(null);
     const ref = useRef<HTMLDivElement>(null);
     const id = useId();
 
@@ -119,8 +119,8 @@ export function ExpandableCardDemoList() {
                     </div>
                 ) : null}
             </AnimatePresence>
-            <div className="grid lg:grid-cols-2  gap-6">
-                {cards.map((card, index) => (
+            <div className={className}>
+                {cards?.map((card, index) => (
                     <motion.div
                         layoutId={`card-${card.title}-${card.id}`}
                         key={`card-${card.title}-${card.id}`}
@@ -182,4 +182,3 @@ export const CloseIcon = () => {
     );
 };
 
-const cards = mockServiceList1;

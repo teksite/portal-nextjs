@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import {  ExpandableCardDemoGrid } from "@/components/expandable-card-demo-grid";
 import { ExpandableCardDemoStandard } from "@/components/expandable-card-demo-standard";
 import {ExpandableCardDemoList} from "@/components/expandable-card-demo-list";
+import {mockServiceList1} from "@/mock";
 
 const meta = {
 	title: "License/Expandable",
@@ -30,8 +31,9 @@ export const Test2: Story = {
 };
 export const Test3: Story = {
 	name: "Expandable Card in list",
+
 	render: () => {
-		return <ExpandableCardDemoList />;
+		return <ExpandableCardDemoList cards={mockServiceList1} />;
 	},
 };
 
