@@ -11,3 +11,12 @@ export function normalizeText(text?: string|null):string {
         .replace(/ي/g, 'ی')
         .replace(/ك/g, 'ک');
 }
+
+
+export function debounce (func: (...args: any[]) => void, delay: number){
+    let timeoutId: NodeJS.Timeout;
+    return (...args: any[]) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func(...args), delay);
+    };
+};
