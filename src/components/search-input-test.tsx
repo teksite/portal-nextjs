@@ -28,7 +28,7 @@ export function SearchInputTest({
 	return (
 		<div className="flex flex-col w-2xl">
 			<div>{`Query: ${query}`}</div>
-			<div>{`Q:${selection?.selectedQuery}  I:${selection?.selectedItem} `}</div>
+			<div>{`Q:${selection?.selectedQuery}  I:${selection?.selectedItem?.title} `}</div>
 			<SearchInput
 				size={size}
 				type={type}
