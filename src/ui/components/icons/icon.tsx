@@ -1,11 +1,10 @@
 // components/Icon.tsx
-import { SVGProps } from 'react';
+import {SVGProps} from 'react';
 import iconsData from './icon-list.json';
-
 
 interface IconData {
     name: string;
-    path: string;
+    path: string | string[];
     viewBox: string;
 }
 
@@ -17,11 +16,23 @@ interface IconProps extends SVGProps<SVGSVGElement> {
     title?: string;
 }
 
-export function IconPicker({ name, size, width = size || 24, height = size || 24, className , pathClassName, title, fill = 'currentColor', ...props }: IconProps) {
-    const icon = (iconsData.icon as IconData[]).find((icon) => icon.name === name);
+export function IconPicker({
+                               name,
+                               size,
+                               width = size || 24,
+                               height = size || 24,
+                               className,
+                               pathClassName,
+                               title,
+                               fill = 'currentColor',
+                               ...props
+                           }: IconProps) {
+    // Validate iconsData structure
+    const icons = Array.isArray(iconsData.icon) ? iconsData.icon as IconData[] : [];
+    const icon = icons.find((icon) => icon.name === name);
 
     if (!icon) {
-        console.warn(`Icon "${name}" not found in iconSet.json`);
+        console.warn(`Icon "${name}" not found in icon-list.json`);
         return null;
     }
 
@@ -36,7 +47,13 @@ export function IconPicker({ name, size, width = size || 24, height = size || 24
             {...props}
         >
             {title && <title>{title}</title>}
-            <path fill={fill} d={icon.path} className={pathClassName}/>
+            {typeof icon.path === 'string' ? (
+                <path fill={fill} d={icon.path} className={pathClassName}/>
+            ) : (
+                icon.path.map((path, index) => (
+                    <path key={index} fill={fill} d={path} className={pathClassName}/>
+                ))
+            )}
         </svg>
     );
 }

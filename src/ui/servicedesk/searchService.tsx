@@ -18,7 +18,6 @@ export default function SearchService() {
 	try {
 		const term = searchParams.get("title") ?? "";
 
-		console.log(term);
 		// const groupsList = groups.length ?
 		//     groups?.map((item) => (<option key={item.Slug} value={item.Id}>{item.Title}</option>))
 		//     : noOption;

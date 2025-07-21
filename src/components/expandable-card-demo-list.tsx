@@ -63,7 +63,7 @@ export function ExpandableCardDemoList() {
                                 <div className="mb-3">
                                     <div className="flex items-center gap-3 justify-start">
                                         <motion.div layoutId={`image-${active.title}-${active.id}`}>
-                                            <IconPicker name="theater" className="text-blue-600 size-12"/>
+                                            <IconPicker name={active.icon || "license"} className="text-blue-600 size-12"/>
                                         </motion.div>
                                         <motion.span
                                             layoutId={`description-${active.serviceGroupCaption}-${active.id}`}>
@@ -127,7 +127,7 @@ export function ExpandableCardDemoList() {
                         onClick={() => setActive(card)}
                         className="x-box flex gap-3 items-center">
                         <motion.div layoutId={`image-${card.title}-${card.id}`}>
-                            <IconPicker name="theater" className="text-blue-600 size-12"/>
+                            <IconPicker name={card.icon || "plus-sign"} className="text-blue-600 size-12"/>
                         </motion.div>
                         <div className="">
                             <motion.h3
