@@ -10,8 +10,8 @@ const meta = {
 	parameters: {
 		layout: "centered",
 	},
-	// tags: ["autodocs"],
-	args: {},
+	tags: ["autodocs"],
+
 } satisfies Meta<any>;
 
 export default meta;
@@ -25,19 +25,22 @@ export const Test: Story = {
 };
 export const Test2: Story = {
 	name: "Expandable Card in Rows",
+
 	render: () => {
 		return <ExpandableCardDemoStandard />;
 	},
+
 	parameters: {
 		direction: 'rtl',
 	},
 };
 export const Test3: Story = {
 	name: "Expandable Card in list",
-	tags: ["autodocs"],
-	args :{
-		cards:mockServiceList1,
-		withBadge:true
+	argTypes: {
+		withBadge: {
+			options: [true, false],
+			control: { type: 'radio' },
+		},
 	},
 	render: ( ) => {
 		return <ExpandableCardDemoList cards={mockServiceList1} withBadge={true} />;

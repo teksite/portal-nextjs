@@ -7,7 +7,8 @@ const meta = {
 	title: "License/Search License",
 	component: undefined,
 	parameters: {
-		layout: "centered",
+		// More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
+		layout: 'fullscreen',
 	},
 	// tags: ["autodocs"],
 	args: {},

@@ -12,11 +12,12 @@ export function ShowExactMatch({license}:{license:LicenseType}) {
                </div>
            }
            <div className="p-1 w-full">
-               <div className="flex items-center justify-start gap-1 divide-x divide-zinc-300 *:py-0.5 *:px-3 *:text *:text-xs mb-3">
-                   <span>گروه: {license.serviceGroupCaption}</span>
-                   <span>کد: {license.code}</span>
-                   {license.electronics && <span>ارائه خدمت: {license.electronics ==1 ?"الکترونیکی" :"غیر الکترونیکی"}</span>}
-                   {license.electronics && <span>{license.needPresence ?"حضوری" :"غیر حضوری"}</span>}
+               <div className="flex items-center justify-start gap-1 divide-x divide-zinc-300 *:py-0.5 *:px-3  *:text *:text-xs mb-3 *:rounded-xl">
+                   <span className="text-zinc-900">گروه: {license.serviceGroupCaption}</span>
+                   <span className="text-zinc-900">کد: {license.code}</span>
+                   {license.electronics && <span title="ارائه خدمت" className={`text-zinc-50  ${license.electronics==1 ? 'bg-green-900' :'bg-zinc-600'}`}>{license.electronics ==1 ?"الکترونیکی" :"غیر الکترونیکی"}</span>}
+                   {license.needPresence && <span title="مراجعه" className={`text-zinc-50  ${license.needPresence ? 'bg-zinc-600' :'bg-green-900'}`}>{license.needPresence?"حضوری" :"غیر حضوری"}</span>}
+                   {license.cost && <span title="هزینه خدمت" className={`text-zinc-50  ${license.cost ? 'bg-green-900' :'bg-zinc-600'}`}>{license.cost?"رایگان" :"غیر رایگان"}</span>}
                </div>
                <h3 className="font-bold">{license.title}</h3>
                {license.description && <p>توضیحات: {license.description}</p>}

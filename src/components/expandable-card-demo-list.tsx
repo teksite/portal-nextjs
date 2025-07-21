@@ -75,7 +75,7 @@ export const ExpandableCardDemoList = React.memo(
                             >
                                 <CloseIcon/>
                             </motion.button>
-                            {withBadge ?  <ExpandedCardContent active={active} id={id} ref={ref}/>
+                            {!withBadge ?  <ExpandedCardContent active={active} id={id} ref={ref}/>
                                 : <ExpandedCardBadge active={active} id={id} ref={ref} /> }
                         </motion.div>
                     )}
