@@ -1,4 +1,4 @@
-export interface ServiceType {
+export interface LicenseType {
 	id: string;
 	slug: string;
 	title: string;

@@ -1,5 +1,5 @@
-import ValidationException from "@/models/exceptions/ValidationException";
-import AuthenticationException from "@/models/exceptions/AuthenticationException";
+import ValidationException from "@/exceptions/ValidationException";
+import AuthenticationException from "@/exceptions/AuthenticationException";
 
 interface ApiErrorResponse {
 	errors?: Record<string, string[]>;
@@ -13,18 +13,20 @@ interface FetchConfig extends RequestInit {
 	};
 }
 
-export const fetchApi = () => {
-	const baseUrl =
-		process.env.API_CALL_URL || "http://localhost:5000/api2/GetAppForCrm/0.1/";
+export const fetchApi = (customBaseUrl?: string) => {
+	const baseUrl = customBaseUrl ||
+		process.env.API_CALL_URL ||
+		'http://localhost:5000/api2/GetAppForCrm/0.1/';
 
 	return async <T>(endpoint: string, config: FetchConfig = {}): Promise<T> => {
+
 		const defaultConfig: FetchConfig = {
 			headers: {
-				"Content-Type": "application/json",
+				'Content-Type': 'application/json',
 				...config.headers,
 			},
-			credentials: "include",
-			cache: config.cache || "force-cache",
+			credentials: 'include',
+			cache: config.cache || 'force-cache',
 			next: config.next,
 			...config,
 		};
@@ -38,7 +40,7 @@ export const fetchApi = () => {
 				if (response.status === 422) {
 					throw new ValidationException(data.errors || {});
 				} else if (response.status === 403) {
-					throw new AuthenticationException(data.message || "Unauthorized");
+					throw new AuthenticationException(data.message || 'Unauthorized');
 				}
 
 				throw new Error(`HTTP error! status: ${response.status}`);
@@ -46,10 +48,11 @@ export const fetchApi = () => {
 
 			return await response.json();
 		} catch (error) {
-			if (error instanceof TypeError && error.message.includes("network")) {
-				throw new Error("Network error occurred");
+			if (error instanceof TypeError && error.message.includes('network')) {
+				throw new Error('Network error occurred');
 			}
 			throw error;
 		}
 	};
 };
+

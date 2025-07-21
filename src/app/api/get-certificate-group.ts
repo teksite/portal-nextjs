@@ -1,12 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import {getGroupServices} from "@/http/controller/servicesController";
 
-type ResponseData = {
-    message: string
-}
-
-export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<ResponseData>
-) {
-    res.status(200).json({ message: 'Hello from Next.js!' })
+export async function GET() {
+    try {
+        const result = await getGroupServices();
+        return Response.json(result);
+    } catch (error) {
+        return Response.json({ error }, { status: 500 });
+    }
 }
