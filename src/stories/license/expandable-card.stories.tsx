@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import {  ExpandableCardDemoGrid } from "@/components/expandable-card-demo-grid";
 import { ExpandableCardDemoStandard } from "@/components/expandable-card-demo-standard";
+import {ExpandableCardDemoList} from "@/components/expandable-card-demo-list";
 
 const meta = {
-	title: "Test",
+	title: "License/Expandable",
 	component: undefined,
 	parameters: {
 		layout: "centered",
@@ -27,25 +28,11 @@ export const Test2: Story = {
 		return <ExpandableCardDemoStandard />;
 	},
 };
+export const Test3: Story = {
+	name: "Expandable Card in list",
+	render: () => {
+		return <ExpandableCardDemoList />;
+	},
+};
 
-// export const Date1: Story = {
-//   name: 'بله خیر',
-//   render: () => {
-//     return (
-//       <div>
-//         123
-//         <CodeBlock
-//           language="javascript"
-//           code={`
-// // Sample JavaScript code
-// function greet() {
-//   console.log('Hello, world!');
-// }
-// hljs.registerLanguage('json', json);
-// hljs.registerLanguage('sql', sql);
-// greet();`}
-//         />
-//       </div>
-//     );
-//   },
-// };
+

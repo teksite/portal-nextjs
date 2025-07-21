@@ -4,7 +4,7 @@ import {mockServiceList1} from "@/mock";
 import LicenseBox from "@/ui/components/license/licenseBox";
 
 const meta = {
-    title: "License/Single Card",
+    title: "License/CardWithIcon/Single Card",
     component: LicenseBox,
     parameters: {
         layout: "centered",

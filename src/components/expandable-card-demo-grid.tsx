@@ -151,7 +151,7 @@ export function ExpandableCardDemoGrid() {
                             </motion.div>
                             <div className="flex justify-center items-center flex-col">
                                 <motion.h3
-                                    layoutId={`title-${card.title}-${id}`}
+                                    layoutId={`title-${card.title}-${card.id}`}
                                     className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
                                 >
                                     {card.title}

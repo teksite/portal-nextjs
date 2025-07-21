@@ -7,9 +7,9 @@ export interface LicenseType {
 	serviceGroupCaption?: string;
 	avgTime?: string;
 	cost?: boolean;
-	description?: string;
-	electronics?: string;
+	description?: string|null;
+	electronics?: number;
 	needPresence?: boolean;
-	serviceTime?: string;
-	image?:string;
+	serviceTime?: string|null;
+	icon?:string;
 }

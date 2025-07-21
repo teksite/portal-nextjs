@@ -4,7 +4,7 @@ import {mockServiceList1} from "@/mock";
 
 
 const meta = {
-	title: "License/License List",
+	title: "License/CardWithIcon/License List",
 	component: LicenseList,
 	parameters: {
 		layout: "centered",

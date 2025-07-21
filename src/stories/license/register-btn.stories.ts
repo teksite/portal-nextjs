@@ -3,7 +3,7 @@ import {RegisterBtn} from "@/ui/components/license/registerBtn";
 import {mockServiceList1} from "@/mock";
 
 const meta = {
-    title: "License/RegisterButton",
+    title: "License/CardWithIcon/RegisterButton",
     component: RegisterBtn,
     parameters: {
         layout: "centered",

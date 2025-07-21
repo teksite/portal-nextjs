@@ -3,7 +3,7 @@ import {mockServiceList1} from "@/mock";
 import {CatalogBtn} from "@/ui/components/license/catalogBtn";
 
 const meta = {
-    title: "License/DetailButton",
+    title: "License/CardWithIcon/DetailButton",
     component: CatalogBtn,
     parameters: {
         layout: "centered",
