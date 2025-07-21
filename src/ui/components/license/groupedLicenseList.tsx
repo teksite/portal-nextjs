@@ -3,7 +3,6 @@ import {getServices} from "@/http/controller/servicesController";
 import {searchParamsType} from "@/ui/servicedesk/searchService";
 import {LicenseType} from "@/models/licenseModel";
 import {LicenseList} from "@/ui/components/license/licenseList";
-import {logError} from "@/lib";
 
 const groupingAndFilteringLicenses = (
 	licenses: LicenseType[],
@@ -58,7 +57,6 @@ export default async function GroupedLicensesListWrapper({search}: { search?: se
 			);
 		});
 	} catch (e) {
-		logError((e as Error).message)
 		return (
 			<p className="text-xs text-center">
 				در بازآوری مشکلی بوجود آمده است لطفا دوباره تلاش کنید.

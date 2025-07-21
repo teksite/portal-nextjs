@@ -15,7 +15,6 @@ export default async function LicensesPage(props: {searchParams?: Promise<search
             title: "خدمات و مجوزها"
         }
     ];
-
     return (
         <>
             <Banner title='خدمات'>

@@ -1,70 +1,15 @@
-import {LicenseType} from "@/models/licenseModel";
-import {mockServiceList2} from "@/mock";
+
 import GroupedLicenseListWrapper from "@/ui/components/license/groupedLicenseList";
+import {advanceSearch} from "@/http/controller/licenseSearchController";
 
 export default function ServiceDeskPage({search}: { search ?: { title?: string } }) {
-    if (!search?.title) return <GroupedLicenseListWrapper />;
+
+    if (!search?.title || !search.title.trim().length) return <GroupedLicenseListWrapper />;
+``
     const searchTerm = search.title ? decodeURIComponent(search.title).trim() : '';
 
-    // Function to normalize Persian text for search
-    const normalizeText = (text: string) => {
-        return text
-            .replace(/[\u200B-\u200D\uFEFF]/g, '') // Remove zero-width characters
-            .replace(/[آأإ]/g, 'ا') // Normalize alef variations
-            .replace(/ي/g, 'ی') // Normalize yeh
-            .replace(/ك/g, 'ک'); // Normalize kaf
-    };
+    const results = advanceSearch(searchTerm);
 
-    // Search logic
-    const searchServices = (term: string): {
-        exact: LicenseType[],
-        titleContains: LicenseType[],
-        descriptionContains: LicenseType[]
-    } => {
-        if (!term) {
-            return {exact: [], titleContains: [], descriptionContains: []};
-        }
-
-        const normalizedTerm = normalizeText(term);
-        const exact: LicenseType[] = [];
-        const titleContains: LicenseType[] = [];
-        const descriptionContains: LicenseType[] = [];
-
-        const exactIds = new Set<string>();
-        const titleIds = new Set<string>();
-
-        mockServiceList2.forEach((service) => {
-            const normalizedTitle = normalizeText(service.title);
-            const normalizedCode = service.code ? normalizeText(service.code) : '';
-            const normalizedDescription = service.description ? normalizeText(service.description) : '';
-
-            if (normalizedTitle === normalizedTerm || normalizedCode === normalizedTerm) {
-                // Exact match on title or code
-                exact.push(service);
-                exactIds.add(service.id);
-            } else if (normalizedTitle.includes(normalizedTerm) && !exactIds.has(service.id)) {
-                // Partial match on title
-                titleContains.push(service);
-                titleIds.add(service.id);
-            }else if (normalizedDescription.includes(normalizedTerm) && !exactIds.has(service.id) && !titleIds.has(service.id)) {
-            // Partial match on description
-                descriptionContains.push(service);
-            }
-        });
-
-        return {exact, titleContains, descriptionContains};
-    };
-
-    const results = searchServices(searchTerm);
-
-    if (!searchTerm) {
-        return (
-            <div className="container mx-auto p-4">
-                <h1 className="text-2xl font-bold mb-4">جستجوی خدمات</h1>
-                <p>لطفاً عبارت مورد نظر خود را در نوار آدرس وارد کنید (پارامتر s).</p>
-            </div>
-        );
-    }
 
     return (
         <div className="container mx-auto p-4">
