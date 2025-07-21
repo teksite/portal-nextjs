@@ -3,7 +3,7 @@ export function env(key :string , defaultValue :string|null =null ):string|null{
 }
 
 
-export function normalizeText(text?: string):string {
+export function normalizeText(text?: string|null):string {
     if (!text) return '';
     return text
         .replace(/[\u200B-\u200D\uFEFF]/g, '') // Remove zero-width chars

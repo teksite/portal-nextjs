@@ -66,8 +66,11 @@ export default function SearchService() {
     const suggestionList = result?.map((suggestion: titleSearchItemType) => (
         <li key={suggestion.id}>
             <Link href={suggestion.slug} className="py-3 block">
-                <span className="text-zinc-950 font-bold block">{suggestion.title}</span>
-                <span className="text-zinc-600 text-sm block">{suggestion.serviceGroupCaption}</span>
+                <span
+                    className="text-zinc-600 block"
+                    dangerouslySetInnerHTML={{ __html: suggestion.highlightedTitle || suggestion.title }}
+                />
+                <span className="text-zinc-600 text-sm block">({suggestion.serviceGroupCaption})</span>
             </Link>
         </li>
     ));

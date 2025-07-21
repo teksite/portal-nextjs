@@ -10,7 +10,7 @@ const config: StorybookConfig = {
         "@storybook/addon-docs",
         "@storybook/addon-a11y",
         "@storybook/addon-vitest",
-        "storybook-rtl-addon"
+        // "storybook-rtl-addon"
     ],
     "framework": {
         "name": "@storybook/nextjs-vite",
