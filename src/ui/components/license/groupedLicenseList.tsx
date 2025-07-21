@@ -40,12 +40,11 @@ export default async function GroupedLicensesListWrapper({search}: { search?: se
 
 	try {
 		const licenses: LicenseType[] = await getServices() ?? [];
-
 		if (!licenses.length) {
 			return <p className="text-center text-sm font-semibold">موردی ثبت نشده‌است</p>
 		}
 
-		const groupedLicenses = groupingAndFilteringLicenses(licensess, search)
+		const groupedLicenses = groupingAndFilteringLicenses(licenses, search)
 
 		return Object.entries(groupedLicenses).map(([name, items]) => {
 			return (

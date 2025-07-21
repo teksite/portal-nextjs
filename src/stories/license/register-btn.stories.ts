@@ -2,8 +2,6 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import {RegisterBtn} from "@/ui/components/license/registerBtn";
 import {mockServiceList1} from "@/mock";
 
-
-
 const meta = {
     title: "License/RegisterButton",
     component: RegisterBtn,

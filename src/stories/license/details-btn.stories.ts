@@ -17,6 +17,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Test: Story = {
     args: {
-        data: mockServiceList1[0],
+        license: mockServiceList1[0],
     },
 };
