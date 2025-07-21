@@ -1,4 +1,4 @@
-export interface ServiceType {
+export interface LicenseType {
 	id: string;
 	slug: string;
 	title: string;
@@ -7,8 +7,9 @@ export interface ServiceType {
 	serviceGroupCaption?: string;
 	avgTime?: string;
 	cost?: boolean;
-	description?: string;
-	electronics?: string;
+	description?: string|null;
+	electronics?: number;
 	needPresence?: boolean;
-	serviceTime?: string;
+	serviceTime?: string|null;
+	icon?:string;
 }

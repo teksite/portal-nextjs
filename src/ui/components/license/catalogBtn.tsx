@@ -9,17 +9,17 @@ import {
 } from "@headlessui/react";
 import { BookOpenIcon } from "@heroicons/react/16/solid";
 
-import { ServiceType } from "@/models/serviceModel";
 import { SolidLink } from "@/ui/components/Links";
+import {LicenseType} from "@/models/licenseModel";
 
-function TableWrapper(service: ServiceType) {
+function TableWrapper(license: LicenseType) {
 	const data = {
-		"کد خدمت": service.code,
-		"گروه خدمت": service.serviceGroupCaption,
-		"هزینه خدمت": service.code ? "دارد" : "ندارد",
-		"نحوه ارائه خدمت": service.electronics ? "الکتورنیکی" : "حضوری",
-		"مراجعه حضوری": service.needPresence ? "دارد" : "ندارد",
-		"متوسط زمان اخذ خدمت": service.avgTime,
+		"کد خدمت": license.code,
+		"گروه خدمت": license.serviceGroupCaption,
+		"هزینه خدمت": license.cost ? "دارد" : "ندارد",
+		"نحوه ارائه خدمت": license.electronics ? "الکتورنیکی" : "حضوری",
+		"مراجعه حضوری": license.needPresence ? "دارد" : "ندارد",
+		"متوسط زمان اخذ خدمت": license.avgTime,
 	};
 
 	return (
@@ -40,16 +40,16 @@ function TableWrapper(service: ServiceType) {
 	);
 }
 
-export default function CatalogBtn({
-	certificate,
+export function CatalogBtn({
+	license,
 }: {
-	certificate: ServiceType;
+	license: LicenseType;
 }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const handleCatalogClick = () => {
 		setIsOpen(true);
 	};
-	const tableContent = TableWrapper(certificate);
+	const tableContent = TableWrapper(license);
 
 	return (
 		<>
@@ -71,7 +71,7 @@ export default function CatalogBtn({
 							<div className="p-12">
 								<div className="flex items-center justify-between mb-6">
 									<DialogTitle className="font-bold !mb-0">
-										{certificate?.title}
+										{license?.title}
 									</DialogTitle>
 									<SolidLink
 										color="green"
@@ -83,7 +83,7 @@ export default function CatalogBtn({
 									</SolidLink>
 								</div>
 								<Description className="text-sm">
-									{certificate?.description}
+									{license?.description}
 								</Description>
 
 								{tableContent}

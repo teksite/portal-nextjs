@@ -7,7 +7,7 @@ export default function Header() {
 	const appName = env("APP_NAME");
 
 	return (
-		<header className="w-full bg-blue-950 px-3 py-1 sticky top-0 z-10 flex justify-between items-center">
+		<header className="w-full bg-blue-950 px-3 py-1 sticky top-0 z-20 flex justify-between items-center">
 			<figure className="flex items-center gap-3 justify-start text-zinc-50">
 				<Image
 					src="/assets/images/logo/logo.png"

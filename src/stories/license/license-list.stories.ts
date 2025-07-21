@@ -1,19 +1,17 @@
-import { fn } from "storybook/test";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import {LicenseList} from "@/ui/components/license/licenseList";
+import {mockServiceList1} from "@/mock";
 
-import { mockServiceList1 } from "@/app/mock";
-
-import { CertificateList } from "./certificatesList";
 
 const meta = {
-	title: "Cards/Certificate List",
-	component: CertificateList,
+	title: "License/CardWithIcon/License List",
+	component: LicenseList,
 	parameters: {
 		layout: "centered",
 	},
 	// tags: ["autodocs"],
 	args: {},
-} satisfies Meta<typeof CertificateList>;
+} satisfies Meta<typeof LicenseList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
