@@ -1,0 +1,40 @@
+@font-face {
+	font-family: "iransansxv";
+	src: url("/IRANSansXV.woff") format("woff-variations"),
+		url("/IRANSansXV.woff") format("woff");
+	/* for the other supporting browsers */
+	font-weight: 100 1000;
+	font-display: fallback;
+}
+
+/*
+نمایش بصورت اعداد فارسی
+*/
+.brs-farsi-num {
+	-moz-font-feature-settings: "ss01";
+	-webkit-font-feature-settings: "ss01";
+	font-feature-settings: "ss01";
+}
+
+/*
+اعداد بصورت منو اسپیس تایپ می‌شود یعنی عرض همه اعداد برابر است و مناسب استفاده در لیست‌ها و جداول اطلاعات.
+*/
+.brs-farsi-num-mono {
+	-moz-font-feature-settings: "ss03";
+	-webkit-font-feature-settings: "ss03";
+	font-feature-settings: "ss03";
+}
+
+/*
+اعداد کمی پایین‌تر از خط کرسی قرار می‌گیرد تا تراز عمودی در باکس‌های طراحی وسط باشد.
+*/
+.brs-farsi-num-align {
+	-moz-font-feature-settings: "ss01", "ss04";
+	-webkit-font-feature-settings: "ss01", "ss04";
+	font-feature-settings: "ss01", "ss04";
+}
+.brs-farsi-num-mono-align {
+	-moz-font-feature-settings: "ss03", "ss04";
+	-webkit-font-feature-settings: "ss03", "ss04";
+	font-feature-settings: "ss03", "ss04";
+}

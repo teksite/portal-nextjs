@@ -1,2 +1,5 @@
-export * from "./search-input";
-export * from "./search-input2";
+export {
+	type SearchInputSelectionValue,
+	type SearchInputProps,
+	SearchInput,
+} from "./search-input";

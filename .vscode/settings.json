@@ -81,7 +81,7 @@
 		"**/vitest.workspace.ts": false,
 		"dist": false
 	},
-	"workbench.colorTheme": "Default Dark+",
+	"workbench.colorTheme": "Default Dark Modern",
 	"explorerExclude.backup": {},
 	"cSpell.customDictionaries": {},
 	"cSpell.ignoreWords": ["barsa"],
@@ -118,5 +118,6 @@
 	],
 	"deepscan.enable": true,
 	"editor.formatOnSave": true,
-	"eslint.useFlatConfig": true
+	"eslint.useFlatConfig": true,
+	"cSpell.words": ["iransansxv", "Segoe", "Tahoma"]
 }

@@ -1,6 +1,6 @@
 import { getRecentServices } from "@/http/controller/servicesController";
 import { LicenseType } from "@/models";
-import CertificateBox from "@/ui/components/certificates/certificateBox";
+import CertificateBox from "@/ui/components/certificate/certificateBox";
 
 export async function CertificatesListWrapper() {
 	try {

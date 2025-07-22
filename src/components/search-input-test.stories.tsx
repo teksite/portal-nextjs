@@ -6,9 +6,7 @@ import { mockAllServices, mockSampleServices } from "@/app/mock";
 const meta = {
 	title: "SearchInput",
 	component: SearchInputTest,
-	parameters: {
-		layout: "centered",
-	},
+
 	argTypes: {
 		size: {
 			control: { type: "radio" }, // or 'select'

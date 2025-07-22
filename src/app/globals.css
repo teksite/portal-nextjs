@@ -1,9 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./font-face.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
 	direction: rtl;
+	font-family: iransansxv, "Segoe UI", Tahoma;
 }
 
 @layer utilities {
