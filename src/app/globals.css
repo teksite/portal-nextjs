@@ -34,6 +34,13 @@
 	.input-style {
 		@apply block w-full rounded-lg border border-zinc-300 dark:border-zinc-600 py-2 pe-10 ps-2 text-sm outline-2 placeholder:text-gray-600 dark:placeholder:text-gray-400 focus:border-blue-800 outline-none dark:text-zinc-50;
 	}
+	h4,
+	.h4 {
+		@apply  font-bold text-zinc-900 mb-2 dark:text-zinc-300;
+	}
+	.input-style {
+		@apply block w-full rounded-lg border border-zinc-300 dark:border-zinc-600 py-2 pe-10 ps-2 text-sm outline-2 placeholder:text-gray-600 dark:placeholder:text-gray-400 focus:border-blue-800 outline-none dark:text-zinc-50;
+	}
 	.label-style {
 		@apply text-sm font-bold mb-1 block;
 	}
