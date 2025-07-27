@@ -177,3 +177,14 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+.trapezoid-after::after {
+	content: '';
+	position: absolute;
+	left: -24px;
+	top: 0;
+	height: 100%;
+	width: 25px;
+	background-color: inherit;
+	clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+}

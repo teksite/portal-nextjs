@@ -15,7 +15,7 @@ interface ListColoredProps {
   column: 1 | 2 | 3 | 4;
 }
 
-export function Simple({data, column}: ListColoredProps) {
+export function Simple2({data, column}: ListColoredProps) {
   const colCount = Number(column);
   const gridClass = {
     1: "grid-cols-1",
@@ -31,21 +31,32 @@ export function Simple({data, column}: ListColoredProps) {
       title: "Default",
     };
 
-    const {fill} = colorMap[groupInfo.color] || {
+    const {bg, fill, border ,text} = colorMap[groupInfo.color] || {
+      bg: "bg-gray-500",
       fill: "fill-gray-800",
+      border: "border-gray-200",
+      text: "text",
     };
-
     return (
       <motion.div
         layoutId={`card-${id}`}
         onClick={() => onExpand(id)}
         className="border border-zinc-300 shadow-xl rounded-xl overflow-hidden cursor-pointer hover:bg-slate-50 hover:shadow-sm duration-150 transition-all ease-linear "
       >
-        <div className="flex items-center gap-3 p-3">
-          <LicenseIcon
-            name={groupInfo.icon ?? "Sayer"}
-            className={`h-full ${fill}`}/>
-          <div>
+        <div className="flex flex-col gap-3 justify-center py-3">
+          <div className={`flex items-center gap-3 py-0.5 px-3 ${bg} ms-0 me-auto md:w-1/2 trapezoid-after relative`}>
+            <LicenseIcon
+              name={groupInfo.icon ?? "Sayer"} size={24}
+              className={`${fill}`}/>
+            <motion.span
+              id={`${id}-group`}
+              layoutId={`group-${id}`}
+              className={`text-sm ${text}`}
+            >
+              {license.serviceGroupCaption}
+            </motion.span>
+          </div>
+          <div className='px-3 py-1'>
             <motion.h4
               id={`${id}-title`}
               layoutId={`title-${id}`}
@@ -53,13 +64,7 @@ export function Simple({data, column}: ListColoredProps) {
             >
               {license.title}
             </motion.h4>
-            <motion.span
-              id={`${id}-group`}
-              layoutId={`group-${id}`}
-              className={`text-sm text`}
-            >
-              {license.serviceGroupCaption}
-            </motion.span>
+
           </div>
         </div>
       </motion.div>
@@ -77,14 +82,10 @@ export function Simple({data, column}: ListColoredProps) {
   }, {} as Record<string, LicenseType[]>);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-12">
       {Object.entries(groupedData).map(([caption, licenses]) => (
         <div key={caption}>
-          <div className="flex items-center gap-3 mb-3">
-            <h2 className="text-2xl font-semibold mb-0 text-sart min-w-fit w-fit">{caption}</h2>
 
-            <hr className="hr w-full"/>
-          </div>
           <LicenseList
             data={licenses}
             className={`grid gap-6 ${gridClass}`}

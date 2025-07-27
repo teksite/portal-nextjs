@@ -9,7 +9,6 @@ import {BadgeCost} from "@/ui/components/certificate/list/popover/badge-cost";
 import {BadgeElecrtonics} from "@/ui/components/certificate/list/popover/badge-elecrtonics";
 import {colorMap} from "@/ui/components/certificate/list/shared";
 
-
 export const Simple = ({id, data}: { id: string; data: LicenseType }) => {
   const groupInfo = getServiceGroupInfo(data) || {
     icon: "Sayer",
@@ -17,7 +16,7 @@ export const Simple = ({id, data}: { id: string; data: LicenseType }) => {
     title: "Default",
   };
 
-  const {bg, fill, border} = colorMap[groupInfo?.color] || {
+  const {bg, fill} = colorMap[groupInfo?.color] || {
     bg: "bg-gray-500",
     fill: "fill-gray-800",
     border: "border-gray-200",
