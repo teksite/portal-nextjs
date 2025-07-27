@@ -27,3 +27,15 @@ export const test1: Story = {
 		);
 	},
 };
+
+export const test3: Story = {
+	name: "Single Icon",
+	render: ({ name: _, ...args }) => {
+		return (
+			<div className="flex gap-3 flex-wrap align-middle">
+				<LicenseIcon name="Bazi" {...args} />
+				<LicenseIcon name="Film" {...args} />
+			</div>
+		);
+	},
+};

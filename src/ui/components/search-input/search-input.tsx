@@ -1,3 +1,4 @@
+"use client";
 import React, { useId, useRef, useState } from "react";
 
 import { cva } from "class-variance-authority";
