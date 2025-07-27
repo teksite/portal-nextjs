@@ -60,13 +60,6 @@ export const test2: Story = {
 	},
 };
 
-export const test3: Story = {
-	name: "Item Expanded",
-	render: (args) => {
-		return <ItemExpandedSimple id={licenseLong.id} data={licenseLong} />;
-	},
-};
-
 export const test4: Story = {
 	name: "Item Expanded With Badge",
 	render: (args) => {

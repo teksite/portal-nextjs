@@ -11,6 +11,11 @@
     <option name="transferred" value="true" />
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.4" />
+  <component name="PhpStan">
+    <PhpStan_settings>
+      <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="5dfd27e1-1038-4d2a-a072-85c1e8b1d85f" timeout="60000" />
+    </PhpStan_settings>
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

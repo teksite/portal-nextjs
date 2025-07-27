@@ -13,7 +13,7 @@ import {colorMap} from "@/ui/components/certificate/list/shared";
 
 export const WithBadge3 = ({ id, data }: { id: string; data: LicenseType }) => {
     const groupInfo = getServiceGroupInfo(data) || {
-        icon: "DefaultIcon",
+        icon: "Sayer",
         color: "gray",
         title: "Default",
     };
@@ -27,8 +27,7 @@ export const WithBadge3 = ({ id, data }: { id: string; data: LicenseType }) => {
     return (
         <motion.div
             layoutId={`card-${id}`}
-            className={`w-full max-w-[500px] h-fit flex flex-col x-box p-0 overflow-hidden ${border}`}
-        >
+            className="w-full max-w-[500px] h-fit flex flex-col x-box p-0 overflow-hidden" >
             <div className="p-6">
                 <div className="flex items-center gap-3 justify-start">
                     <motion.div layoutId={`image-${id}`}>
@@ -52,7 +51,7 @@ export const WithBadge3 = ({ id, data }: { id: string; data: LicenseType }) => {
                 </div>
 
                 <hr className="my-3 border-zinc-300 dark:border-zinc-600" />
-                <div className="mb-3 max-h-[1500px] h-[150px]">
+                <div className="mb-3 max-h-[120px] h-[120px] overflow-y-auto">
                     <div className="text-sm">کد خدمت: {data.code}</div>
                     <p id={`${id}-description`} className="text-sm">
                         {data.description}

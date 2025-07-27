@@ -3,13 +3,13 @@ import { ListColored } from "@/ui/components/certificate/list/items/list-colored
 import { mockAllServices } from "@/app/mock";
 import { ListSimple } from "@/ui/components/certificate/list/items/list-simple";
 import { ListUp } from "@/ui/components/certificate/list/items/list-up";
+import {Simple} from "@/ui/components/certificate/list/items/simple";
+import {ListSemiColored} from "@/ui/components/certificate/list/items/list-semi-colored";
 
-// Define the type for args to include column
 interface ListArgs {
     column: number;
 }
 
-// Default render function
 const defaultRender = ({ component: Component, data, column }: { component: React.ComponentType<any>, data: typeof mockAllServices, column: number }) => {
     return <Component data={data} column={column} />;
 };
@@ -28,7 +28,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const test1: Story = {
-    name: "Colored",
+    name: "Semi Colored",
+    args: {
+        component: ListSemiColored,
+        data: mockAllServices,
+        column: 3,
+    },
+    render: ({ component, data, column }) => {
+        return <ListSemiColored data={data} column={column} />;
+    },
+};
+export const test2: Story = {
+    name: "Full Colored",
     args: {
         component: ListColored,
         data: mockAllServices,
@@ -39,7 +50,7 @@ export const test1: Story = {
     },
 };
 
-export const test2: Story = {
+export const test3: Story = {
     name: "Simple",
     args: {
         component: ListSimple,
@@ -48,11 +59,21 @@ export const test2: Story = {
     },
 };
 
-export const test3: Story = {
+export const test4: Story = {
     name: "Simple Up",
     args: {
         component: ListUp,
         data: mockAllServices,
         column: 3,
     },
+
+};
+export const test5: Story = {
+    name: "Simple",
+    args: {
+        component: Simple,
+        data: mockAllServices,
+        column: 3,
+    },
+
 };

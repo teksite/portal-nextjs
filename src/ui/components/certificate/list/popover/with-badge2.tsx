@@ -7,11 +7,24 @@ import {BadgeCost} from "@/ui/components/certificate/list/popover/badge-cost";
 import {BadgeElecrtonics} from "@/ui/components/certificate/list/popover/badge-elecrtonics";
 import {LicenseIcon} from "@/ui/components/certificate/icons";
 import {getServiceGroupInfo} from "@/http/controller/service-groups-controller";
+import {colorMap} from "@/ui/components/certificate/list/shared";
 
 export const WithBadge2 = ({id, data,}: {
     id: string;
     data: LicenseType;
 }) => {
+    const groupInfo = getServiceGroupInfo(data) || {
+        icon: "Sayer",
+        color: "gray",
+        title: "Default",
+    };
+
+    const { bg, fill, border } = colorMap[groupInfo?.color] || {
+        bg: "bg-gray-500",
+        fill: "fill-gray-800",
+        border: "border-gray-200",
+    };
+
     return (
         <motion.div
             layoutId={`card-${id}`}
@@ -25,13 +38,14 @@ export const WithBadge2 = ({id, data,}: {
                     {data.title}
                 </motion.h3>
                 <hr className="my-3 border-zinc-300 dark:border-zinc-600"/>
-                <div className="mb-3 max-h-[1500px] h-[150px]">
+                <div className="mb-3 max-h-[120px] h-[120px] overflow-y-auto">
                     <div className="flex items-center gap-3 justify-start">
                         <motion.div layoutId={`image-${id}`}>
                             <div className="flex flex-col gap-1 items-center">
-                                <LicenseIcon name={getServiceGroupInfo(data).icon ??  'Sayer'} style={{
-                                    fill : getServiceGroupInfo(data)?.color ?? 'gray',
-                                }} />
+                                <LicenseIcon
+                                    name={groupInfo.icon}
+                                    className={`p-1  size-12 rounded`}
+                                />
                             </div>
                         </motion.div>
                         <motion.span className="text-sm" layoutId={`caption-${id}`}>

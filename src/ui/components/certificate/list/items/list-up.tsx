@@ -25,7 +25,7 @@ export function ListUp({data, column}: ListColoredProps) {
 
     const CollapsedComponent = ({id, data: license, onExpand}: GenericItemCollapsedProps) => {
         const groupInfo = getServiceGroupInfo(license) || {
-            icon: "DefaultIcon",
+            icon: "Sayer",
             color: "gray",
             title: "Default",
         };
@@ -41,7 +41,7 @@ export function ListUp({data, column}: ListColoredProps) {
             <motion.div
                 layoutId={`card-${id}`}
                 onClick={() => onExpand(id)}
-                className={`border shadow-lg rounded-xl overflow-hidden cursor-pointer pt-3 ${border}`}
+                className={`border shadow-xl rounded-xl overflow-hidden cursor-pointer hover:bg-slate-50  hover:shadow-sm duration-150 transition-all ease-linear pt-3 ${border}`}
             >
                 <div className="">
                     <LicenseIcon
