@@ -36,31 +36,28 @@ export const Simple4 = ({id, data,}: {
              <motion.div layoutId={`image-${id}`} className="">
                <LicenseIcon
                  name={groupInfo.icon}
-                 className={` size-8 rounded`}
+                 className={`size-6 rounded`}
                />
              </motion.div>
              <motion.span
                id={`${id}-title`}
                layoutId={`title-${id}`}
-               className="font-semibold text-lg ${text} !mb-0">
+               className={`font-semibold ${text} !mb-0`}>
                {data.title}
              </motion.span>
            </div>
        </div>
        <div className="px-6 pb-b">
-         <hr className="my-3 border-zinc-300 dark:border-zinc-600"/>
          <div className="mb-3 max-h-[120px] h-[120px] overflow-y-auto">
-           <div className="flex items-center gap-3 justify-start">
-
-             <motion.span className="text-sm" layoutId={`caption-${id}`}>
-               {data.serviceGroupCaption}
-             </motion.span>
-           </div>
-           <div className="text-sm">کد خدمت: {data.code}</div>
-
            <p id={`${id}-description`} className="text-sm">
              {data.description}
            </p>
+           <div className="flex items-center gap-3 justify-start">
+             <motion.span className="text-sm" layoutId={`caption-${id}`}>
+               گروه: {data.serviceGroupCaption}
+             </motion.span>
+           </div>
+           <div className="text-sm">کد خدمت: {data.code}</div>
          </div>
          {data.avgTime && (
            <p>
@@ -68,6 +65,7 @@ export const Simple4 = ({id, data,}: {
              <span className="font-bold text-sm">{data.avgTime}</span>
            </p>
          )}
+
          <ul className="my-3 flex gap-3 flex-wrap items-center">
            <li>
              <BadgePresence needPresent={data.needPresence ?? false}/>

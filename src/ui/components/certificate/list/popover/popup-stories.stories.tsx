@@ -9,6 +9,7 @@ import { Simple } from "@/ui/components/certificate/list/popover/simple";
 import { Simple2 } from "@/ui/components/certificate/list/popover/simple2";
 import { Simple3 } from "@/ui/components/certificate/list/popover/simple3";
 import { Simple4 } from "@/ui/components/certificate/list/popover/simple4";
+import { Simple5 } from "@/ui/components/certificate/list/popover/simple5";
 
 const meta = {
 	title: "License List/Popover",
@@ -108,5 +109,12 @@ export const test9: Story = {
 	name: "Simple4",
 	render: (args) => {
 		return <Simple4 data={licenseLong} id={licenseLong.id} />;
+	},
+};
+
+export const test10: Story = {
+	name: "Simple5",
+	render: (args) => {
+		return <Simple5 data={licenseLong} id={licenseLong.id} />;
 	},
 };
