@@ -9,7 +9,7 @@ import {BadgeCost} from "@/ui/components/certificate/list/popover/badge-cost";
 import {BadgeElecrtonics} from "@/ui/components/certificate/list/popover/badge-elecrtonics";
 import {colorMap} from "@/ui/components/certificate/list/shared";
 
-export const Simple = ({id, data}: { id: string; data: LicenseType }) => {
+export const Simple2 = ({id, data}: { id: string; data: LicenseType }) => {
   const groupInfo = getServiceGroupInfo(data) || {
     icon: "Sayer",
     color: "gray",
@@ -25,7 +25,7 @@ export const Simple = ({id, data}: { id: string; data: LicenseType }) => {
   return (
     <motion.div
       layoutId={`card-${id}`}
-      className="w-full max-w-[500px] h-fit flex flex-col x-box p-0 overflow-hidden">
+      className="w-full max-w-[500px] h-fit flex flex-col border border-zinc-300 rounded-xl p-1 pb-3 overflow-hidden">
       <div className="p-6">
         <div className="">
           <motion.div layoutId={`image-${id}`} className="">
@@ -44,7 +44,7 @@ export const Simple = ({id, data}: { id: string; data: LicenseType }) => {
           </div>
         </div>
 
-        <div className="mb-3 max-h-[120px] h-[120px] overflow-y-auto p-3 shadow-inner">
+        <div className="mb-3 max-h-[120px] h-[120px] overflow-y-auto p-3 shadow-inner border border-zinc-100 rounded-lg">
 
           <p id={`${id}-description`} className="text-sm">
             {data.description}
@@ -76,19 +76,23 @@ export const Simple = ({id, data}: { id: string; data: LicenseType }) => {
 
 
       </div>
-      <div className="flex border-t border-zinc-300 divide-x divide-zinc-300 dark:border-zinc-600 dark:divide-zinc-600">
-        <Link
-          href={`/details/${id}`}
-          className="w-full text-center block p-3 hover:bg-zinc-300 dark:hover:bg-zinc-600 text-sm"
-        >
-          جزیئات بیشتر
-        </Link>
-        <Link
-          href={`/request/${id}`}
-          className="w-full text-center block p-3 hover:bg-zinc-300 dark:hover:bg-zinc-600 text-sm"
-        >
-          ثبت درخواست
-        </Link>
+      <div className="flex items-center justify-center">
+       <div className="group">
+         <Link
+           href={`/details/${id}`}
+           className="group-focus-within:scale-90 w-36 text-sm py-2 px-2 rounded-s-xl bg-yellow-600 hover:bg-yellow-900 text-white inline-block text-center duration-75 ease-linear transition-all"
+         >
+           جزیئات بیشتر
+         </Link>
+       </div>
+       <div className="group">
+         <Link
+           href={`/request/${id}`}
+           className="group-focus-within:scale-90 w-36 text-sm py-2 px-2 rounded-e-xl  bg-cyan-600 hover:bg-cyan-900 text-white inline-block text-center duration-75 ease-linear transition-all"
+         >
+           ثبت درخواست
+         </Link>
+       </div>
       </div>
     </motion.div>
   );

@@ -7,6 +7,7 @@ import {Simple} from "@/ui/components/certificate/list/items/simple";
 import {ListSemiColored} from "@/ui/components/certificate/list/items/list-semi-colored";
 import {Simple2} from "@/ui/components/certificate/list/items/simple-2";
 import React from "react";
+import {Simple3} from "@/ui/components/certificate/list/items/simple-3";
 
 interface ListArgs {
     column: number;
@@ -82,6 +83,15 @@ export const test6: Story = {
     name: "Simple2",
     args: {
         component: Simple2,
+        data: mockAllServices,
+        column: 3,
+    },
+};
+
+export const test7: Story = {
+    name: "Fiori",
+    args: {
+        component: Simple3,
         data: mockAllServices,
         column: 3,
     },

@@ -33,7 +33,6 @@ export function ListUp({data, column}: ListColoredProps) {
         const {bg, fill, border ,text} = colorMap[groupInfo.color] || {
             bg: "bg-gray-500",
             fill: "fill-gray-800",
-            border: "border-gray-200",
             border: "text-gray-800",
         };
 

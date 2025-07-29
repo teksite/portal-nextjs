@@ -9,7 +9,7 @@ import {BadgeCost} from "@/ui/components/certificate/list/popover/badge-cost";
 import {BadgeElecrtonics} from "@/ui/components/certificate/list/popover/badge-elecrtonics";
 import {colorMap} from "@/ui/components/certificate/list/shared";
 
-export const Simple = ({id, data}: { id: string; data: LicenseType }) => {
+export const Simple3 = ({id, data}: { id: string; data: LicenseType }) => {
   const groupInfo = getServiceGroupInfo(data) || {
     icon: "Sayer",
     color: "gray",
@@ -25,26 +25,35 @@ export const Simple = ({id, data}: { id: string; data: LicenseType }) => {
   return (
     <motion.div
       layoutId={`card-${id}`}
-      className="w-full max-w-[500px] h-fit flex flex-col x-box p-0 overflow-hidden">
+      className="w-full max-w-[500px] h-fit flex flex-col border border-zinc-300 rounded-xl p-1 pb-3 overflow-hidden">
       <div className="p-6">
-        <div className="">
-          <motion.div layoutId={`image-${id}`} className="">
-            <LicenseIcon
-              name={groupInfo.icon ?? "Sayer"}
-              className={`p-1 ${bg} ${fill} size-12 rounded-full mx-auto mb-3`}
-            />
-          </motion.div>
-          <div>
-            <motion.h2
-              id={`${id}-title`}
-              layoutId={`title-${id}`}
-              className="text-center font-semibold">
-              {data.title}
-            </motion.h2>
-          </div>
+        <div className="flex items-center justify-between gap-3">
+         <div className="flex items-center justify-start gap-3 w-fit min-w-fit">
+           <motion.div layoutId={`image-${id}`} className="">
+             <LicenseIcon
+               name={groupInfo.icon ?? "Sayer"}
+               className={`p-1 ${bg} ${fill} size-8 rounded-full mx-auto mb-3`} />
+           </motion.div>
+             <motion.h2
+               id={`${id}-title`}
+               layoutId={`title-${id}`}
+               className="text-center font-semibold mb-0">
+               {data.title}
+             </motion.h2>
+
+         </div>
+
+        <hr className="hr border-dashed w-full"/>
+            <Link
+              href={`/request/${id}`}
+              className="w-fit min-w-fit text-sm py-1 px-2 rounded-xl  bg-green-600 hover:bg-green-900 text-white inline-block text-center duration-75 ease-linear transition-all"
+            >
+              ثبت درخواست
+            </Link>
+
         </div>
 
-        <div className="mb-3 max-h-[120px] h-[120px] overflow-y-auto p-3 shadow-inner">
+        <div className="mb-3 max-h-[120px] h-[120px] overflow-y-auto p-3 shadow-inner border border-zinc-100 rounded-lg">
 
           <p id={`${id}-description`} className="text-sm">
             {data.description}
@@ -72,23 +81,14 @@ export const Simple = ({id, data}: { id: string; data: LicenseType }) => {
                 </li>
               )}
           </ul>
+          <hr className="hr my-6" />
+          <Link
+            href={`/details/${id}`}
+            className="text-blue-900 text-sm font-semibold"
+          >
+            جزیئات بیشتر
+          </Link>
         </div>
-
-
-      </div>
-      <div className="flex border-t border-zinc-300 divide-x divide-zinc-300 dark:border-zinc-600 dark:divide-zinc-600">
-        <Link
-          href={`/details/${id}`}
-          className="w-full text-center block p-3 hover:bg-zinc-300 dark:hover:bg-zinc-600 text-sm"
-        >
-          جزیئات بیشتر
-        </Link>
-        <Link
-          href={`/request/${id}`}
-          className="w-full text-center block p-3 hover:bg-zinc-300 dark:hover:bg-zinc-600 text-sm"
-        >
-          ثبت درخواست
-        </Link>
       </div>
     </motion.div>
   );
