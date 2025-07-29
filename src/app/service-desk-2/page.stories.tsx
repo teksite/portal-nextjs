@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Gradient, GradientBackground } from "./gradient";
-import { Header } from "./header";
+import ServiceDesk2Page from "./page";
 import { Navbar } from "./navbar";
 import { Hero } from "./hero";
 
 const meta = {
-	title: "ServiceDesk2/Header",
-	component: Header,
+	title: "ServiceDesk2/Page",
+	component: ServiceDesk2Page,
 
 	// argTypes: {
 	// 	size: {
@@ -24,36 +24,37 @@ const meta = {
 	// 	type: "noButton",
 	// 	data: mockAllServices,
 	// },
-} satisfies Meta<typeof Header>;
+} satisfies Meta<typeof ServiceDesk2Page>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const test1: Story = {
+export const gradient: Story = {
 	name: "Gradient",
 	render: (args) => {
 		// return <div>1234</div>
 		return <Gradient className="w-64 h-64" {...args} />;
 	},
 };
-export const test2: Story = {
-	name: "Header",
-	render: (args) => {
-		// return <div>1234</div>
-		return <Header />;
-	},
-};
-export const test3: Story = {
+
+export const navbar: Story = {
 	name: "Navbar",
 	render: (args) => {
 		// return <div>1234</div>
 		return <Navbar />;
 	},
 };
-export const test4: Story = {
+export const hero: Story = {
 	name: "Hero",
 	render: (args) => {
 		// return <div>1234</div>
 		return <Hero />;
+	},
+};
+export const page: Story = {
+	name: "Page",
+	render: (args) => {
+		// return <div>1234</div>
+		return <ServiceDesk2Page />;
 	},
 };

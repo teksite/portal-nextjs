@@ -9,7 +9,7 @@ export function normalizeLicensesData(licenseList: LicenseType[]) {
 	licenseList.forEach((item, idx) => {
 		const license = removeFalsyPropsFast(item) as LicenseType;
 		if (!isValid(license)) return;
-
+		license.id = license.slug;
 		licenses[license.id] = license;
 		const { id, groupId } = license;
 

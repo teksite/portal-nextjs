@@ -20,7 +20,7 @@ const links = [
 
 export function Navbar({ banner }: { banner?: React.ReactNode }) {
 	return (
-		<Collapsible className="pt-12 sm:pt-16">
+		<Collapsible className="pt-10 sm:pt-12">
 			<PlusGrid>
 				<PlusGrid.Row className="relative flex justify-between">
 					<div className="relative flex gap-6">
