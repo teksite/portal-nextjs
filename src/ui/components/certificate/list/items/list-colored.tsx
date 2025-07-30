@@ -40,7 +40,7 @@ export function ListColored({data, column}: ListColoredProps) {
             <motion.div
                 layoutId={`card-${id}`}
                 onClick={() => onExpand(id)}
-                className={`border shadow-lg rounded-xl overflow-hidden cursor-pointer hover:bg-slate-50  hover:shadow-sm duration-150 transition-all ease-linear ${border}`}
+                className={`border shadow rounded-xl overflow-hidden cursor-pointer hover:bg-slate-50  hover:shadow-sm duration-150 transition-all ease-linear ${border}`}
             >
                 <div className="flex gap-3 items-stretch h-full">
                     <LicenseIcon

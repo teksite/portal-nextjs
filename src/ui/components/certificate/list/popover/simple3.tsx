@@ -53,7 +53,7 @@ export const Simple3 = ({id, data}: { id: string; data: LicenseType }) => {
 
         </div>
 
-        <div className="mb-3 max-h-[120px] h-[120px] overflow-y-auto p-3 shadow-inner border border-zinc-100 rounded-lg">
+        <div className="mb-3 max-h-[300px] h-[300px] overflow-y-auto p-3 shadow-inner border border-zinc-100 rounded-lg">
 
           <p id={`${id}-description`} className="text-sm">
             {data.description}

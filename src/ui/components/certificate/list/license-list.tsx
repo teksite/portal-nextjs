@@ -16,7 +16,7 @@ export type LicenseListProps = {
 };
 export const LicenseList = ({
 	data,
-	className = "grid gap-6 lg:grid-cols-2",
+	className ,
 	expandedComponent,
 	collapsedComponent,
 	overlayClassName,
@@ -43,7 +43,6 @@ export const LicenseList = ({
 			<AnimatePresence>
 				{activeId && (
 					<motion.div
-						// ref={ref}
 						onClick={closeHandler}
 						className={cn(
 							"fixed inset-0 grid place-items-center z-[100] bg-zinc-950/50 backdrop-blur-sm",
@@ -58,11 +57,11 @@ export const LicenseList = ({
 						aria-labelledby={`${activeId}-title`}
 						aria-describedby={`${activeId}-description`}
 					>
-						<ExpandedComponent id={activeId} data={dataDict[activeId]} />
+							<ExpandedComponent id={activeId} data={dataDict[activeId]}  />
 					</motion.div>
 				)}
 			</AnimatePresence>
-			<div className={cn("p-4", className)}>
+			<div className={cn("p-3", className)}>
 				{data.length === 0 ? (
 					<p className="text-center text-neutral-600 dark:text-neutral-400">
 						هیچ کارتی برای نمایش وجود ندارد.
@@ -71,6 +70,7 @@ export const LicenseList = ({
 					data.map((card) => (
 						<CollapsedComponent
 							id={card.id}
+							key={card.id}
 							data={card}
 							onExpand={handleExpand}
 						/>

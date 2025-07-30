@@ -13,15 +13,16 @@ import {WithBadge2} from "@/ui/components/certificate/list/popover/with-badge2";
 interface ListColoredProps {
   data: LicenseType[];
   column: 1 | 2 | 3 | 4;
+
 }
 
-export function Simple({data, column}: ListColoredProps) {
+export function Simple4({data, column}: ListColoredProps) {
   const colCount = Number(column);
   const gridClass = {
     1: "grid-cols-1",
-    2: "lg:grid-cols-2 xl:grid-cols-2",
-    3: "lg:grid-cols-2 xl:grid-cols-3",
-    4: "lg:grid-cols-2 xl:grid-cols-4",
+    2: "sm:grid-cols-2 xl:grid-cols-2",
+    3: "sm:grid-cols-2 xl:grid-cols-3",
+    4: "sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4",
   }[colCount] || "grid-cols-1";
 
   const CollapsedComponent = ({id, data: license, onExpand}: GenericItemCollapsedProps) => {
@@ -44,7 +45,7 @@ export function Simple({data, column}: ListColoredProps) {
         <div className="flex items-center gap-3 p-3">
           <LicenseIcon
             name={groupInfo.icon ?? "Sayer"}
-            className={`size-8 ${fill}`}/>
+            className={`h-full ${fill}`}/>
           <div>
             <motion.h4
               id={`${id}-title`}

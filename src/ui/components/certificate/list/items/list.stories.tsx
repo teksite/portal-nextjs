@@ -8,6 +8,7 @@ import {ListSemiColored} from "@/ui/components/certificate/list/items/list-semi-
 import {Simple2} from "@/ui/components/certificate/list/items/simple-2";
 import React from "react";
 import {Simple3} from "@/ui/components/certificate/list/items/simple-3";
+import {ListLicense} from "@/ui/components/certificate/list/items/license-list";
 
 interface ListArgs {
     column: number;
@@ -54,7 +55,7 @@ export const test2: Story = {
 };
 
 export const test3: Story = {
-    name: "Simple",
+    name: "Simple22",
     args: {
         component: ListSimple,
         data: mockAllServices,
@@ -96,3 +97,14 @@ export const test7: Story = {
         column: 3,
     },
 };
+
+
+export const test8: Story = {
+    name: "Final List",
+    args: {
+        component: ListLicense,
+        data: mockAllServices,
+        column: 3,
+    },
+};
+
