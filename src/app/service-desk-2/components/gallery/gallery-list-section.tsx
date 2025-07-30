@@ -21,6 +21,7 @@ export function GalleryListSection({
 
 function Filtered({ query }: { query: string }) {
 	const { groups, licenses } = useNormalizedData();
+
 	const filteredList = useMemo(
 		() => filterLogic(Object.values(licenses), query),
 		[licenses, query]
@@ -49,9 +50,9 @@ function Categorized() {
 	const { groupIdList } = useNormalizedData();
 	return (
 		<ul>
-			{groupIdList.map((id) => {
-				return <Group id={id} />;
-			})}
+			{groupIdList.map((id) => (
+				<Group id={id} />
+			))}
 		</ul>
 	);
 }

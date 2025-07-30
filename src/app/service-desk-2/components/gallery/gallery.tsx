@@ -16,9 +16,10 @@ export function Gallery({ className }: GalleryProps) {
 	return (
 		<div className={className}>
 			<GallerySearchSection
-				onSelectChange={(selection) => {
-					setSelection(selection);
-				}}
+				onSelectChange={setSelection}
+				// onSelectChange={(selection) => {
+				// 	setSelection(selection);
+				// }}
 			/>
 			<GalleryListSection query={selection?.selectedQuery} />
 		</div>
