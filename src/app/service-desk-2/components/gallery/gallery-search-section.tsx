@@ -7,11 +7,9 @@ import { useNormalizedData } from "./contexts";
 
 export type GallerySearchSectionProps = {
 	className?: string;
-	// data: LicensesNormalized;
 	onSelectChange: SearchInputProps<LicenseType>["onSelectChange"];
 };
 export function GallerySearchSection({
-	// data: { licenses },
 	className,
 	onSelectChange,
 }: GallerySearchSectionProps) {

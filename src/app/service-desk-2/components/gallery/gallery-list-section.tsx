@@ -5,13 +5,11 @@ import { Group } from "./group";
 import { useNormalizedData } from "./contexts";
 
 export type GalleryListSectionProps = {
-	// data: LicensesNormalized;
 	query?: string;
 	className?: string;
 };
 export function GalleryListSection({
 	className,
-	// data,
 	query,
 }: GalleryListSectionProps) {
 	return (
