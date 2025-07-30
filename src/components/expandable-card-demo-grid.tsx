@@ -37,7 +37,7 @@ export function ExpandableCardDemoGrid() {
 				{active && typeof active === "object" ? (
 					<div className="fixed inset-0  grid place-items-center z-[100]">
 						<motion.button
-							key={`button-${active.title}-${id}`}
+
 							layout
 							initial={{
 								opacity: 0,

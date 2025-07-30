@@ -48,7 +48,6 @@ export const LicenseList = ({
 							"fixed inset-0 grid place-items-center z-[100] bg-zinc-950/50 backdrop-blur-sm",
 							overlayClassName
 						)}
-						dir="rtl"
 						initial="hidden"
 						animate="visible"
 						exit="exit"
@@ -57,10 +56,20 @@ export const LicenseList = ({
 						aria-labelledby={`${activeId}-title`}
 						aria-describedby={`${activeId}-description`}
 					>
-							<ExpandedComponent id={activeId} data={dataDict[activeId]}  />
+						<motion.div
+							initial={{ opacity: 0, scale: 0.95 }}
+							animate={{ opacity: 1, scale: 1 }}
+							exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
+							onClick={(e) => e.stopPropagation()}
+							className="w-full max-w-md"
+						>
+							<ExpandedComponent id={activeId} data={dataDict[activeId]} />
+						</motion.div>
 					</motion.div>
 				)}
 			</AnimatePresence>
+
+
 			<div className={cn("p-3", className)}>
 				{data.length === 0 ? (
 					<p className="text-center text-neutral-600 dark:text-neutral-400">
@@ -83,8 +92,25 @@ export const LicenseList = ({
 
 const cardVariants = {
 	hidden: { opacity: 0, scale: 0.95 },
-	visible: { opacity: 1, scale: 1, transition: { duration: 0.2 } },
-	exit: { opacity: 0, scale: 0.95, transition: { duration: 0.1 } },
+	visible: {
+		opacity: 1,
+		scale: 1,
+		transition: {
+			duration: 0.3,
+			ease: "easeOut",
+			when: "beforeChildren",
+			staggerChildren: 0.1,
+		},
+	},
+	exit: {
+		opacity: 0,
+		scale: 0.95,
+		transition: {
+			duration: 0.3,
+			ease: "easeIn",
+			when: "afterChildren",
+		},
+	},
 };
 
 function useShouldClose(

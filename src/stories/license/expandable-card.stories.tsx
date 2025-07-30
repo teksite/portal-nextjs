@@ -3,6 +3,7 @@ import {  ExpandableCardDemoGrid } from "@/components/expandable-card-demo-grid"
 import { ExpandableCardDemoStandard } from "@/components/expandable-card-demo-standard";
 import {ExpandableCardDemoList} from "@/components/expandable-card-demo-list";
 import {mockServiceList1} from "@/mock";
+import {ExpandableCardTestList} from "@/components/expandable-card-test-list";
 
 const meta = {
 	title: "License/Expandable",
@@ -49,5 +50,3 @@ export const Test3: Story = {
 		direction: 'rtl',
 	},
 };
-
-

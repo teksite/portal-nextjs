@@ -30,22 +30,14 @@ export const ItemText = ({ id, data }: { id: string; data: LicenseType }) => {
           {license.title}
         </motion.h4>
         <div className="flex items-center justify-between mt-4">
-          <div className="flex items-center gap-3">
-            <motion.div
-              layoutId={`image-${id}`}
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
+          <motion.div className="flex items-center gap-3" layoutId={`cap-${id}`}>
+            <div>
               <LicenseIcon name={group.name ?? "Sayer"} className={`w-6 h-6 ${fill}`} />
-            </motion.div>
-            <motion.span
-              layoutId={`group-${id}`}
-              className={`text-sm font-medium ${fill}`}
-            >
+            </div>
+            <span className={`text-sm font-medium ${fill}`} >
               {license.serviceGroupCaption || "بدون گروه"}
-            </motion.span>
-          </div>
+            </span>
+          </motion.div>
           <span className="text-sm text-zinc-600 dark:text-zinc-400">
             کد خدمت: {license.code}
           </span>
