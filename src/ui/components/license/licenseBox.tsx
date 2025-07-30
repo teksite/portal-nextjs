@@ -1,19 +1,16 @@
 import CardWithIcon from "@/ui/components/cardWithIcon";
-import {CatalogBtn} from "@/ui/components/license/catalogBtn";
-import {LicenseType} from "@/models/licenseModel";
-import {RegisterBtn} from "@/ui/components/license/registerBtn";
-import {ReactElement} from "react";
+import { CatalogBtn } from "@/ui/components/license/catalogBtn";
+import { LicenseType } from "@/models/licenseModel";
+import { RegisterBtn } from "@/ui/components/license/registerBtn";
+import { ReactElement } from "react";
 
 interface LicenseBoxProps {
 	license: LicenseType;
 }
 
-export default function LicenseBox({ license }: LicenseBoxProps):ReactElement {
-	const image: string = "/no-image.jpg";
-	const {
-		title = "بدون عنوان",
-		description,
-	} = license;
+export default function LicenseBox({ license }: LicenseBoxProps): ReactElement {
+	const image: string = "/next.svg";
+	const { title = "بدون عنوان", description } = license;
 	return (
 		<CardWithIcon title={title} image={image} className="h-full relative">
 			<div className="space-y-6 flex flex-col justify-between h-full relative">

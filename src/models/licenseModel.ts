@@ -8,7 +8,7 @@ export type LicenseType = {
 	avgTime?: string;
 	cost?: boolean;
 	description?: string | null;
-	electronics?: number;
+	electronics?: string;
 	needPresence?: boolean;
 	serviceTime?: string | null;
 	icon?: string;

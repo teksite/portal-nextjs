@@ -4,6 +4,7 @@ export { default as Chap } from "./chap";
 export { default as Film } from "./film";
 export { default as Honar } from "./honar";
 export { default as Majazi } from "./majazi";
+export { default as Omoomi } from "./omoomi";
 export { default as Moarefiname } from "./moarefiname";
 export { default as Moassesat } from "./moassesat";
 export { default as Resane } from "./resane";

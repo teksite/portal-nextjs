@@ -88,7 +88,7 @@
 	"cSpell.languageSettings": [],
 	"material-icon-theme.folders.theme": "classic",
 	"material-icon-theme.hidesExplorerArrows": true,
-	"workbench.iconTheme": "material-icon-theme",
+	"workbench.iconTheme": "vscode-icons",
 	"workbench.activityBar.iconClickBehavior": "toggle",
 	"workbench.editor.decorations.colors": true,
 	"breadcrumbs.filePath": "on",
@@ -119,5 +119,5 @@
 	"deepscan.enable": true,
 	"editor.formatOnSave": true,
 	"eslint.useFlatConfig": true,
-	"cSpell.words": ["iransansxv", "Segoe", "Tahoma"]
+	"cSpell.words": ["Bazi", "iransansxv", "Segoe", "Tahoma"]
 }

@@ -1,0 +1,8 @@
+{
+	"formParam": {
+		"MoId": "1233027790000000300",
+		"MoContext": { "ViewName": "Portal - نمايش شناسنامه" }
+	},
+	"Culture": "fa-IR",
+	"action": "Form94.GetForm"
+}
