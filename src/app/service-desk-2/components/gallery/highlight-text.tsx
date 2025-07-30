@@ -9,12 +9,12 @@ type HighlightTextProps = {
  * A <HighlightText> component that splits on *all* terms in `query`
  * and wraps each match in a <span> with `highlightClassName`.
  */
-export const HighlightText: React.FC<HighlightTextProps> = ({
+export function HighlightText({
 	text,
 	query,
 	highlightClassName = "font-semibold text-accent-foreground",
 	normalClassName = "",
-}) => {
+}: HighlightTextProps) {
 	if (!query) {
 		// Nothing to highlight
 		return <span className={normalClassName}>{text}</span>;
@@ -67,4 +67,4 @@ export const HighlightText: React.FC<HighlightTextProps> = ({
 			})}
 		</>
 	);
-};
+}

@@ -5,7 +5,8 @@ import { globalConfig } from "@/lib";
 
 // Opt into static caching / ISR
 export const dynamic = "force-static";
-export const revalidate = 3600;
+// no revalidate here, because we’ll do it on the fetch call
+// export const revalidate = 3600;
 
 export async function GET() {
 	const upstream = globalConfig.API_CALL_URL;
@@ -19,7 +20,7 @@ export async function GET() {
 		body: JSON.stringify({
 			/* no payload */
 		}),
-		// Note: this fetch itself is server-side only
+		next: { revalidate: 3600 }, // <-- cache the POST for 1h
 	});
 	const upstreamResult = (await res.json()) as LicenseType[];
 	const licenseList = (upstreamResult as any)?.Services as LicenseType[];

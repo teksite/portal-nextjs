@@ -1,33 +1,31 @@
-import { LicensesNormalized, LicenseType } from "@/models";
-import {
-	SearchInput,
-	SearchInputProps,
-	SearchInputSelectionValue,
-} from "@/ui/atoms";
+import { LicenseType } from "@/models";
+import { SearchInput, SearchInputProps } from "@/ui/atoms";
 import React, { useCallback, useMemo, useState } from "react";
 import { filterLogic } from "./filter-logic";
 import { HighlightText } from "./highlight-text";
+import { useNormalizedData } from "./contexts";
 
-export type SearchSectionProps = {
+export type GallerySearchSectionProps = {
 	className?: string;
-	licenseList: LicenseType[];
+	// data: LicensesNormalized;
 	onSelectChange: SearchInputProps<LicenseType>["onSelectChange"];
 };
-export function SearchSection({
-	licenseList,
+export function GallerySearchSection({
+	// data: { licenses },
 	className,
 	onSelectChange,
-}: SearchSectionProps) {
+}: GallerySearchSectionProps) {
+	const { licenses } = useNormalizedData();
 	const [query, setQuery] = useState<string>();
 
 	const filteredData = useMemo(
-		() => filterLogic(licenseList, query),
-		[licenseList, query]
+		() => filterLogic(Object.values(licenses), query),
+		[licenses, query]
 	);
 	const getItemLabel = useCallback((item: LicenseType) => item.title, []);
 	const renderItem = useCallback(
-		(service: LicenseType, query?: string) => (
-			<ListItem service={service} query={query} />
+		(license: LicenseType, query?: string) => (
+			<ListItem license={license} query={query} />
 		),
 		[]
 	);
@@ -48,10 +46,10 @@ export function SearchSection({
 }
 
 function ListItem({
-	service,
+	license,
 	query,
 }: {
-	service: LicenseType;
+	license: LicenseType;
 	query?: string;
 }) {
 	return (
@@ -59,15 +57,15 @@ function ListItem({
 			<div className="flex-1">
 				{query ? (
 					<HighlightText
-						text={service.title}
+						text={license.title}
 						query={query}
 						highlightClassName="font-bold text-blue-700"
 					/>
 				) : (
-					service.title
+					license.title
 				)}
 			</div>
-			<div>{service.groupId}</div>
+			<div>{license.groupId}</div>
 		</div>
 	);
 }

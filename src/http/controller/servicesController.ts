@@ -49,3 +49,16 @@ export async function getGroupServices() {
 		return [];
 	}
 }
+
+export async function fetchLicenseFormData(id: string): Promise<object> {
+	try {
+		const { Services }: { Services: LicenseType[] } = await api("GetServices", {
+			method: "POST",
+			next: { tags: ["GetServices"], revalidate: 120 },
+		});
+		return Services;
+	} catch (error) {
+		console.error(error);
+		return [];
+	}
+}

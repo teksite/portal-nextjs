@@ -1,4 +1,4 @@
-import { removeFalsyPropsFast } from "@/lib";
+import { normalizeFarsi, removeFalsyPropsFast } from "@/lib";
 import { LicenseGroup, LicenseType } from "@/models";
 
 export function normalizeLicensesData(licenseList: LicenseType[]) {
@@ -6,20 +6,20 @@ export function normalizeLicensesData(licenseList: LicenseType[]) {
 	const groups: Record<string, LicenseGroup> = {};
 	const groupIdList: string[] = [];
 
-	licenseList.forEach((item, idx) => {
+	licenseList.forEach((item) => {
 		const license = removeFalsyPropsFast(item) as LicenseType;
+		correctFarsiChars(license);
 		if (!isValid(license)) return;
 		license.id = license.slug;
 		licenses[license.id] = license;
 		const { id, groupId } = license;
-
 		if (!groups[groupId]) {
-			groups[groupId] = createGroupFromLicense(license);
+			const group = createGroupFromLicense(license);
+			correctFarsiChars(group);
+			groups[groupId] = group;
 			groupIdList.push(groupId);
 		}
-
-		const group = groups[groupId];
-		group.licenseIdList.push(id);
+		groups[groupId].licenseIdList.push(id);
 	});
 	return { licenses, groups, groupIdList };
 }
@@ -43,6 +43,13 @@ function isValid({
 	serviceGroupCaption,
 }: LicenseType): boolean {
 	return !!(id && groupId && title && serviceGroupCaption);
+}
+
+function correctFarsiChars(obj: Record<string, any>) {
+	Object.keys(obj).forEach((key) => {
+		if (typeof obj[key] === "string")
+			(obj as any)[key] = normalizeFarsi(obj[key]) as any;
+	});
 }
 
 const groupData: Record<string, { name: string; color: string }> = {
