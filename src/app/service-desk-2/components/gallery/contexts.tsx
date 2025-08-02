@@ -1,5 +1,5 @@
 "use client";
-import { LicensesNormalized } from "@/models";
+import {LicenseGroup, LicensesNormalized, LicenseType} from "@/models";
 import React, { useContext } from "react";
 
 const NormalizedDataContext = React.createContext<LicensesNormalized>({
@@ -8,9 +8,13 @@ const NormalizedDataContext = React.createContext<LicensesNormalized>({
 	licenses: {},
 } as LicensesNormalized);
 export const useNormalizedData = () => useContext(NormalizedDataContext);
-export const useGroupData = (id: string) => {
+export const useGroupData = (id: string):LicenseGroup => {
 	const { groups } = useNormalizedData();
 	return groups[id];
+};
+export const uselicenseData = (id: string):LicenseType => {
+	const { licenses } = useNormalizedData();
+	return licenses[id];
 };
 export function NormalizedDataProvider({
 	normalizedData,

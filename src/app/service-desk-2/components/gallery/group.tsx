@@ -1,41 +1,53 @@
-import { cn } from "@/lib";
-import { LicenseGroup, LicensesNormalized } from "@/models";
-import { Item } from "./item";
-import { useGroupData, useNormalizedData } from "./contexts";
+import {cn} from "@/lib";
+import {LicenseGroup, LicensesNormalized} from "@/models";
+import {Item} from "./item";
+import {useGroupData, useNormalizedData} from "./contexts";
+import {LicenseIcon} from "@/ui/components/certificate/icons";
+import {LicenseList} from "@/ui/components/certificate/list";
+import CollapseItem from "@/ui/components/certificate/list/items/gallery/collapse/collapse";
+import {ItemText} from "@/ui/components/certificate/list/popover/item-text";
 
 export type GroupProps = {
-	id: string;
+  id: string;
 };
-export function Group({ id }: GroupProps) {
-	return (
-		<div
-			id={id}
-			className={cn(
-				"flex flex-col mt-5 ",
-				"border border-solid border-amber-500"
-			)}
-		>
-			<GroupHeader id={id} />
-			<GroupContent id={id} />
-		</div>
-	);
+
+export function Group({id}: GroupProps) {
+  return (
+    <div
+      id={id}
+      className={cn(
+        "mb-12",
+      )}
+    >
+      <GroupHeader id={id}/>
+      <GroupContent id={id}/>
+    </div>
+  );
 }
 
-export function GroupHeader({ id }: GroupProps) {
-	const group = useGroupData(id);
-	return <h2 className="bg-amber-200 mb-0 px-2">{group.title}</h2>;
+export function GroupHeader({id}: GroupProps) {
+  const group = useGroupData(id);
+  return <div className="flex items-center justify-start mb-6 gap-3">
+    <LicenseIcon name={group?.name ?? "Sayer"} className={`size-8`}/>
+    <h2 className="text-2xl font-semibold mb-0 text-start">{group.title || "بدون گروه"}</h2>
+  </div>;
 }
 
-export function GroupContent({ id }: GroupProps) {
-	const group = useGroupData(id);
-	const { licenses } = useNormalizedData();
+export function GroupContent({id}: GroupProps) {
+  const group = useGroupData(id);
+  const { licenses } = useNormalizedData();
+  const licenseData = group.licenseIdList.map((id) => licenses[id]);
 
-	return (
-		<ul className="border border-solid border-amber-200">
-			{group.licenseIdList.map((id) => {
-				const license = licenses[id];
-				return <Item license={license} group={group} />;
-			})}
-		</ul>
-	);
+  return (
+     <LicenseList className="grid gap-6 md:grid-cols-2"
+       data={licenseData}
+       collapsedComponent={({ id, data, onExpand }) => (
+         <div onClick={() => onExpand(id)}>
+           <CollapseItem id={id} license={data} group={group} />
+         </div>
+       )}
+       expandedComponent={ItemText}
+     />
+
+  );
 }

@@ -1,6 +1,6 @@
-import { cn } from "@/lib";
 import { LicenseGroup, LicenseType } from "@/models";
 import { HighlightText } from "./highlight-text";
+import CollapseItem from "@/ui/components/certificate/list/items/gallery/collapse/collapse";
 
 export type ItemProps = {
 	license: LicenseType;
@@ -9,20 +9,17 @@ export type ItemProps = {
 };
 export function Item({ license, group, query }: ItemProps) {
 	return (
-		<li className="flex gap-4 border border-solid p-2 mb-3">
-			<div>
+		<li className="">
 				{query ? (
-					<HighlightText
-						text={license.title}
-						query={query}
-						highlightClassName="text-blue-600 font-semibold"
-					/>
-				) : (
-					license.title
-				)}
-			</div>
+						<CollapseItem id={license.id} license={license} group={group} title={<HighlightText
+							text={license.title}
+							query={query}
+							highlightClassName="text-blue-600 font-semibold"
+						/>} />
 
-			<div className="text-sm border ">{group.title}</div>
+				) : (
+					<CollapseItem id={license.id} license={license} group={group} title={license.title} />
+				)}
 		</li>
 	);
 }

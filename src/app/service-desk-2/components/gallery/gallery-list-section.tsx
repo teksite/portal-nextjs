@@ -3,6 +3,9 @@ import { filterLogic } from "./filter-logic";
 import { Item } from "./item";
 import { Group } from "./group";
 import { useNormalizedData } from "./contexts";
+import {LicenseList} from "@/ui/components/certificate/list";
+import CollapseItem from "@/ui/components/certificate/list/items/gallery/collapse/collapse";
+import {ItemText} from "@/ui/components/certificate/list/popover/item-text";
 
 export type GalleryListSectionProps = {
 	query?: string;
@@ -33,13 +36,22 @@ function Filtered({ query }: { query: string }) {
 				<div>آیتمی یافت نشد </div>
 			) : (
 				<ul>
-					{filteredList.map((license) => (
-						<Item
-							license={license}
-							group={groups[license.groupId]}
-							query={query}
-						/>
-					))}
+					<LicenseList className="grid gap-6 md:grid-cols-2"
+											 data={filteredList}
+											 collapsedComponent={({ id, data, onExpand }) => (
+												 <div onClick={() => onExpand(id)}>
+													 <CollapseItem id={id} license={data} />
+												 </div>
+											 )}
+											 expandedComponent={ItemText}
+					/>
+					{/*{filteredList.map((license) => (*/}
+					{/*	<Item*/}
+					{/*		license={license}*/}
+					{/*		group={groups[license.groupId]}*/}
+					{/*		query={query}*/}
+					{/*	/>*/}
+					{/*))}*/}
 				</ul>
 			)}
 		</div>

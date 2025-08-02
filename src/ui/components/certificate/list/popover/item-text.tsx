@@ -4,12 +4,13 @@ import mockData from "@/mock/mock-all-licenses-data.json";
 import { LicenseIcon } from "@/ui/components/certificate/icons";
 import { colorMap } from "@/ui/components/certificate/list/shared";
 import { motion } from "motion/react";
+import {useGroupData, uselicenseData} from "@/app/service-desk-2/components";
 
 export const ItemText = ({ id, data }: { id: string; data: LicenseType }) => {
-  const licenses: Record<string, LicenseType> = mockData.licenses;
-  const groups: Record<string, LicenseGroup> = mockData.groups;
-  const license = licenses[id];
-  const group = groups[data.groupId] || { name: "Sayer", color: "gray" };
+  // const groups: Record<string, LicenseGroup> = mockData.groups;
+  const license = uselicenseData(id);
+  const groupId=license.groupId;
+  const group = useGroupData(groupId);
   const { fill } = colorMap[group.color ?? "gray"] || { fill: "fill-gray-800" };
 
   return (
@@ -47,7 +48,7 @@ export const ItemText = ({ id, data }: { id: string; data: LicenseType }) => {
           <table className="w-full text-sm">
             <tbody>
             <tr className="border-b border-zinc-100">
-              <td className="p-3">نحوه اخذ خدمت</td>
+              <td className="p-3 w-32">نحوه اخذ خدمت</td>
               <td className="p-3">
                   <span
                     className={`px-2 py-1 rounded ${license.needPresence ? 'text-red-600 bg-red-100' : 'text-green-600 bg-green-100'}`}
@@ -57,7 +58,7 @@ export const ItemText = ({ id, data }: { id: string; data: LicenseType }) => {
               </td>
             </tr>
             <tr className="border-b border-zinc-100">
-              <td className="p-3">هزینه</td>
+              <td className="p-3 w-32">هزینه</td>
               <td className="p-3">
                   <span
                     className={`px-2 py-1 rounded ${license.cost ? 'text-red-600 bg-red-100' : 'text-green-600 bg-green-100'}`}
@@ -67,7 +68,7 @@ export const ItemText = ({ id, data }: { id: string; data: LicenseType }) => {
               </td>
             </tr>
             <tr className="border-b border-zinc-100">
-              <td className="p-3">نحوه ارائه خدمت</td>
+              <td className="p-3 w-32">نحوه ارائه خدمت</td>
               <td className="p-3">
                   <span
                     className={`px-2 py-1 rounded ${license.electronics==0 ? 'text-gray-600 bg-gray-100' : (license.electronics == 1 ? 'text-green-600 bg-green-100' : 'text-blue-600 bg-blue-100')}`}
@@ -77,7 +78,7 @@ export const ItemText = ({ id, data }: { id: string; data: LicenseType }) => {
               </td>
             </tr>
             <tr className="border-b border-zinc-100">
-              <td className="p-3">مدت زمان اخذ خدمت</td>
+              <td className="p-3 w-32">مدت زمان اخذ خدمت</td>
               <td className="p-3">{license.avgTime ?? '-'}</td>
             </tr>
             </tbody>
