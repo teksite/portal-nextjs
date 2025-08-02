@@ -5,10 +5,11 @@ import {LicenseType} from "@/models";
 import {LicenseGroupType} from "@/models/licenseGroupModel";
 import {ReactElement} from "react";
 import {colorMap} from "@/ui/components/certificate/list/shared";
+import {useGroupData} from "@/app/service-desk-2/components";
 
 export default function CollapseItem({ id, license, group , title}:{id:string , license:LicenseType , group?:LicenseGroupType , title?:string|ReactElement}) {
+  group= group ? group: useGroupData(license.groupId)
   const { fill } = colorMap[group.color ?? "gray"] || { fill: "fill-gray-800" };
-
   return (
     <motion.div
       layoutId={`card-${id}`}
