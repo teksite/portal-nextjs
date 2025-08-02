@@ -11,14 +11,10 @@ export function Item({ license, group, query }: ItemProps) {
 	return (
 		<li className="">
 				{query ? (
-						<CollapseItem id={license.id} license={license} group={group} title={<HighlightText
-							text={license.title}
-							query={query}
-							highlightClassName="text-blue-600 font-semibold"
-						/>} />
+						<CollapseItem id={license.id} license={license} />
 
 				) : (
-					<CollapseItem id={license.id} license={license} group={group} title={license.title} />
+					<CollapseItem id={license.id} license={license} title={license.title} />
 				)}
 		</li>
 	);

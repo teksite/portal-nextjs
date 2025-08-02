@@ -40,18 +40,12 @@ function Filtered({ query }: { query: string }) {
 											 data={filteredList}
 											 collapsedComponent={({ id, data, onExpand }) => (
 												 <div onClick={() => onExpand(id)}>
-													 <CollapseItem id={id} license={data} />
+													 <CollapseItem id={id} license={data} query={query} />
 												 </div>
 											 )}
 											 expandedComponent={ItemText}
 					/>
-					{/*{filteredList.map((license) => (*/}
-					{/*	<Item*/}
-					{/*		license={license}*/}
-					{/*		group={groups[license.groupId]}*/}
-					{/*		query={query}*/}
-					{/*	/>*/}
-					{/*))}*/}
+
 				</ul>
 			)}
 		</div>
