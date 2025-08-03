@@ -4,7 +4,9 @@ import { SearchInput, SearchInputProps } from "@/ui/atoms";
 import React, { useCallback, useMemo, useState } from "react";
 import { filterLogic } from "./filter-logic";
 import { HighlightText } from "./highlight-text";
-import { useNormalizedData } from "./contexts";
+import {useGroupData, useNormalizedData} from "./contexts";
+import {getGroupServices} from "@/http/controller/servicesController";
+import {LicenseIcon} from "@/ui/components/certificate/icons";
 
 export type GallerySearchSectionProps = {
 	className?: string;
@@ -51,9 +53,10 @@ function ListItem({
 	license: LicenseType;
 	query?: string;
 }) {
+	const group= useGroupData(license.groupId);
 	return (
-		<div className="flex">
-			<div className="flex-1">
+		<div className="">
+			<span className="">
 				{query ? (
 					<HighlightText
 						text={license.title}
@@ -63,8 +66,13 @@ function ListItem({
 				) : (
 					license.title
 				)}
+			</span>
+			<div className="flex gap-1 items-center">
+				<LicenseIcon name={group?.name ?? "Sayer"} className={`size-6`} />
+				<span className="text-xs">
+         			 {license.serviceGroupCaption ?? "بدون گروه"}
+        		</span>
 			</div>
-			<div>{license.groupId}</div>
 		</div>
 	);
 }
