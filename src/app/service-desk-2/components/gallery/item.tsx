@@ -1,6 +1,6 @@
 import { LicenseGroup, LicenseType } from "@/models";
 import { HighlightText } from "./highlight-text";
-import CollapseItem from "@/ui/components/certificate/list/items/gallery/collapse/collapse";
+import CollapseItem from "@/app/service-desk-2/components/gallery/collapse";
 
 export type ItemProps = {
 	license: LicenseType;

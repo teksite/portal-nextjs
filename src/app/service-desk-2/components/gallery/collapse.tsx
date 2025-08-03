@@ -25,7 +25,7 @@ export default function CollapseItem({ id, license, group, query }: CollapseItem
       className="flex flex-col justify-between gap-1 px-6 py-3 border border-zinc-300 shadow-xl rounded-xl overflow-hidden cursor-pointer hover:bg-slate-50 hover:shadow-sm transition-all duration-150 ease-linear"
     >
       <div className="flex items-center gap-3 mb-2">
-        <motion.h4 layoutId={`title-${id}`} className="mb-1">
+        <motion.h3 layoutId={`title-${id}`} className="mb-1">
           {query ? (
             <HighlightText
               text={license.title}
@@ -35,9 +35,10 @@ export default function CollapseItem({ id, license, group, query }: CollapseItem
           ) : (
             license.title
           )}
-        </motion.h4>
+        </motion.h3>
       </div>
 
+      {/* Group Information Section */}
       <motion.div className="flex items-center gap-3" layoutId={`cap-${id}`}>
         <LicenseIcon name={resolvedGroup?.name ?? "Sayer"} className={`size-6 ${fill}`} />
         <span className="text-sm font-medium">

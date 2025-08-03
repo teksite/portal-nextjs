@@ -1,3 +1,4 @@
+'use client'
 import { LicenseType } from "@/models";
 import { SearchInput, SearchInputProps } from "@/ui/atoms";
 import React, { useCallback, useMemo, useState } from "react";
@@ -7,7 +8,7 @@ import { useNormalizedData } from "./contexts";
 
 export type GallerySearchSectionProps = {
 	className?: string;
-	onSelectChange: SearchInputProps<LicenseType>["onSelectChange"];
+	onSelectChange?: SearchInputProps<LicenseType>["onSelectChange"];
 };
 export function GallerySearchSection({
 	className,

@@ -1,11 +1,10 @@
 import {cn} from "@/lib";
-import {LicenseGroup, LicensesNormalized} from "@/models";
-import {Item} from "./item";
+
 import {useGroupData, useNormalizedData} from "./contexts";
 import {LicenseIcon} from "@/ui/components/certificate/icons";
 import {LicenseList} from "@/ui/components/certificate/list";
-import CollapseItem from "@/ui/components/certificate/list/items/gallery/collapse/collapse";
-import {ItemText} from "@/ui/components/certificate/list/popover/item-text";
+import CollapseItem from "@/app/service-desk-2/components/gallery/collapse";
+import {Pupop} from "@/app/service-desk-2/components/gallery/pupop";
 
 export type GroupProps = {
   id: string;
@@ -46,7 +45,7 @@ export function GroupContent({id}: GroupProps) {
            <CollapseItem id={id} license={data} group={group} />
          </div>
        )}
-       expandedComponent={ItemText}
+       expandedComponent={Pupop}
      />
 
   );

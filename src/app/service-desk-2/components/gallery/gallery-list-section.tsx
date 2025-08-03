@@ -4,7 +4,7 @@ import { Item } from "./item";
 import { Group } from "./group";
 import { useNormalizedData } from "./contexts";
 import {LicenseList} from "@/ui/components/certificate/list";
-import CollapseItem from "@/ui/components/certificate/list/items/gallery/collapse/collapse";
+import CollapseItem from "@/app/service-desk-2/components/gallery/collapse";
 import {ItemText} from "@/ui/components/certificate/list/popover/item-text";
 
 export type GalleryListSectionProps = {
@@ -54,10 +54,11 @@ function Filtered({ query }: { query: string }) {
 
 function Categorized() {
 	const { groupIdList } = useNormalizedData();
+
 	return (
 		<ul>
 			{groupIdList.map((id) => (
-				<Group id={id} />
+				<Group key={id} id={id} />
 			))}
 		</ul>
 	);

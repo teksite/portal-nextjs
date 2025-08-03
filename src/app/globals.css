@@ -23,6 +23,10 @@
 	.inner-container {
 		@apply w-11/12 md:w-3/4 max-w-7xl mx-auto;
 	}
+	h1,
+	.h1 {
+		@apply text-3xl font-bold text-zinc-900 mb-3 dark:text-zinc-300;
+	}
 	h2,
 	.h2 {
 		@apply text-xl font-bold text-zinc-900 mb-3 dark:text-zinc-300;

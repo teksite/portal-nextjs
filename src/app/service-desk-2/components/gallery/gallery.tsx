@@ -15,12 +15,14 @@ export function Gallery({ className }: GalleryProps) {
 
 	return (
 		<div className={className}>
-			<GallerySearchSection
-				onSelectChange={setSelection}
-				// onSelectChange={(selection) => {
-				// 	setSelection(selection);
-				// }}
-			/>
+			<div className="">
+				<GallerySearchSection
+					onSelectChange={setSelection}
+					// onSelectChange={(selection) => {
+					// 	setSelection(selection);
+					// }}
+				/>
+			</div>
 			<GalleryListSection query={selection?.selectedQuery} />
 		</div>
 	);

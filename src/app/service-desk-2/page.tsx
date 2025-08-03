@@ -10,8 +10,8 @@ export const dynamic = "force-dynamic";
 type ServiceDesk2PageProp = object;
 export default async function ServiceDesk2Page() {
 	const res = await fetch(
-		// `http://localhost:3000/api/licenses-data`,
-		`${process.env.NEXT_PUBLIC_BASE_URL}/api/licenses-data`,
+		`http://localhost:3000/api/licenses-data`,
+		// `${process.env.NEXT_PUBLIC_BASE_URL}/api/licenses-data`,
 		{
 			cache: "force-cache",
 		}
@@ -21,9 +21,11 @@ export default async function ServiceDesk2Page() {
 	return (
 		<div className="overflow-hidden">
 			<Hero />
-			<NormalizedDataProvider normalizedData={data}>
-				<Gallery />
-			</NormalizedDataProvider>
+			<div className=" inner-container">
+				<NormalizedDataProvider normalizedData={data}>
+					<Gallery />
+				</NormalizedDataProvider>
+			</div>
 		</div>
 	);
 }

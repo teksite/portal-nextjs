@@ -3,11 +3,11 @@ import {Suspense} from "react";
 import Breadcrumb from "@/ui/components/breadcrumb/breadcrumb";
 import {GroupedCardWithIconListSkeleton} from "@/ui/components/skeletons";
 import Banner from "@/ui/layout/Banner";
-import SearchBox, {searchParamsType} from "@/ui/servicedesk/searchBox";
+import SearchBox from "@/ui/servicedesk/searchBox";
 import SearchResult from "@/ui/servicedesk/searchResult";
 
 
-export default async function LicensesPage(props: { searchParams?: Promise<searchParamsType>; }) {
+export default async function LicensesPage(props: { searchParams}) {
     const searchParams = await props.searchParams;
 
     const breadcrumbItems = [

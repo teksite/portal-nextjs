@@ -25,7 +25,6 @@ export default function RootLayout({
 			<html lang="fa" dir="rtl">
 				<body
 					className={cn(
-						// vazir.className,
 						"antialiased bg-slate-50 dark:bg-zinc-950"
 					)}
 				>
