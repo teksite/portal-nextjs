@@ -20,22 +20,21 @@ export function StickySearchBar({
         };
 
         window.addEventListener("scroll", handleScroll);
-
-        // پاکسازی
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-    return (
-        <>
-            {showSticky &&
-                <div className="sticky top-14 z-50 bg-white shadow-md">
-                    <div className="inner-container py-3">
-                        <GallerySearchSection onSelectChange={setSelection}/>
-                    </div>
-                </div>
-            }
-        </>
 
+    return (
+        <div
+            className={`
+                sticky top-14 z-50 bg-white shadow-md transition-all duration-500 
+                ${showSticky ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
+            `}
+        >
+            <div className="inner-container py-3">
+                <GallerySearchSection onSelectChange={setSelection} />
+            </div>
+        </div>
     );
 }

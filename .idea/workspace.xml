@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d32bf7f-7a58-42d5-b0c7-a26cd539abcf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/components/StickySearchBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/components/ServiceDesk2Client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/components/ServiceDesk2Client.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/components/gallery/gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/components/gallery/gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/components/hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/components/hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/components/StickySearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/components/StickySearchBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +142,8 @@
       <workItem from="1754134579429" duration="4043000" />
       <workItem from="1754195245756" duration="663000" />
       <workItem from="1754200319717" duration="2072000" />
-      <workItem from="1754281903394" duration="6132000" />
+      <workItem from="1754281903394" duration="7860000" />
+      <workItem from="1754293038186" duration="1897000" />
     </task>
     <servers />
   </component>

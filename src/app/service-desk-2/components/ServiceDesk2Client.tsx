@@ -14,8 +14,8 @@ export function ServiceDesk2Client() {
     return (
         <>
             <Hero selection={selection} setSelection={setSelection} />
-            <div className="inner-container">
                 <StickySearchBar selection={selection} setSelection={setSelection} />
+            <div className="inner-container">
 
                 <Gallery selection={selection} setSelection={setSelection} />
             </div>
