@@ -6,7 +6,6 @@ import { colorMap } from "@/ui/components/certificate/list/shared";
 import { useGroupData } from "@/app/service-desk-2/components";
 import { HighlightText } from "@/app/service-desk-2/components/gallery/highlight-text";
 
-// Define props interface for better type safety and clarity
 interface CollapseItemProps {
   id: string;
   license: LicenseType;

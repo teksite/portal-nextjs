@@ -9,20 +9,19 @@ import { GalleryListSection } from "./gallery-list-section";
 export type GalleryProps = {
 	className?: string;
 };
-export function Gallery({ className }: GalleryProps) {
-	const [selection, setSelection] =
-		useState<SearchInputSelectionValue<LicenseType>>();
+export function Gallery({
+							className,
+							selection,
+							setSelection,
+						}: {
+	className?: string;
+	selection: SearchInputSelectionValue<LicenseType> | undefined;
+	setSelection: (value: SearchInputSelectionValue<LicenseType> | undefined) => void;
+}) {
+
 
 	return (
 		<div className={className}>
-			<div className="">
-				<GallerySearchSection
-					onSelectChange={setSelection}
-					// onSelectChange={(selection) => {
-					// 	setSelection(selection);
-					// }}
-				/>
-			</div>
 			<GalleryListSection query={selection?.selectedQuery} />
 		</div>
 	);
