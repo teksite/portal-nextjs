@@ -15,7 +15,7 @@ export default async function ServiceDesk2Page() {
     const data = (await res.json()) as LicensesNormalized;
 
     return (
-        <div className="overflow-hidden">
+        <div className="">
             <NormalizedDataProvider normalizedData={data}>
                 <ServiceDesk2Client />
             </NormalizedDataProvider>

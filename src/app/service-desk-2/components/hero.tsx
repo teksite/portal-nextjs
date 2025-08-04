@@ -14,7 +14,7 @@ export function Hero({
 
 	return (
 		<div className="relative  mb-12">
-			<Gradient className="absolute inset-2 bottom-0 rounded-lg ring-1 ring-black/5 ring-inset " />
+			<Gradient className="absolute inset-2 bottom-0 rounded-lg ring-1 ring-black/5 ring-inset" />
 			<Container className="relative">
 				<div className="pt-16 pb-24 sm:pt-16 sm:pb-10 md:pt-20 md:pb-24 text-center">
 					<h1 className="">
