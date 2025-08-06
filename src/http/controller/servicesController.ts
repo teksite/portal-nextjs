@@ -1,6 +1,6 @@
 //import callApi from "@/helpers/callApi";
-import {fetchApi} from "@/lib/";
-import {LicenseType} from "@/models/licenseModel";
+import { fetchApi } from "@/lib/";
+import { LicenseType } from "@/models/licenseModel";
 
 const api = fetchApi();
 
@@ -13,16 +13,14 @@ export async function getServices(): Promise<LicenseType[]> {
 			method: "POST",
 			next: { tags: ["GetServices"], revalidate: 120 },
 		});
-		Services.map((license:LicenseType)=>{
-			switch (license.serviceGroupCaption){
-				case 'فضاي مجازي':
-					license.image='/assets/images/placeholder/virtual-env.jpg';
+		Services.map((license: LicenseType) => {
+			switch (license.serviceGroupCaption) {
+				case "فضاي مجازي":
+					license.icon = "/assets/images/placeholder/virtual-env.jpg";
 					break;
 				default:
-					license.image='/assets/images/placeholder/other-license.jpg';
-
+					license.icon = "/assets/images/placeholder/other-license.jpg";
 			}
-
 		});
 
 		return Services;
@@ -46,6 +44,19 @@ export async function getGroupServices() {
 			next: { tags: ["GetServiceGroup"], revalidate: 120 },
 		});
 		return SGData;
+	} catch (error) {
+		console.error(error);
+		return [];
+	}
+}
+
+export async function fetchLicenseFormData(id: string): Promise<object> {
+	try {
+		const { Services }: { Services: LicenseType[] } = await api("GetServices", {
+			method: "POST",
+			next: { tags: ["GetServices"], revalidate: 120 },
+		});
+		return Services;
 	} catch (error) {
 		console.error(error);
 		return [];

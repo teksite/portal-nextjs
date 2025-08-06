@@ -3,10 +3,11 @@ import {Suspense} from "react";
 import Breadcrumb from "@/ui/components/breadcrumb/breadcrumb";
 import {GroupedCardWithIconListSkeleton} from "@/ui/components/skeletons";
 import Banner from "@/ui/layout/Banner";
-import SearchService, {searchParamsType} from "@/ui/servicedesk/searchService";
-import GroupedLicenseListWrapper from "@/ui/components/license/groupedLicenseList";
+import SearchBox from "@/ui/servicedesk/searchBox";
+import SearchResult from "@/ui/servicedesk/searchResult";
 
-export default async function LicensesPage(props: {searchParams?: Promise<searchParamsType>;}) {
+
+export default async function LicensesPage(props: { searchParams}) {
     const searchParams = await props.searchParams;
 
     const breadcrumbItems = [
@@ -14,17 +15,18 @@ export default async function LicensesPage(props: {searchParams?: Promise<search
             title: "خدمات و مجوزها"
         }
     ];
-
     return (
         <>
             <Banner title='خدمات'>
                 <Breadcrumb items={breadcrumbItems} listClassName='justify-center mx-auto text-center'/>
             </Banner>
             <main className=''>
-                <SearchService />
+                <div className="-mt-16">
+                    <SearchBox/>
+                </div>
                 <div className="mt-12 space-y-12 inner-container">
                     <Suspense fallback={<GroupedCardWithIconListSkeleton/>}>
-                        <GroupedLicenseListWrapper search={searchParams}/>
+                        <SearchResult search={searchParams}/>
                     </Suspense>
                 </div>
             </main>

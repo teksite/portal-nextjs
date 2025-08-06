@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import {  ExpandableCardDemoGrid } from "@/components/expandable-card-demo-grid";
 import { ExpandableCardDemoStandard } from "@/components/expandable-card-demo-standard";
 import {ExpandableCardDemoList} from "@/components/expandable-card-demo-list";
+import {mockServiceList1} from "@/mock";
+import {ExpandableCardTestList} from "@/components/expandable-card-test-list";
 
 const meta = {
 	title: "License/Expandable",
@@ -9,8 +11,8 @@ const meta = {
 	parameters: {
 		layout: "centered",
 	},
-	// tags: ["autodocs"],
-	args: {},
+	tags: ["autodocs"],
+
 } satisfies Meta<any>;
 
 export default meta;
@@ -24,15 +26,27 @@ export const Test: Story = {
 };
 export const Test2: Story = {
 	name: "Expandable Card in Rows",
+
 	render: () => {
 		return <ExpandableCardDemoStandard />;
+	},
+
+	parameters: {
+		direction: 'rtl',
 	},
 };
 export const Test3: Story = {
 	name: "Expandable Card in list",
-	render: () => {
-		return <ExpandableCardDemoList />;
+	argTypes: {
+		withBadge: {
+			options: [true, false],
+			control: { type: 'radio' },
+		},
+	},
+	render: ( ) => {
+		return <ExpandableCardDemoList cards={mockServiceList1} withBadge={true} />;
+	},
+	parameters: {
+		direction: 'rtl',
 	},
 };
-
-

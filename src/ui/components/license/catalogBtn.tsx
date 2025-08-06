@@ -40,11 +40,7 @@ function TableWrapper(license: LicenseType) {
 	);
 }
 
-export function CatalogBtn({
-	license,
-}: {
-	license: LicenseType;
-}) {
+export function CatalogBtn({license}: {license: LicenseType;}) {
 	const [isOpen, setIsOpen] = useState(false);
 	const handleCatalogClick = () => {
 		setIsOpen(true);

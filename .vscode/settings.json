@@ -43,9 +43,9 @@
 		"**/.git": false,
 		"**/.svn": false,
 		"**/.hg": false,
+		"**/CVS": false,
 		"**/.DS_Store": false,
 		"**/Thumbs.db": false,
-		"**/CVS": false,
 		"**/_jest.config.ts": false,
 		"**/_jest.preset.js": false,
 		"**/.babelrc": false,
@@ -81,14 +81,14 @@
 		"**/vitest.workspace.ts": false,
 		"dist": false
 	},
-	"workbench.colorTheme": "Default Dark+",
+	"workbench.colorTheme": "Default Dark Modern",
 	"explorerExclude.backup": {},
 	"cSpell.customDictionaries": {},
 	"cSpell.ignoreWords": ["barsa"],
 	"cSpell.languageSettings": [],
 	"material-icon-theme.folders.theme": "classic",
 	"material-icon-theme.hidesExplorerArrows": true,
-	"workbench.iconTheme": "material-icon-theme",
+	"workbench.iconTheme": "vscode-icons",
 	"workbench.activityBar.iconClickBehavior": "toggle",
 	"workbench.editor.decorations.colors": true,
 	"breadcrumbs.filePath": "on",
@@ -117,5 +117,7 @@
 		"typescriptreact"
 	],
 	"deepscan.enable": true,
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"eslint.useFlatConfig": true,
+	"cSpell.words": ["Bazi", "iransansxv", "Segoe", "Tahoma"]
 }

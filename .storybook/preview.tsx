@@ -2,9 +2,7 @@ import type { Preview } from "@storybook/nextjs-vite";
 import "../src/app/globals.css";
 
 const preview: Preview = {
-
 	parameters: {
-
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
@@ -19,6 +17,13 @@ const preview: Preview = {
 			test: "todo",
 		},
 	},
+	// decorators: [
+	// 	(Story) => (
+	// 		<div dir="rtl">
+	// 			<Story />
+	// 		</div>
+	// 	),
+	// ],
 };
 
 export default preview;
