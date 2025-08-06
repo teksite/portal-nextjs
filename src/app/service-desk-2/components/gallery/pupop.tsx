@@ -93,7 +93,7 @@ export const Pupop = ({ id, data }: { id: string; data: LicenseType }) => {
             </motion.p>
           )}
           <Link href="#" className="text-blue-600 hover:text-blue-800 text-sm inline-block">
-            جزئیات بیشتر &gt;&gt;
+            جزئیات بیشتر
           </Link>
         </div>
       </div>
@@ -104,7 +104,7 @@ export const Pupop = ({ id, data }: { id: string; data: LicenseType }) => {
           بستن
         </button>
         <Link
-          href={`/request/${id}`}
+          href={`/service-desk-2/services/${id}`}
           className="flex-1 p-3 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-center"
         >
           ثبت درخواست

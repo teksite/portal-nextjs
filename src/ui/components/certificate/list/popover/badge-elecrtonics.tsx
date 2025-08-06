@@ -1,6 +1,6 @@
 import React from "react";
 
-export const BadgeElecrtonics = ({electronics}: { electronics: number }) => {
+export const BadgeElecrtonics = ({electronics}: { electronics?: number|string }) => {
     return (
         <span
             title="ارائه نحوه "

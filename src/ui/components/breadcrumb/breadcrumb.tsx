@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import {memo, useMemo} from 'react';
+import {ChevronLeft, ChevronLeftIcon} from "lucide-react";
 
 // Type Definitions
 interface BreadcrumbItem {
@@ -22,24 +23,17 @@ const DEFAULT_HOME_ITEM: BreadcrumbItem = {
     href: '/',
 };
 
-const ChevronIcon = memo(() => (
-    <svg className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1 shrink-0" aria-hidden="true"
-         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
-    </svg>
-));
-ChevronIcon.displayName = 'ChevronIcon';
 
 // Breadcrumb Item Component
 const BreadcrumbItem = memo(({title, href}: BreadcrumbItem) => (
     <li className="inline-flex items-center">
         {href ? (
             <>
-                <Link href={href} className="text-zinc-50 hover:text-zinc-100 transition-colors duration-200 select-none"
+                <Link href={href} className=" transition-colors duration-200 select-none"
                       aria-label={`Navigate to ${title}`}>
                     {title}
                 </Link>
-                <ChevronIcon/>
+                <ChevronLeftIcon size="12"/>
             </>
         ) : (
             <span className="text-zinc-300 font-medium select-none">{title}</span>

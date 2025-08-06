@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d32bf7f-7a58-42d5-b0c7-a26cd539abcf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item2.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item3.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item4.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item5.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item6.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/top-bar.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/top-bar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/components/StickySearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/components/StickySearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/components/gallery/pupop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/components/gallery/pupop.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/components/breadcrumb/breadcrumb.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/components/breadcrumb/breadcrumb.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/components/certificate/list/popover/badge-cost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/components/certificate/list/popover/badge-cost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/components/certificate/list/popover/badge-elecrtonics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/components/certificate/list/popover/badge-elecrtonics.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +75,7 @@
     &quot;git-widget-placeholder&quot;: &quot;sina&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sinazb/Desktop/website/portal/src/app/service-desk-2/components/gallery&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sinazb/Desktop/website/portal/src/app/service-desk-2/services/[id]/components&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -76,13 +89,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sinazb\Desktop\website\portal\src\app\service-desk-2\services\[id]\components" />
       <recent name="C:\Users\sinazb\Desktop\website\portal\src\app\service-desk-2\components\gallery" />
       <recent name="C:\Users\sinazb\Desktop\website\portal\src\ui\components\certificate\list\items" />
       <recent name="C:\Users\sinazb\Desktop\website\portal\src\ui\components\certificate\list\popover" />
       <recent name="C:\Users\sinazb\Desktop\website\portal\src\ui\servicedesk\gallery" />
-      <recent name="C:\Users\sinazb\Desktop\website\portal\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sinazb\Desktop\website\portal\src\app\service-desk-2\services\[id]\components\items" />
       <recent name="C:\Users\sinazb\Desktop\website\portal\src\app\service-desk-2\components\gallery" />
       <recent name="C:\Users\sinazb\Desktop\website\portal\src\ui\components\certificate\list\items\gallery" />
       <recent name="C:\Users\sinazb\Desktop\website\portal\src\ui\components\certificate\list\items" />
@@ -144,6 +158,9 @@
       <workItem from="1754200319717" duration="2072000" />
       <workItem from="1754281903394" duration="7860000" />
       <workItem from="1754293038186" duration="1897000" />
+      <workItem from="1754300064616" duration="1555000" />
+      <workItem from="1754367989443" duration="12735000" />
+      <workItem from="1754454505883" duration="6965000" />
     </task>
     <servers />
   </component>
