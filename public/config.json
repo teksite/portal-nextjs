@@ -1,0 +1,4 @@
+{
+	"API_CALL_URL": "http://localhost:5000/api2/GetAppForCrm/0.1",
+	"USE_OFFLINE_DATA": true
+}

@@ -1,0 +1,71 @@
+{
+    // JS
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    // TS
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    // JSON
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // Extension: Git
+    "git.rebaseWhenSync": false,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    // Extension: Prettier
+    "prettier.requireConfig": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    // Extension: ESLint
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "never"
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "eslint.format.enable": true,
+    "npm.packageManager": "npm",
+    "workbench.colorTheme": "Default Dark+",
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": false,
+        "**/.hg": false,
+        "**/.DS_Store": false,
+        "**/Thumbs.db": false,
+        "vitest.shims.d.ts": false,
+        "vitest.config.ts": false,
+        "tsconfig.json": false,
+        "postcss.config.mjs": false,
+        "pnpm-lock.yaml": false,
+        "package-lock.json": false,
+        "next.config.ts": false,
+        "LICENSE.md": false,
+        "eslint.config.mjs": false,
+        "components.json": false,
+        ".prettierrc.json": false,
+        ".prettierignore": false,
+        ".nvmrc": false,
+        ".npmrc": false,
+        ".editorconfig": false,
+        "node_modules": false,
+        ".vscode": false,
+        ".storybook": false,
+        ".next": false,
+        ".devcontainer": false,
+        ".github": false,
+        ".gitignore": false,
+        "README.md": false,
+        "next-env.d.ts": false,
+        "package.json": false
+    },
+    "explorerExclude.backup": {},
+    "workbench.iconTheme": "vscode-icons",
+    "editor.tabSize": 3,
+    "editor.insertSpaces": true
+}

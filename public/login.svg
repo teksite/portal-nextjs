@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="eKYvVARqByJ1"
+     viewBox="20 20 88 88" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style><![CDATA[
+#eKYvVARqByJ6_to {animation: eKYvVARqByJ6_to__to 1000ms linear infinite normal  }@keyframes eKYvVARqByJ6_to__to { 0% {transform: translate(-0.000002px,9.666633px)} 50% {transform: translate(0.110295px,-1.999961px)} 100% {transform: translate(0.110295px,8.833334px)}}
+]]></style>
+    <g transform="matrix(1.2 0 0 1.2-12.8-12.8)">
+        <g transform="matrix(0 0 0 0 71.6667-.833333)" opacity="0">
+            <path d="M68,71h-8c-1.104569,0-2,.895431-2,2v14h12v-14c0-1.104569-.895431-2-2-2Z"
+                  transform="matrix(1 0.466308 0 1 0-32.6415)" fill="none" stroke="#393939" stroke-width="3.33"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <path d="M82,67.3l-18-18-18,18v17.7c0,1.104569.895431,2,2,2h7.166667v-17.666666c0-1.104569.895431-2,2-2h13.666666c1.104569,0,2,.895431,2,2v17.666666L80,87c1.104569,0,2-.895431,2-2v-17.7Z"
+              fill="none" stroke="#393939" stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round"/>
+        <g id="eKYvVARqByJ6_to" transform="translate(-0.000002,9.666633)">
+            <g transform="translate(0,0)" opacity="0.976042">
+                <path d="M0,6v-6h6" transform="matrix(.707107 0.707107-.707107 0.707107 64 73.1667)" fill="none"
+                      stroke="#393939" stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M70,89.166667v12.499999" transform="translate(-6-15.1667)" fill="#ffd41d" stroke="#393939"
+                      stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+        </g>
+        <path d="M88,63.33v0L66.8,42.13c-.750273-.751108-1.768363-1.173147-2.83-1.173147s-2.079727.422039-2.83,1.173147L40,63.35v0c-1.264949,1.398884-1.211059,3.543861.12254,4.87746s3.478576,1.387489,4.87746.12254L64,49.3l19,19c.961356.939511,2.366058,1.265169,3.642747.844513s2.212677-1.517545,2.427253-2.844513c.235166-1.112789-.179174-2.262872-1.07-2.97Z"
+              fill="none" stroke="#393939" stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+</svg>
