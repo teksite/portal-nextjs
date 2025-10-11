@@ -1,5 +1,5 @@
-import {AuthenticationException, ValidationException} from "@/exceptions";
-import {mockGetLicensesAndGroups, mockLGetLicenses, mockLShowLicense} from "@/mock";
+import { AuthenticationException, ValidationException } from "@/exceptions";
+import {mockGetLicensesAndGroups, mockGetLicensesFilters, mockLGetLicenses, mockLShowLicense} from "@/mock";
 
 interface ApiErrorResponse {
     errors?: Record<string, string[]>;
@@ -13,24 +13,17 @@ interface FetchConfig extends RequestInit {
     };
 }
 
-const dictionaryUrls: Record<string, string> = {
-    allLicences: "http://localhost:5000/api2/GetAppForCrm/0.1/get-all-licenses",
-    showLicences: "http://localhost:5000/api2/GetAppForCrm/0.1/get-all-licenses",
-    allLicencesAndGroups: "http://localhost:5000/api2/GetAppForCrm/0.1/get-all-groups-lincenses",
-    showLicenceGroups: "http://localhost:5000/api2/GetAppForCrm/0.1/get-all-groups",
-    allLicenceGroups: "http://localhost:5000/api2/GetAppForCrm/0.1/get-groups",
-};
-
-const sandbox = true;
-
+// فقط برای sandbox
 const mockData: Record<string, any> = {
     allLicences: mockLGetLicenses,
     showLicences: mockLShowLicense,
     allLicencesAndGroups: mockGetLicensesAndGroups,
     showLicenceGroups: mockLShowLicense,
     allLicenceGroups: mockLShowLicense,
+    licensesFilters: mockGetLicensesFilters,
 };
 
+const sandbox = true; // true = استفاده از mock
 
 export const fetchApi = async <T = any>(
     slugOrUrl?: string,
@@ -40,18 +33,12 @@ export const fetchApi = async <T = any>(
 
     if (sandbox) {
         const key = slugOrUrl as keyof typeof mockData;
-        if (!slugOrUrl || !mockData[key]) {
-            throw new Error(`No mock data found for key: ${slugOrUrl}`);
-        }
+        if (!slugOrUrl || !mockData[key]) throw new Error(`No mock data for: ${slugOrUrl}`);
         return mockData[key] as T;
     }
 
-    let baseUrl = slugOrUrl ? dictionaryUrls[slugOrUrl] ?? slugOrUrl : "";
-    if (!baseUrl) throw new Error("fetchApi called without a valid slug or url");
-
-    if (param) baseUrl = `${baseUrl}/${param}`;
-
-    const finalUrl = `${baseUrl}`;
+    // استفاده از API route داخلی برای جلوگیری از CORS
+    const apiRoute = `/api/proxy?endpoint=${encodeURIComponent(slugOrUrl || "")}${param ? `&param=${param}` : ""}`;
 
     const defaultConfig: FetchConfig = {
         method: config.method ?? "GET",
@@ -60,20 +47,16 @@ export const fetchApi = async <T = any>(
             ...config.headers,
         },
         credentials: config.credentials ?? "include",
-        cache: config.cache ?? "force-cache",
-        next: config.next,
         body: config.body,
     };
 
     try {
-        const response = await fetch(finalUrl, defaultConfig);
+        const response = await fetch(apiRoute, defaultConfig);
 
         if (!response.ok) {
             const data: ApiErrorResponse = await response.json().catch(() => ({}));
-
             if (response.status === 422) throw new ValidationException(data.errors || {});
             if (response.status === 403) throw new AuthenticationException(data.message || "Unauthorized");
-
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 

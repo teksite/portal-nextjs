@@ -25,3 +25,16 @@ export interface BasicGroupType {
 export interface GroupType extends BasicGroupType {
     licenses: LicenseType[];
 }
+
+export interface FilterItemType {
+    id: string;
+    title: string;
+}
+
+export interface FilterGroupType {
+    title: string;
+    items: Record<string, FilterItemType>;
+}
+
+export type LicensesFiltersType = Record<string, FilterGroup>;
+

@@ -7,6 +7,7 @@ import {LayoutFooter} from "@/app/partials/footer";
 
 const vazirMatn = Vazirmatn({
     variable: "--vazir-mat",
+
 });
 
 
@@ -22,12 +23,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="fa" dir={'rtl'}>
-        <body className={`${vazirMatn.className} antialiased outer-container`}>
-        <LayoutHeader/>
-        <main className="min-h-svh">
-            {children}
-        </main>
-        <LayoutFooter/>
+        <body className={`${vazirMatn.className} antialiased bg-slate-100`}>
+        <div className="outer-container">
+            <LayoutHeader/>
+            <main className="min-h-svh">
+                {children}
+            </main>
+            <LayoutFooter/>
+        </div>
         </body>
         </html>
     );
