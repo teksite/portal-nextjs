@@ -37,7 +37,6 @@ export const fetchApi = async <T = any>(
         return mockData[key] as T;
     }
 
-    // استفاده از API route داخلی برای جلوگیری از CORS
     const apiRoute = `/api/proxy?endpoint=${encodeURIComponent(slugOrUrl || "")}${param ? `&param=${param}` : ""}`;
 
     const defaultConfig: FetchConfig = {
