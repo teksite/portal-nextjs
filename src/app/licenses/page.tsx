@@ -17,7 +17,7 @@ export default async function ServicesIndexPage() {
         <>
             <Breadcrumbs items={breadcrumbs}/>
             <div className='grid gap-6 lg:grid-cols-4 2xl:grid-cols-6'>
-                <aside className="p-3 bg-zinc-50 rounded-lg shadow-lg">
+                <aside className="p-3 bg-zinc-50 rounded-e-lg shadow-lg">
                     <FilterAside />
                 </aside>
                <div className="lg:col-span-3 2xl:col-span-5">

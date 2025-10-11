@@ -50,7 +50,7 @@
 
     /* Input Style */
     .input-style {
-        @apply block w-full rounded-lg border border-zinc-300 bg-white py-2 ps-3 pe-10 text-sm
+        @apply block w-full rounded-lg border border-zinc-300 bg-white py-1.5 px-3 text-sm
         placeholder:text-gray-500 focus:border-blue-700 focus:ring-2 focus:ring-blue-700/30
         outline-none dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-50 dark:placeholder:text-gray-400;
     }
