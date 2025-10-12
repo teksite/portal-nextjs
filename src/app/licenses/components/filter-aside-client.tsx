@@ -1,9 +1,9 @@
 'use client';
 
 import {useState} from "react";
-import {FilterGroupType, FilterItemType, LicensesFiltersType} from "@/types";
+import {FilterGroupType, FilterItemType} from "@/types";
 
-export function FilterAsideClient({filterItems}: { filterItems: LicensesFiltersType }) {
+export function FilterAsideClient({filterItems}: { filterItems: FilterGroupType }) {
     const [activeFilters, setActiveFilters] = useState<Record<string, string>>({});
 
     const handleFilterChange = (key: string, value: string) => {

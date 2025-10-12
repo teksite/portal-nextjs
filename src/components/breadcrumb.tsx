@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { memo } from "react";
 
-type BreadcrumbItem = [label: string, href?: string];
+type BreadcrumbItem = {
+    label: string;
+    href?: string;
+};
 
 type BreadcrumbsProps = {
     items: BreadcrumbItem[];
     separator?: string;
 };
-
 export const Breadcrumbs = memo(function Breadcrumbs({ items, separator = "/" }: BreadcrumbsProps) {
     if (!items || items.length === 0) return null;
 

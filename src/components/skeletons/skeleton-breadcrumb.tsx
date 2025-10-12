@@ -1,13 +1,3 @@
-import Link from "next/link";
-import {memo} from "react";
-
-type BreadcrumbItem = [label: string, href?: string];
-
-type BreadcrumbsProps = {
-    items: BreadcrumbItem[];
-    separator?: string;
-};
-
 export function SkeletonBreadcrumbs() {
     return (
         <div className=" bg-zinc-50 px-3 py-2 shadow mb-6">

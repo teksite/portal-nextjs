@@ -2,7 +2,7 @@ import {LicenseType} from "@/types";
 import Link from "next/link";
 
 type LicenseItemProps = {
-    groups: LicenseType[];
+    license: LicenseType;
 }
 
 export function LicenseItem({license}: LicenseItemProps) {

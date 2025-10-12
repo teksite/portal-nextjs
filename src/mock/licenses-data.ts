@@ -1,6 +1,6 @@
-import {FilterGroupType, GroupType, LicensesFilters, LicensesFiltersType, LicenseType} from "@/types";
+import {BasicGroupType, FilterGroupType, GroupWithLicenseType, LicenseType} from "@/types";
 
-export const mockLGetLicenses: LicenseType[] = {
+export const mockLGetLicenses: Record<string, LicenseType> = {
     '1179027790000000128': {
         id: '1179027790000000128',
         title: 'ثبت شکایات',
@@ -172,15 +172,6 @@ export const mockLGetLicenses: LicenseType[] = {
         electronics: 1,
         serviceTime: 'شنبه تا چهار شنبه - ساعات اداری',
         groupTitle: 'هنر'
-    },
-    '1233027790000000300': {
-        id: '1233027790000000300',
-        title: 'برگزاری دوره های آموزش مهارتی فرهنگی ، هنری',
-        code: '18051307000',
-        groupId: '1233027780000000101',
-        electronics: 1,
-        serviceTime: 'شنبه تا چهار شنبه - ساعات اداری',
-        groupTitle: 'آموزش'
     },
     '1233027790000000301': {
         id: '1233027790000000301',
@@ -935,7 +926,6 @@ export const mockLGetLicenses: LicenseType[] = {
     }
 }
 export const mockLShowLicense: LicenseType = {
-
     id: '1233027790000000385',
     title: 'صدور پروانه مالکیت فیلم',
     groupId: '1233027780000000119',
@@ -943,7 +933,55 @@ export const mockLShowLicense: LicenseType = {
     serviceTime: 'شنبه تا چهار شنبه - ساعات اداری',
     groupTitle: 'فیلم و سینما'
 }
-export const mockGetLicensesAndGroups: GroupType[] = {
+
+export const mockGetGroups:  Record<string, BasicGroupType> = {
+    '1152027780000000265': {
+        title: "خدمات عمومی",
+        id: "1152027780000000265",
+    },
+    '1233027780000000100': {
+        title: "فضای مجازی",
+        id: "1233027780000000100",
+    },
+    '1233027780000000101': {
+        title: "آموزش",
+        id: "1233027780000000101",
+    },
+    '1233027780000000102': {
+        title: "هنر",
+        id: "1233027780000000102",
+    },
+    '1233027780000000106': {
+        title: "چاپ ، نشر و کتاب",
+        id: "1233027780000000106",
+    },
+    '1233027780000000116': {
+        title: "سایر خدمات",
+        id: "1233027780000000116",
+    },
+    '1233027780000000109': {
+        title: "معرفی نامه و تاییدیه",
+        id: "1233027780000000109",
+    },
+    '1233027780000000120': {
+        title: "رسانه و تبلیغات",
+        id: "1233027780000000120",
+    },
+    '1233027780000000114': {
+        title: "موسسات",
+        id: "1233027780000000114",
+    },
+    '1233027780000000115': {
+        title: "بازی های رایانه ای",
+        id: "1233027780000000115",
+    },
+    '1233027780000000119': {
+        title: "فیلم و سینما",
+        id: "1233027780000000119",
+    }
+}
+
+export const mockGetLicensesAndGroups:  Record<string, GroupWithLicenseType> = {
     '1152027780000000265': {
         title: "خدمات عمومی",
         id: "1152027780000000265",
@@ -1942,7 +1980,7 @@ export const mockGetLicensesAndGroups: GroupType[] = {
     }
 }
 
-export const mockGetLicensesFilters :LicensesFiltersType[] = {
+export const mockGetLicensesFilters : Record<string, FilterGroupType> = {
     group: {
         title: "گروه خدمت",
         items: {

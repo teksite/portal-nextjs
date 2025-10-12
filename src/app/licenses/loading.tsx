@@ -1,5 +1,5 @@
 import {SkeletonGroupedLicensesList} from "@/app/licenses/components/skeletons/skeleton-grouped-licenses-list";
-import {SkeletonBreadcrumbs} from "@/app/components/skeletons/skeleton-breadcrumb";
+import {SkeletonBreadcrumbs} from "@/components/skeletons/skeleton-breadcrumb";
 
 
 export default function Loading() {

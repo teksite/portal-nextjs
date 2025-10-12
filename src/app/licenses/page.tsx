@@ -1,9 +1,8 @@
 import {fetchApi} from "@/lib/utils";
-import {GroupType, LicenseType} from "@/types";
 import {GroupedLicensesList} from "@/app/licenses/components/grouped-licenses-list";
-import Link from "next/link";
-import {Breadcrumbs} from "@/app/components/breadcrumb";
 import {FilterAside} from "@/app/licenses/partials/filter-aside";
+import {GroupWithLicenseType} from "@/types";
+import {Breadcrumbs} from "@/components/breadcrumb";
 
 const breadcrumbs = [
     {label: "صفحه نخست", href: "/"},
@@ -11,7 +10,7 @@ const breadcrumbs = [
 ];
 export default async function ServicesIndexPage() {
 
-    const groups: GroupType[] | [] = await fetchApi('allLicencesAndGroups');
+    const groups: GroupWithLicenseType[] | [] = await fetchApi('allLicencesAndGroups');
 
     return (
         <>

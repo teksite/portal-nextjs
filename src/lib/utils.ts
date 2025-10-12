@@ -1,5 +1,11 @@
 import { AuthenticationException, ValidationException } from "@/exceptions";
-import {mockGetLicensesAndGroups, mockGetLicensesFilters, mockLGetLicenses, mockLShowLicense} from "@/mock";
+import {
+    mockGetGroups,
+    mockGetLicensesAndGroups,
+    mockGetLicensesFilters,
+    mockLGetLicenses,
+    mockLShowLicense
+} from "@/mock";
 
 interface ApiErrorResponse {
     errors?: Record<string, string[]>;
@@ -14,18 +20,19 @@ interface FetchConfig extends RequestInit {
 }
 
 // فقط برای sandbox
-const mockData: Record<string, any> = {
+const mockData: Record<string, unknown> = {
     allLicences: mockLGetLicenses,
     showLicences: mockLShowLicense,
     allLicencesAndGroups: mockGetLicensesAndGroups,
-    showLicenceGroups: mockLShowLicense,
-    allLicenceGroups: mockLShowLicense,
+
+    allLicenceGroups: mockGetGroups,
+
     licensesFilters: mockGetLicensesFilters,
 };
 
 const sandbox = true; // true = استفاده از mock
 
-export const fetchApi = async <T = any>(
+export const fetchApi = async <T = unknown>(
     slugOrUrl?: string,
     param?: string,
     config: FetchConfig = {}

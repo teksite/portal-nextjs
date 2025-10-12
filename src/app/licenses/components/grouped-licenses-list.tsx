@@ -1,14 +1,14 @@
-import {GroupType, LicenseType} from "@/types";
+import {GroupWithLicenseType, LicenseType} from "@/types";
 import {LicenseItem} from "@/app/licenses/components/license-item";
 
 type GroupedLicensesProps = {
-    groups: GroupType[];
+    groups: GroupWithLicenseType[];
 }
 
 export function GroupedLicensesList({groups}: GroupedLicensesProps) {
     return (
         <ul>
-            {Object.entries(groups).map(([id, group]: [key: string, group: GroupType]) => (
+            {Object.entries(groups).map(([id, group]: [key: string, group: GroupWithLicenseType]) => (
                     <li key={id} className="mt-12">
                         <h3 className="h4">
                             {group.title}

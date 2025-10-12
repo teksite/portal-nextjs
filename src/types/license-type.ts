@@ -16,14 +16,13 @@ export interface LicenseType extends BasicLicenseType {
     icon?: string;
 }
 
-
 export interface BasicGroupType {
     id: string;
     title: string;
 }
 
-export interface GroupType extends BasicGroupType {
-    licenses: LicenseType[];
+export interface GroupWithLicenseType extends BasicGroupType {
+    licenses: Record<string, LicenseType>;
 }
 
 export interface FilterItemType {
@@ -36,5 +35,4 @@ export interface FilterGroupType {
     items: Record<string, FilterItemType>;
 }
 
-export type LicensesFiltersType = Record<string, FilterGroup>;
 
