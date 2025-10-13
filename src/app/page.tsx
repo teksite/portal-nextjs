@@ -1,6 +1,6 @@
-import Image from "next/image";
 import {SectionLicenses} from "@/app/components/section-licenses";
 import {SectionTransparency} from "@/app/components/section-transparency";
+import {SectionOpenData} from "@/app/components/section-open-data";
 
 export default function Home() {
     return (
@@ -12,7 +12,7 @@ export default function Home() {
                 <SectionTransparency />
             </div>
             <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
-                <SectionLicenses />
+                <SectionOpenData />
             </div>
         </>
     );

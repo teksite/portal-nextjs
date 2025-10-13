@@ -1,36 +1,79 @@
-import { ReactNode, HTMLAttributes, useEffect, useCallback } from "react";
-import { Xbox } from "@/components/xbox";
+'use client'
+
+import { ReactNode, HTMLAttributes, useEffect, useCallback, useState, useRef } from "react";
 
 type ModalProps = {
+    title?: string;
     children: ReactNode;
     isOpen: boolean;
     onClose: () => void;
 } & HTMLAttributes<HTMLDivElement>;
 
-export function Modal({ children, isOpen, onClose, ...props }: ModalProps) {
+export function Modal({ title, children, isOpen, onClose, ...props }: ModalProps) {
+    const modalRef = useRef<HTMLDivElement>(null);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+    const [dragging, setDragging] = useState(false);
 
+    // -------------------------------
+    // Drag handlers
+    // -------------------------------
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!modalRef.current) return;
+        setDragging(true);
+        setMouseOffset({
+            x: e.clientX - position.x,
+            y: e.clientY - position.y,
+        });
+    };
+
+    const handleMouseMove = useCallback((e: MouseEvent) => {
+        if (!dragging) return;
+        setPosition({
+            x: e.clientX - mouseOffset.x,
+            y: e.clientY - mouseOffset.y,
+        });
+    }, [dragging, mouseOffset]);
+
+    const handleMouseUp = useCallback(() => setDragging(false), []);
+
+    useEffect(() => {
+        if (dragging) {
+            window.addEventListener("mousemove", handleMouseMove);
+            window.addEventListener("mouseup", handleMouseUp);
+        } else {
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("mouseup", handleMouseUp);
+        }
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("mouseup", handleMouseUp);
+        };
+    }, [dragging, handleMouseMove, handleMouseUp]);
+
+    // -------------------------------
+    // Close handler
+    // -------------------------------
     const handleClose = useCallback(() => {
-        if (isOpen) onClose();
-    }, [isOpen, onClose]);
+        onClose();
+        setPosition({ x: 0, y: 0 }); // ✅ Reset position
+    }, [onClose]);
 
+    // -------------------------------
+    // ESC key
+    // -------------------------------
     useEffect(() => {
         if (!isOpen) return;
-
-        const handleEsc = (e: KeyboardEvent) => {
-            if (e.key === "Escape") onClose();
-        };
-
+        const handleEsc = (e: KeyboardEvent) => e.key === "Escape" && handleClose();
         window.addEventListener("keydown", handleEsc);
         return () => window.removeEventListener("keydown", handleEsc);
-    }, [isOpen, onClose]);
+    }, [isOpen, handleClose]);
 
+    // -------------------------------
+    // Lock body scroll
+    // -------------------------------
     useEffect(() => {
-        if (isOpen) {
-            document.body.classList.add("overflow-hidden");
-        } else {
-            document.body.classList.remove("overflow-hidden");
-        }
-
+        document.body.classList.toggle("overflow-hidden", isOpen);
         return () => document.body.classList.remove("overflow-hidden");
     }, [isOpen]);
 
@@ -38,24 +81,35 @@ export function Modal({ children, isOpen, onClose, ...props }: ModalProps) {
 
     return (
         <div
-            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center animate-fadeIn"
+            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center"
             {...props}
             onClick={handleClose}
         >
             <div
-                className="relative w-[90%] max-w-6xl max-h-[90vh] bg-white rounded-lg shadow-lg overflow-hidden animate-scaleIn"
+                ref={modalRef}
+                style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
+                className="relative w-[90%] max-w-6xl max-h-[90vh] rounded-lg shadow-lg overflow-hidden bg-white -translate-y-1/2"
                 onClick={(e) => e.stopPropagation()}
             >
-                <Xbox className="w-full h-full overflow-y-auto p-6 relative">
+                {/* Modal Header (Drag handle) */}
+                <div
+                    className="modalHeader flex items-center justify-between gap-3 border-b border-zinc-300 bg-blue-950 px-3 py-1 cursor-move"
+                    onMouseDown={handleMouseDown}
+                >
+                    {title && <h3 className="text-lg font-bold mb-0 text-white">{title}</h3>}
                     <button
-                        className="text-red-500 rounded-full px-2 py-1 absolute top-2 end-2"
+                        className="text-red-500 rounded-full p-1"
                         onClick={handleClose}
                         aria-label="Close Modal"
                     >
                         ✕
                     </button>
+                </div>
+
+                {/* Modal Content */}
+                <div className="bg-zinc-50 p-6 w-full h-full overflow-y-auto">
                     {children}
-                </Xbox>
+                </div>
             </div>
         </div>
     );

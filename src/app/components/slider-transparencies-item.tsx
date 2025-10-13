@@ -32,11 +32,7 @@ export function SliderTransparenciesItem({ category }: { category :TransparencyC
                 </figure>
             </button>
 
-            <Modal isOpen={showModal} onClose={toggleModal}>
-                <div className="flex items-center justify-between gap-3 border-b border-zinc-300 pb-4 mb-6">
-                    <h3 className="text-lg font-bold">{category.title}</h3>
-                </div>
-
+            <Modal isOpen={showModal} onClose={toggleModal} title={category.title}>
                 <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {Object.entries(category.groups).map(([key, group]) => (
                         <li key={key}>
