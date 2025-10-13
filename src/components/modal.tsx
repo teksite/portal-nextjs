@@ -88,7 +88,7 @@ export function Modal({ title, children, isOpen, onClose, ...props }: ModalProps
             <div
                 ref={modalRef}
                 style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
-                className="relative w-[90%] max-w-4xl max-h-[90vh] rounded-lg shadow-lg overflow-hidden bg-zinc-50 -translate-y-1/2"
+                className="relative w-[90%] max-w-4xl max-h-[90vh] rounded-lg shadow-lg overflow-hidden bg-zinc-50 dark:bg-zinc-900 -translate-y-1/2"
                 onClick={(e) => e.stopPropagation()} >
                 <div
                     className="modalHeader flex items-center justify-between gap-3  bg-slate-600 px-3 py-1 cursor-move"
@@ -101,7 +101,7 @@ export function Modal({ title, children, isOpen, onClose, ...props }: ModalProps
                         ✕
                     </button>
                 </div>
-                <div className="bg-zinc-50 p-6 w-full h-full overflow-y-auto">
+                <div className=" p-6 w-full h-full overflow-y-auto">
                     {children}
                 </div>
             </div>

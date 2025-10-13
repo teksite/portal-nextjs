@@ -14,14 +14,14 @@ export const Breadcrumbs = memo(function Breadcrumbs({ items, separator = "/" }:
     if (!items || items.length === 0) return null;
 
     return (
-        <nav aria-label="Breadcrumb" className=" bg-zinc-50 px-3 py-3 shadow border-b border-zinc-300">
+        <nav aria-label="Breadcrumb" className=" bg-zinc-50 dark:bg-zinc-900 px-3 py-3 shadow border-b border-default">
             {items.map(({label, href}, index) => {
                 const isLast = index === items.length - 1;
 
                 return (
                     <span key={href ?? label}>
                         {href && !isLast ? (
-                            <Link href={href} className="text-blue-900 hover:blue-600 font-semibold">
+                            <Link href={href} className="text-blue-900 dark:text-blue-100 hover:blue-600 font-semibold">
                                 {label}
                             </Link>
                         ) : (

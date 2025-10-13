@@ -8,26 +8,26 @@ import {SectionOpenData} from "@/app/components/section-open-data";
 export default function Loading() {
     return (
         <>
-            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+            <div className="border border-default my-12 rounded-xl inner-container p-6">
                 <SkeletonSection/>
                 <SkeletonSlider />
             </div>
-            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+            <div className="border border-default my-12 rounded-xl inner-container p-6">
                 <span className="shimmer w-24 p-2 h-6 block rounded-md mb-12"></span>
                 <SkeletonSlider/>
             </div>
-            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+            <div className="border border-default my-12 rounded-xl inner-container p-6">
                 <SkeletonSection/>
                 <SkeletonSlider />
             </div>
 
-            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+            <div className="border border-default my-12 rounded-xl inner-container p-6">
                 <SectionLicenses/>
             </div>
-            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+            <div className="border border-default my-12 rounded-xl inner-container p-6">
                 <SectionTransparency/>
             </div>
-            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+            <div className="border border-default my-12 rounded-xl inner-container p-6">
                 <SectionOpenData/>
             </div>
         </>

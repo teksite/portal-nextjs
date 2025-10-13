@@ -15,7 +15,7 @@ export function SliderTransparenciesItem({category}: { category: TransparencyCat
             <button
                 type="button"
                 onClick={toggleModal}
-                className="block w-full focus:outline-none cursor-pointer hover:shadow transition border border-zinc-100 rounded-lg p-3">
+                className="block w-full focus:outline-none cursor-pointer hover:shadow transition xbox">
                 <figure className="text-center">
                     {category.image && (
                         <Image
@@ -35,7 +35,7 @@ export function SliderTransparenciesItem({category}: { category: TransparencyCat
             <Modal isOpen={showModal} onClose={toggleModal} title={category.title}>
                 <ul className="flex gap-3 justify-between items-stretch flex-wrap">
                     {Object.entries(category.groups).map(([key, group]) => (
-                        <li key={key} className="w-[200px] p-6 border border-zinc-300 rounded-lg h-full">
+                        <li key={key} className="w-[200px] p-6 border border-default rounded-lg h-full">
                             <Link href={`/groups/${key}`}>
                                 <figure>
                                     {group.image && (

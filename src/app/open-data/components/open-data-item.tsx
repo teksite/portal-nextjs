@@ -8,7 +8,7 @@ type OpenDataItemProps = {
 
 export function OpenDataItem({opendata}: OpenDataItemProps) {
     return (
-        <Link href={`/open-data/${opendata.id}`} className="bg-zinc-50 rounded-xl hover:shadow h-full flex flex-col justify-between">
+        <Link href={`/open-data/${opendata.id}`} className="bg-zinc-50 dark:bg-zinc-900 rounded-xl hover:shadow h-full flex flex-col justify-between">
             <div className='px-3 py-6 '>
                <figure>
                    {

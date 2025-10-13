@@ -11,7 +11,7 @@ export async function SectionTransparency() {
                 <h2>
                     درگاه شفافیت
                 </h2>
-                <hr className="my-6 border-zinc-300"/>
+                <hr className="my-6 border-default"/>
                 <SliderTransparencies categories={categories} />
             </Xbox>
         </section>
