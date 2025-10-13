@@ -1,17 +1,16 @@
 import {fetchApi} from "@/lib/utils";
-import {GroupedLicensesList} from "@/app/licenses/components/grouped-licenses-list";
-import {FilterAside} from "@/app/licenses/partials/filter-aside";
+import {GroupedOpenDataList} from "@/app/open-data/components/grouped-open-data-list";
 import {GroupWithLicenseType} from "@/types";
 import {Breadcrumbs} from "@/components/breadcrumb";
+import {FilterAside} from "@/app/open-data/partials/filter-aside";
 
 const breadcrumbs = [
     {label: "صفحه نخست", href: "/"},
-    {label: "صفحه مجوزها"}
+    {label: "درگاه داده باز"}
 ];
+
 export default async function ServicesIndexPage() {
-
-    const groups: GroupWithLicenseType[] | [] = await fetchApi('allLicencesAndGroups');
-
+    const groups: GroupWithLicenseType[] | [] = await fetchApi('allOpenDataAndGroups');
     return (
         <>
             <Breadcrumbs items={breadcrumbs}/>
@@ -21,9 +20,9 @@ export default async function ServicesIndexPage() {
                 </aside>
                 <div className="lg:col-span-3 2xl:col-span-5">
                     <div className="w-11/12 mt-6 mx-auto">
-                        <h1>مجوزها</h1>
+                        <h1>درگاه داده باز</h1>
                         <div className="pb-24">
-                            <GroupedLicensesList groups={groups}/>
+                            <GroupedOpenDataList groups={groups}/>
                         </div>
                     </div>
                 </div>

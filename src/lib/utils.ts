@@ -1,8 +1,10 @@
-import { AuthenticationException, ValidationException } from "@/exceptions";
+import {AuthenticationException, ValidationException} from "@/exceptions";
 import {
     mockGetGroups,
     mockGetLicensesAndGroups,
     mockGetLicensesFilters,
+    mockGetOpenDataAndGroups, mockGetOpenDataFilters,
+    mockGetOpendataFilters,
     mockLGetLicenses, mockLGetTransparencyCategoryWithGroup,
     mockLShowLicense
 } from "@/mock";
@@ -29,6 +31,10 @@ const mockData: Record<string, unknown> = {
 
     // Transparency
     allTransparencyCategoryWithGroup: mockLGetTransparencyCategoryWithGroup,
+    // Open Data
+    allOpenDataAndGroups: mockGetOpenDataAndGroups,
+    openDataFilters: mockGetOpenDataFilters,
+
 };
 
 const sandbox = true;

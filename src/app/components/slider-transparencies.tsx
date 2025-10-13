@@ -8,7 +8,7 @@ type SliderTransparenciesProps = {
 
 export async function SliderTransparencies({categories}: SliderTransparenciesProps) {
     return (
-        <ul className="grid gap-3 grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 items-stretch justify-between">
+        <ul className="grid gap-3 grid-cols-2 sm:grid-cols-4 xl:grid-cols-6 items-stretch">
             {
                 Object.entries(categories).map(([key, category]: [key: string, categories: TransparencyCategoryWithGroupType]) => (
                     <li key={key} className='h-full'>

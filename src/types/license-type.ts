@@ -3,6 +3,8 @@ export interface BasicLicenseType {
     title: string;
     groupId: string;
     groupTitle?: string;
+    image?: string;
+
 }
 export interface LicenseType extends BasicLicenseType {
     code?: string;
@@ -12,7 +14,7 @@ export interface LicenseType extends BasicLicenseType {
     electronics?: number;
     needPresence?: boolean;
     serviceTime?: string | null;
-    image?: string;
+
 }
 
 export interface BasicGroupType {

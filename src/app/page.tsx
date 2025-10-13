@@ -5,14 +5,14 @@ import {SectionOpenData} from "@/app/components/section-open-data";
 export default function Home() {
     return (
         <>
-           <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
-               <SectionLicenses />
-           </div>
             <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
-                <SectionTransparency />
+                <SectionLicenses/>
             </div>
             <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
-                <SectionOpenData />
+                <SectionTransparency/>
+            </div>
+            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+                <SectionOpenData/>
             </div>
         </>
     );
