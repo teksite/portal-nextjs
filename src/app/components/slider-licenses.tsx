@@ -1,6 +1,7 @@
 import {BasicGroupType} from "@/types";
 import {Xbox} from "@/components/xbox";
 import Link from "next/link";
+import Image from "next/image";
 type SliderLicensesProps={
     groups: Record<string, BasicGroupType>
 }
@@ -13,6 +14,11 @@ export async function SliderLicenses({groups}:SliderLicensesProps) {
                       <Xbox className='h-full'>
                           <Link href={`/licenses/${group.id}`}>
                               <figure className="text-center">
+                                  {
+                                      group.image &&
+                                      <Image src={group.image} alt={group.title} width={200} height={150}
+                                             fetchPriority={'low'} loading={'lazy'} decoding={'async'}/>
+                                  }
                                   <figcaption className="text-center text-sm">
                                       {group.title}
                                   </figcaption>

@@ -3,7 +3,7 @@ import {
     mockGetGroups,
     mockGetLicensesAndGroups,
     mockGetLicensesFilters,
-    mockLGetLicenses,
+    mockLGetLicenses, mockLGetTransparencyCategoryWithGroup,
     mockLShowLicense
 } from "@/mock";
 
@@ -19,18 +19,19 @@ interface FetchConfig extends RequestInit {
     };
 }
 
-// فقط برای sandbox
 const mockData: Record<string, unknown> = {
+    // LICENSE
     allLicences: mockLGetLicenses,
     showLicences: mockLShowLicense,
     allLicencesAndGroups: mockGetLicensesAndGroups,
-
     allLicenceGroups: mockGetGroups,
-
     licensesFilters: mockGetLicensesFilters,
+
+    // Transparency
+    allTransparencyCategoryWithGroup: mockLGetTransparencyCategoryWithGroup,
 };
 
-const sandbox = true; // true = استفاده از mock
+const sandbox = true;
 
 export const fetchApi = async <T = unknown>(
     slugOrUrl?: string,

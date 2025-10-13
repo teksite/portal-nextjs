@@ -6,8 +6,9 @@ const dictionaryUrls = {
     allLicencesAndGroups: "http://localhost:5000/api2/GetAppForCrm/0.1/get-all-groups-lincenses",
 
     allLicenceGroups: "http://localhost:5000/api2/GetAppForCrm/0.1/get-groups",
-
     licensesFilters: "http://localhost:5000/api2/GetAppForCrm/0.1/get-license-filters",
+
+    allTransparencyCategoryWithGroup:"http://localhost:5000/api2/GetAppForCrm/0.1/get-license-filters",
 } as const;
 
 type EndpointKey = keyof typeof dictionaryUrls;

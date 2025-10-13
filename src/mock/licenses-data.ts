@@ -933,7 +933,6 @@ export const mockLShowLicense: LicenseType = {
     serviceTime: 'شنبه تا چهار شنبه - ساعات اداری',
     groupTitle: 'فیلم و سینما'
 }
-
 export const mockGetGroups:  Record<string, BasicGroupType> = {
     '1152027780000000265': {
         title: "خدمات عمومی",
@@ -980,7 +979,6 @@ export const mockGetGroups:  Record<string, BasicGroupType> = {
         id: "1233027780000000119",
     }
 }
-
 export const mockGetLicensesAndGroups:  Record<string, GroupWithLicenseType> = {
     '1152027780000000265': {
         title: "خدمات عمومی",
@@ -1979,7 +1977,6 @@ export const mockGetLicensesAndGroups:  Record<string, GroupWithLicenseType> = {
         }
     }
 }
-
 export const mockGetLicensesFilters : Record<string, FilterGroupType> = {
     group: {
         title: "گروه خدمت",
