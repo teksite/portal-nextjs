@@ -15,7 +15,7 @@ export function SliderTransparenciesItem({ category }: { category :TransparencyC
             <button
                 type="button"
                 onClick={toggleModal}
-                className="focus:outline-none hover:opacity-90 transition" >
+                className="block w-full focus:outline-none cursor-pointer hover:shadow transition border border-zinc-100 rounded-lg p-3" >
                 <figure className="text-center">
                     {category.image && (
                         <Image
