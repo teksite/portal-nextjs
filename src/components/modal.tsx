@@ -81,32 +81,26 @@ export function Modal({ title, children, isOpen, onClose, ...props }: ModalProps
 
     return (
         <div
-            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center"
+            className="fixed inset-0 bg-zinc-950/90 z-50 flex items-center justify-center"
             {...props}
             onClick={handleClose}
         >
             <div
                 ref={modalRef}
                 style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
-                className="relative w-[90%] max-w-6xl max-h-[90vh] rounded-lg shadow-lg overflow-hidden bg-white -translate-y-1/2"
-                onClick={(e) => e.stopPropagation()}
-            >
-                {/* Modal Header (Drag handle) */}
+                className="relative w-[90%] max-w-4xl max-h-[90vh] rounded-lg shadow-lg overflow-hidden bg-zinc-50 -translate-y-1/2"
+                onClick={(e) => e.stopPropagation()} >
                 <div
-                    className="modalHeader flex items-center justify-between gap-3 border-b border-zinc-300 bg-blue-950 px-3 py-1 cursor-move"
-                    onMouseDown={handleMouseDown}
-                >
-                    {title && <h3 className="text-lg font-bold mb-0 text-white">{title}</h3>}
+                    className="modalHeader flex items-center justify-between gap-3  bg-slate-600 px-3 py-1 cursor-move"
+                    onMouseDown={handleMouseDown} >
+                    {title && <h3 className="text-lg font-bold mb-0 text-zinc-50">{title}</h3>}
                     <button
-                        className="text-red-500 rounded-full p-1"
+                        className="text-zinc-50 rounded-full p-1 mt-1"
                         onClick={handleClose}
-                        aria-label="Close Modal"
-                    >
+                        aria-label="Close Modal" >
                         ✕
                     </button>
                 </div>
-
-                {/* Modal Content */}
                 <div className="bg-zinc-50 p-6 w-full h-full overflow-y-auto">
                     {children}
                 </div>

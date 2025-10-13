@@ -24,7 +24,7 @@ export async function SectionOpenData() {
                     </div>
                 </div>
                 <div>
-                    <Image src={'/uploads/factory/open-data-banner.jpg'} alt={'درگاه داده باز'} width={400} height={177} className='w-full h-full rounded-lg' loading={'eager'} property fetchPriority='high' decoding='sync' />
+                    <Image src={'/uploads/factory/open-data-banner.jpg'} alt={'درگاه داده باز'} width={400} height={177} className='w-full h-full rounded-lg' loading={'eager'} fetchPriority='high' decoding='sync' />
                 </div>
             </Xbox>
 

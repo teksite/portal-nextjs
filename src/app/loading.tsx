@@ -1,22 +1,34 @@
-import {SkeletonGroupedLicensesList} from "@/app/licenses/components/skeletons/skeleton-grouped-licenses-list";
-import {SkeletonBreadcrumbs} from "@/components/skeletons/skeleton-breadcrumb";
-import {SkeletonAside} from "@/app/licenses/components/skeletons/skeleton-aside";
+import {SkeletonSection} from "@/app/components/skeleton/skeleton-section";
+import {SkeletonSlider} from "@/app/components/skeleton/skeleton-slider";
+import {SectionLicenses} from "@/app/components/section-licenses";
+import {SectionTransparency} from "@/app/components/section-transparency";
+import {SectionOpenData} from "@/app/components/section-open-data";
 
 
 export default function Loading() {
     return (
         <>
-            <SkeletonBreadcrumbs/>
-            <div className='grid gap-6 lg:grid-cols-4 2xl:grid-cols-6'>
-              <div>
-                  <SkeletonAside />
-              </div>
-                <div className="lg:col-span-3 2xl:col-span-5">
-                    <div className="w-11/12 mt-6 mx-auto">
-                        <span className="w-24 h-3 p-2 shimmer block mb-6"></span>
-                        <SkeletonGroupedLicensesList/>
-                    </div>
-                </div>
+            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+                <SkeletonSection/>
+                <SkeletonSlider />
+            </div>
+            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+                <span className="shimmer w-24 p-2 h-6 block rounded-md mb-12"></span>
+                <SkeletonSlider/>
+            </div>
+            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+                <SkeletonSection/>
+                <SkeletonSlider />
+            </div>
+
+            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+                <SectionLicenses/>
+            </div>
+            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+                <SectionTransparency/>
+            </div>
+            <div className="border border-zinc-300 my-12 rounded-xl inner-container p-6">
+                <SectionOpenData/>
             </div>
         </>
     );

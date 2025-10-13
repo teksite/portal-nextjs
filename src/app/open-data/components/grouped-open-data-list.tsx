@@ -10,7 +10,7 @@ export function GroupedOpenDataList({groups}: GroupedOpenDataListProps) {
         <ul>
             {Object.entries(groups).map(([id, group]: [key: string, group: GroupWithOpenDataType]) => (
                     <li key={id} className="mt-12">
-                        <h3 className="h4">
+                        <h3 className="h4" id={group.id}>
                             {group.title}
                         </h3>
                         <div className="mt-6">

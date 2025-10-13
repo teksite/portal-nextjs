@@ -24,7 +24,7 @@ export async function SectionLicenses() {
                     </div>
                 </div>
                 <div>
-                    <Image src={'/uploads/factory/license-banner.jpg'} alt={'درگاه مجوز‌ها'} width={400} height={177} className='w-full h-full rounded-lg' loading={'eager'} property fetchPriority='high' decoding='sync' />
+                    <Image src={'/uploads/factory/license-banner.jpg'} alt={'درگاه مجوز‌ها'} width={400} height={177} className='w-full h-full rounded-lg' loading={'eager'} fetchPriority='high' decoding='sync' />
                 </div>
             </Xbox>
             <div>

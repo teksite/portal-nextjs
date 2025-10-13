@@ -2092,8 +2092,8 @@ export const mockGetOpenDataFilters : Record<string, FilterGroupType> = {
                 title:"PDF"
 
             },
-            "2":{
-                id:"2",
+            "3":{
+                id:"3",
                 title:"EXCEL"
 
             },

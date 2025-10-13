@@ -58,6 +58,6 @@
         @apply bg-gray-200 rounded-xl animate-pulse;
     }
     .shimmer .shimmer{
-        @apply bg-white rounded-xl animate-pulse;
+        @apply bg-zinc-50 rounded-xl animate-pulse;
     }
 }
