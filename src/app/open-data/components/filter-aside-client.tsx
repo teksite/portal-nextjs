@@ -42,7 +42,7 @@ export function FilterAsideClient({filterItems}: { filterItems: FilterOpenDataGr
                     />
                 </li>
 
-                {Object.entries(filterItems).map(([groupKey, filterGroup]: [string, FilterOpenDataGroupType]) => (
+                {Object.entries(filterItems).map(([groupKey, filterGroup]: [groupKey:string, filterGroup:FilterOpenDataGroupType]) => (
                     <li key={groupKey}>
                         <label className="mb-1 font-bold block text-sm" htmlFor={`filter[${groupKey}]`}>
                             {filterGroup.title}:

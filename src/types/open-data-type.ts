@@ -7,16 +7,16 @@ export interface BasicOpenDataType {
 
 }
 export interface OpenDataType extends BasicOpenDataType {
-
+    code?:string;
 
 }
 
-export interface BasicGroupType {
+export interface BasicOpenDataGroupType {
     id: string;
     title: string;
     image?: string;
 }
-export interface GroupWithOpenDataType extends BasicGroupType {
+export interface GroupWithOpenDataType extends BasicOpenDataGroupType {
     opendata: Record<string, BasicOpenDataType>;
 }
 
@@ -27,7 +27,7 @@ export interface FilterOpenDataItemType {
 }
 export interface FilterOpenDataGroupType {
     title: string;
-    items: Record<string, FilterItemType>;
+    items: Record<string, FilterOpenDataItemType>;
 }
 
 

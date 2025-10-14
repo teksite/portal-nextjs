@@ -1,6 +1,6 @@
 import {fetchApi} from "@/lib/utils";
 import {GroupedOpenDataList} from "@/app/open-data/components/grouped-open-data-list";
-import {GroupWithLicenseType} from "@/types";
+import {GroupWithLicenseType, GroupWithOpenDataType} from "@/types";
 import {Breadcrumbs} from "@/components/breadcrumb";
 import {FilterAside} from "@/app/open-data/partials/filter-aside";
 
@@ -10,7 +10,7 @@ const breadcrumbs = [
 ];
 
 export default async function ServicesIndexPage() {
-    const groups: GroupWithLicenseType[] | [] = await fetchApi('allOpenDataAndGroups');
+    const groups: GroupWithOpenDataType[] | [] = await fetchApi('allOpenDataAndGroups');
     return (
         <>
             <Breadcrumbs items={breadcrumbs}/>

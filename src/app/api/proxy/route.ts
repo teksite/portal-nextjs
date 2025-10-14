@@ -12,6 +12,9 @@ const dictionaryUrls = {
 
 
     allOpenDataAndGroups:"http://localhost:5000/api2/GetAppForCrm/0.1/get-license-filters",
+
+
+    allUsefulLink:"http://localhost:5000/api2/GetAppForCrm/0.1/get-license-filters",
 } as const;
 
 type EndpointKey = keyof typeof dictionaryUrls;

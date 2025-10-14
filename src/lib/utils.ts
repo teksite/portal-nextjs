@@ -1,10 +1,10 @@
 import {AuthenticationException, ValidationException} from "@/exceptions";
 import {
+    allUsefulLink,
     mockGetGroups,
     mockGetLicensesAndGroups,
     mockGetLicensesFilters,
     mockGetOpenDataAndGroups, mockGetOpenDataFilters,
-    mockGetOpendataFilters,
     mockLGetLicenses, mockLGetTransparencyCategoryWithGroup,
     mockLShowLicense
 } from "@/mock";
@@ -34,6 +34,9 @@ const mockData: Record<string, unknown> = {
     // Open Data
     allOpenDataAndGroups: mockGetOpenDataAndGroups,
     openDataFilters: mockGetOpenDataFilters,
+
+    //Useful link
+    allUsefulLink: allUsefulLink,
 
 };
 

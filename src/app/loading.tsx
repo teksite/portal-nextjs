@@ -29,6 +29,8 @@ export default function Loading() {
             </div>
             <div className="border border-default my-12 rounded-xl inner-container p-6">
                 <SectionOpenData/>
+                <SkeletonSlider/>
+
             </div>
         </>
     );

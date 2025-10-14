@@ -1,7 +1,5 @@
-import {SkeletonLicenseItem} from "@/app/licenses/components/skeletons/skeleton-license-item";
 
-
-export function SkeletonSlider ({skeletonCount = 8} :{skeletonCount:number}){
+export function SkeletonSlider ({skeletonCount = 8} :{skeletonCount?:number}){
     const skeletons = Array.from({ length: skeletonCount }, (_, i) => i);
 
     return (
