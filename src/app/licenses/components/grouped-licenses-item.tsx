@@ -17,7 +17,7 @@ export function GroupedLicenses({groups}: GroupedLicensesProps) {
                             <ul className={'grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch'}>
                                 {Object.entries(group.licenses).map(([id, license]: [key: string, license: LicenseType]) => (
                                     <li key={id} className='h-full'>
-                                       <LicenseItem license={license}/>
+                                       <LicenseItem license={license} group={group} />
                                     </li>
                                     )
                                 )}

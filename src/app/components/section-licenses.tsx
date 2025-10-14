@@ -4,6 +4,8 @@ import {SliderLicenses} from "@/app/components/slider-licenses";
 import {Xbox} from "@/components/xbox";
 import Link from "next/link";
 import Image from "next/image";
+import {CustomLink} from "@/components/link/custom-link";
+import {IconPicker} from "@/components/icon";
 
 export async function SectionLicenses() {
     const groups:Record<string, BasicGroupType> = await fetchApi('allLicencesAndGroups');
@@ -18,9 +20,10 @@ export async function SectionLicenses() {
                         خدمات وزارت فرهنگ و ارشاد اسلامی را از این قسمت مشاهده و ثبت درخواست نمایید. درخواست های الکترونیکی سازمان را میتوان از این قسمت درخواست و ثبت کرد.
                     </p>
                     <div className="mt-6">
-                        <Link href={'/licenses'} className='text-sm font-semibold text-zinc-50 bg-blue-950 rounded-lg px-3 py-1'>
+                        <CustomLink href={'/licenses'} className='inline-flex items-center gap-3' size={"md"}>
                             مشاهده خدمات
-                        </Link>
+                            <IconPicker icon={'angle-left'} className={'stroke-2'} size={'14'}/>
+                        </CustomLink>
                     </div>
                 </div>
                 <div>

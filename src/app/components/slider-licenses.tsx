@@ -12,7 +12,7 @@ export async function SliderLicenses({groups}:SliderLicensesProps) {
               Object.entries(groups).map(([key, group]:[key:string , group:BasicGroupType]) => (
                   <li key={key} className='h-full'>
                       <Xbox className='h-full'>
-                          <Link href={`/licenses/${group.id}`}>
+                          <Link href={`/licenses?group=${group.id}`}>
                               <figure className="text-center">
                                   {
                                       group.image &&

@@ -1,6 +1,8 @@
 import {Xbox} from "@/components/xbox";
 import Link from "next/link";
 import Image from "next/image";
+import {CustomLink} from "@/components/link/custom-link";
+import {IconPicker} from "@/components/icon";
 
 export async function SectionOpenData() {
     return (
@@ -17,10 +19,10 @@ export async function SectionOpenData() {
                         می‌کند.
                     </p>
                     <div className="mt-6">
-                        <Link href={'/open-data'}
-                              className='text-sm font-semibold text-zinc-50 bg-blue-950 rounded-lg px-3 py-1'>
+                        <CustomLink href={'/open-data'} className='inline-flex items-center gap-3' size={"md"}>
                             ورود به درگاه
-                        </Link>
+                            <IconPicker icon={'angle-left'} className={'stroke-2'} size={'14'}/>
+                        </CustomLink>
                     </div>
                 </div>
                 <div>
