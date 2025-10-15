@@ -120,7 +120,7 @@ export const Pupop = ({ id, data }: { id: string; data: LicenseType }) => {
 						href={`/service-desk-2/${id}`}
 						className="text-blue-600 hover:text-blue-800 text-sm inline-block"
 					>
-						جزئیات بیشترcccccc
+						جزئیات بیشتر
 					</Link>
 				</div>
 			</div>

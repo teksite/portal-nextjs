@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d32bf7f-7a58-42d5-b0c7-a26cd539abcf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item2.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item3.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item4.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item5.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item6.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/top-bar.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/top-bar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/[id]/components/items/license-item4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/[id]/components/items/license-item4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/[id]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/components/gallery/pupop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/components/gallery/pupop.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/components/breadcrumb/breadcrumb.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/components/breadcrumb/breadcrumb.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/components/certificate/list/popover/badge-cost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/components/certificate/list/popover/badge-cost.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/components/certificate/list/popover/badge-elecrtonics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/components/certificate/list/popover/badge-elecrtonics.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item2.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item3.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item4.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item5.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/items/license-item6.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/top-bar.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/components/top-bar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/not-found.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service-desk-2/services/[id]/page.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +160,12 @@
       <workItem from="1754293038186" duration="1897000" />
       <workItem from="1754300064616" duration="1555000" />
       <workItem from="1754367989443" duration="12735000" />
-      <workItem from="1754454505883" duration="6965000" />
+      <workItem from="1754454505883" duration="12756000" />
+      <workItem from="1754713778020" duration="572000" />
+      <workItem from="1754720180587" duration="307000" />
+      <workItem from="1754720857053" duration="2783000" />
+      <workItem from="1754724935800" duration="2708000" />
+      <workItem from="1755417980052" duration="379000" />
     </task>
     <servers />
   </component>
@@ -193,7 +198,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="portal/sina" />
                       </list>
                     </value>
                   </entry>
@@ -204,6 +209,18 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/ui/components/certificate/list/popover/simple2.tsx</url>
+          <line>29</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

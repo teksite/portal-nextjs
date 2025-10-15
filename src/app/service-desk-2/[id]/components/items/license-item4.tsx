@@ -21,39 +21,39 @@ export function LicenseItem4({data}: { data: LicenseType }) {
                 <table className="w-full ">
                     <tbody>
                     <tr>
-                        <th className="p-3 text-center border border-zinc-300">کدخدمت</th>
-                        <td className="p-3 text-center border border-zinc-300">{data.id}</td>
+                        <th className="p-3 text-center border border-zinc-200">کدخدمت</th>
+                        <td className="p-3 text-center border border-zinc-200">{data.id}</td>
+                    </tr>
+
+                    <tr>
+                        <th className="p-3 text-center border border-zinc-200">گروه خدمت</th>
+                        <td className="p-3 text-center border border-zinc-200">{data.serviceGroupCaption}</td>
                     </tr>
                     <tr>
-                        <th className="p-3 text-center border border-zinc-300">مدت اخذ خدمت</th>
-                        <td className="p-3 text-center border border-zinc-300">{data.avgTime}</td>
-                    </tr>
-                    <tr>
-                        <th className="p-3 text-center border border-zinc-300">گروه خدمت</th>
-                        <td className="p-3 text-center border border-zinc-300">{data.serviceGroupCaption}</td>
-                    </tr>
-                    <tr>
-                        <th className="p-3 text-center border border-zinc-300">هزینه</th>
-                        <td className="p-3 text-center border border-zinc-300">
+                        <th className="p-3 text-center border border-zinc-200">هزینه</th>
+                        <td className="p-3 text-center border border-zinc-200">
                             <BadgeCost needCost={!!data.cost}/>
                         </td>
                     </tr>
                     <tr>
-                        <th className="p-3 text-center border border-zinc-300">نحوه اخذ خدمت</th>
-                        <td className="p-3 text-center border border-zinc-300">
+                        <th className="p-3 text-center border border-zinc-200">نحوه اخذ خدمت</th>
+                        <td className="p-3 text-center border border-zinc-200">
                             <BadgeElecrtonics electronics={data.electronics}/>
-
                         </td>
                     </tr>
                     <tr>
-                        <th className="p-3 text-center border border-zinc-300">نحوه مراجعه</th>
-                        <td className="p-3 text-center border border-zinc-300">
+                        <th className="p-3 text-center border border-zinc-200">نحوه مراجعه</th>
+                        <td className="p-3 text-center border border-zinc-200">
                             <BadgePresence needPresent={!!data.needPresence}/>
                         </td>
                     </tr>
                     <tr>
-                        <th className="p-3 text-center border border-zinc-300">مدت زمان اعتبار</th>
-                        <td className="p-3 text-center border border-zinc-300">{data.serviceTime ?? 'نامحدود'}</td>
+                        <th className="p-3 text-center border border-zinc-200">مدت اخذ خدمت</th>
+                        <td className="p-3 text-center border border-zinc-200">{data.avgTime}</td>
+                    </tr>
+                    <tr>
+                        <th className="p-3 text-center border border-zinc-200">مدت زمان اعتبار</th>
+                        <td className="p-3 text-center border border-zinc-200">{data.serviceTime ?? 'نامحدود'}</td>
                     </tr>
 
                     </tbody>
